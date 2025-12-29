@@ -1,8 +1,8 @@
 const subTopics = {
   Home: [
-    { id: "home/cheatshet", title: "Шпаргалка" },
-    { id: "home/etc", title: "Разные полезности в анрил" },
-    { id: "home/git", title: "GIT" },
+    { id: "Home/cheatshet", title: "Шпаргалка" },
+    { id: "Home/etc", title: "Разные полезности в анрил" },
+    { id: "Home/git", title: "GIT" },
   ],
   Animation: [    
     { id: "Animation/animation", title: "Add animation to character and movement" },
