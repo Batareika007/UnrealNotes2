@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #363232;
+  /* background-color: #000; */
+  color: white;
+}
+
+#main-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: #333;
+  padding: 10px;
+  z-index: 10;
+}
+
+#main-nav a {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+#sub-nav {
+  position: fixed;
+  top: 35px; left: 0; right: 0;
+  background: #444;
+  overflow: hidden;
+  max-height: 0; /* изначально спрятан */
+  transition: max-height 0.3s ease;
+  padding-top: 5px;
+}
+
+#sub-nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+}
+
+#content {
+  max-width: 50%;
+  margin: 50px auto 0;
+  padding: 20px;
+}
+
+img{
+  max-width: 100%;
+}
