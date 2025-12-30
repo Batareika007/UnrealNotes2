@@ -1,0 +1,69 @@
+<p>Интерактивность с объектами - делаем по середине экрана точку для интерактивности</p>
+<p>Создаём blueprint interface</p>
+<img src="/Blueprint/images/interact1.png" alt="">
+<p>Называем, к примеру interact interface и в самом блюпринте создаём функцию interact</p>
+<img src="/Blueprint/images/interact2.png" alt="">
+<p>Далее создаём input кнопку на которое будет происходить действие</p>
+<p>Так же нам надо 2–3  картинки указателя. Кружок, крестик... </p>
+<p>Далее создаем Widget - назовем Pointer и туда вставляем картинку делаем по центру</p>
+<img src="/Blueprint/images/interact3.png" alt="">
+<p>Далее в нашем персонаже создаем блюприн настройки на event tick</p>
+<img src="/Blueprint/images/interact4.png" alt="">
+<img src="/Blueprint/images/interact5.png" alt="">
+<p>Создаём переменную типа актор</p>
+<img src="/Blueprint/images/interact6.png" alt="">
+<p>Модифицируем NODE</p>
+<img src="/Blueprint/images/interact7.png" alt="">
+<p>Подключаем к INPUT нашу логику </p>
+<img src="/Blueprint/images/interact8.png" alt="">
+<p>В event begin play - подключаем виджет </p>
+<img src="/Blueprint/images/interact9.png" alt="">
+<p>И подключаем наш созданный widget, делаем promote to variable. Так же называем нашу новую переменную например pointer widget</p>
+<p>И если всё сделано правильно, при старте уже должен быть виден наш pointer</p>
+<img src="/Blueprint/images/interact10.png" alt="">
+<p>Далее прописываем логику - если мы сталкиваемся с чем может интерактировать, то будет один pointer, например кружок с точкой внутри, а всё остальное время, то есть, когда мы не можем ни с чем интерактировать, будет пустой кружок</p>
+<img src="/Blueprint/images/interact11.png" alt="">
+<p>Следующий этап — это добавлять объекты, с которыми можно манипулировать 
+    Например, сделаем дверь, которая будет открываться от нажатия
+</p>
+<p>Создаем пустой blueprint, добавляем static mesh и заменяем SceenRoot</p>
+<img src="/Blueprint/images/interact12.png" alt="">
+<p>Далее создаем переменную Boolean - open door</p>
+<img src="/Blueprint/images/interact13.png" alt="">
+<p>Далее заходим в Class Settings - там добавляем наш созданные interact interface </p>
+<img src="/Blueprint/images/interact14.png" alt="">
+<p>У нас появляется новые interface </p>
+<img src="/Blueprint/images/interact15.png" alt="">
+<p>Что нам дает возможность создать новый Event Interact</p>
+<img src="/Blueprint/images/interact16.png" alt="">
+<p>Создаем логику - если дверь закрыта то открыть, если открыта то закрыть </p>
+<img src="/Blueprint/images/interact17.png" alt="">
+<img src="/Blueprint/images/interact18.png" alt="">
+<p>Лучше из timeline добавить lerp vector - что указать расстояние не трогая весь timeline</p>
+<p>Далее чтоб для каждого актора на сцене не писать ту же логику, мы просто будет его заменять нашим главным актером, подставляя дочерний элемент </p>
+<p>Создаем ещё одну переменную, типа static mesh object</p>
+<img src="/Blueprint/images/interact19.png" alt="">
+<p>В construction script - создаем логику замеы наш меш на новый и обязательно новые меш должен быть публичным (открытый глазик)</p>
+<p>На этом этапе мы закончили. </p>
+<p>Теперь берем уже существующию дверь или создаем новую и там заменяем меш на дочерний, который с логикой.</p>
+<p>В новом blueprint добавляем дочерний актор - childActor</p>
+<img src="/Blueprint/images/interact20.png" alt="">
+<p>В details выбираем child actor class - актор с логикой  который сделали</p>
+<img src="/Blueprint/images/interact21.png" alt="">
+<p>И в default  выбираем меш нашей двери.</p>
+<img src="/Blueprint/images/interact22.png" alt="">
+<p>И в конце удаляем оригинальную дверь если они имеласть в начале... 
+    То есть мы заменили существующую дверь на интерактивный актор, и там добавили новую дверь. 
+</p>
+<img src="/Blueprint/images/interact23.png" alt="">
+<img src="/Blueprint/images/interact24.png" alt="">
+<p>Всё теперт всё должно работать, такими де дейсивиями добавляем логику отддельно для правой двери, для левой, выдвежных ящиков и тд... </p>
+<p>Interface - использовать переменные для изменения чего либо</p>
+<ol>
+    <li>В самом Enteract Event добавляем переменные, и каждый раз, когда вызываем event, он будет пользоваться этой переменной</li>
+    <li>Вместо добавления переменной, добавляем ссылку на персонажа character – object reference. Это не действенный персонаж, а любой character. В input так и назовем character ref</li>
+    <li>Создаем новый интерфейс, он будет этим самым character ref. Функцию называем так какое действие должно выполниться, например добавлять очки. В output - добавляем переменную уже с параметром, который нужно добавить </li>
+    <li>В нашем персонаже добавили переменную, которая должна увеличивать счет. В персонаже подключаем настраиваем новый интерфейс - открываем его и у нас открывается функция</li>
+    <li>В актор с которым мы коммуницируем из character ref - выводим нашу функцию и там уже есть переменная, которая будет изменена </li>
+</ol>
+<p>Итог - вместо того чтоб наш интерфейс имел кучу переменных, мы вызываем только те которые нам нужныы</p>

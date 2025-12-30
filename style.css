@@ -26,7 +26,7 @@ body {
   background: #444;
   overflow: hidden;
   max-height: 0; /* изначально спрятан */
-  transition: max-height 0.3s ease;
+  transition: max-height 0.4s ease;
   padding-top: 5px;
 }
 

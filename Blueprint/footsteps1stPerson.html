@@ -1,0 +1,75 @@
+<p>Шаги по разным поверхностям только для игрока с первого вида, без анимаций</p>
+
+<p>В project settings - добавляем разные типы физический поверхностей  </p> 
+
+<img src="/Blueprint/images/footsteps1stperson1.png" alt="">
+
+<p>В отдельной папки создаем физический материал </p>
+
+<img src="/Blueprint/images/footsteps1stperson2.png" alt="">
+
+<p>Создаем материалы и называем так же как проекте</p>
+
+<img src="/Blueprint/images/footsteps1stperson3.png" alt="">
+
+<p>Так же в каждом выбираем матерал </p>
+
+<img src="/Blueprint/images/footsteps1stperson4.png" alt="">
+
+
+<p>
+    В персонажном блюпринтер создаем две функции
+    Trace footsteps - отслеживать движение и добавлять разные звуки смотря от какого материала
+    
+</p> 
+
+<img src="/Blueprint/images/footsteps1stperson5.png" alt="">
+<img src="/Blueprint/images/footsteps1stperson6.png" alt="">
+
+<p>Footstep try - если трасе правдив будет звучат звуки</p>
+
+<img src="/Blueprint/images/footsteps1stperson7.png" alt="">
+
+<p>
+    Создаем функции
+    Таймлайн через каждую секунду или больше меньше пока мы движемс будет играть музыка
+    
+</p> 
+
+<img src="/Blueprint/images/footsteps1stperson8.png" alt="">
+
+<p>
+    В таймлайне создаем только одну точку конечную
+    
+</p> 
+
+<img src="/Blueprint/images/footsteps1stperson9.png" alt="">
+
+
+<p>
+    Далее создаем логику, если персонаж движется то будут играть звуки ходьбы
+    
+</p> 
+
+<img src="/Blueprint/images/footsteps1stperson10.png" alt="">
+
+
+<p>Так же если бежим то будет ускорять звуки</p>
+
+<img src="/Blueprint/images/footsteps1stperson11.png" alt="">
+
+<p>
+    Далее чтоб всё это работало, надо каждому материалу добавить физический материал который мы создали в движке, для этого открываем сам материал и в деталях назначаем ему физический материал
+    
+</p> 
+
+<img src="/Blueprint/images/footsteps1stperson12.png" alt="">
+
+
+<p>
+    Всё должно работать, чтоб сделать более объёмный звук можно использовать данные параметры
+    
+</p> 
+
+<img src="/Blueprint/images/footsteps1stperson13.png" alt="">
+

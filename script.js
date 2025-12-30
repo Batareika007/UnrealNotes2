@@ -18,28 +18,30 @@ const subTopics = {
   Blueprints: [
     { id: "Blueprint/bpcommunication", title: "Blueprint Communications"},
     { id: "Blueprint/blueprint", title: "blueprint"},
-    { id: "Blueprint/blueprint", title: "Classes"},
-    { id: "Blueprint/blueprint", title: "Collison"},
-    { id: "Blueprint/blueprint", title: "coments"},
-    { id: "Blueprint/blueprint", title: "Create First-Person Character"},
-    { id: "Blueprint/blueprint", title: "Damage Collision"},
-    { id: "Blueprint/blueprint", title: "Enumerators"},
-    { id: "Blueprint/blueprint", title: "Event Dispatchers"},
-    { id: "Blueprint/blueprint", title: "footsteps1stPerson"},
-    { id: "Blueprint/blueprint", title: "Functions Events Macros"},
-    { id: "Blueprint/blueprint", title: "GameMode"},
-    { id: "Blueprint/blueprint", title: "HUD"},
-    { id: "Blueprint/blueprint", title: "Interact"},
-    { id: "Blueprint/blueprint", title: "Localization"},
-    { id: "Blueprint/blueprint", title: "Material and color"},
-    { id: "Blueprint/blueprint", title: "Nodes"},
-    { id: "Blueprint/blueprint", title: "Sphere cast"},
-    { id: "Blueprint/blueprint", title: "Structure"},
-    { id: "Blueprint/blueprint", title: "Time Control"},
-    { id: "Blueprint/blueprint", title: "Trigger"},
-    { id: "Blueprint/blueprint", title: "UX UI"},
-    { id: "Blueprint/blueprint", title: "Vectors"},
-    { id: "Blueprint/blueprint", title: "двигать акторы"},
+    { id: "Blueprint/bpclasses", title: "Classes"},
+    { id: "Blueprint/collision", title: "Collison"},
+    { id: "Blueprint/comment", title: "comments"},
+    { id: "Blueprint/CreateFirstPersonCharacter", title: "Create First-Person Character"},
+    { id: "Blueprint/DamageCollision", title: "Damage Collision"},
+    { id: "Blueprint/Enumerators", title: "Enumerators"},
+    { id: "Blueprint/eventDispatchers", title: "Event Dispatchers"},
+    { id: "Blueprint/footsteps1stPerson", title: "footsteps1stPerson"},
+    { id: "Blueprint/functionsEventsMacros", title: "Functions Events Macros"},
+    { id: "Blueprint/gameMode", title: "GameMode"},
+    { id: "Blueprint/hud", title: "HUD"},
+    { id: "Blueprint/interact", title: "Interact"},
+    { id: "Blueprint/localization", title: "Localization"},
+    { id: "Blueprint/Materialandcolor", title: "Material and color"},
+    { id: "Blueprint/nodes", title: "Nodes"},
+    { id: "Blueprint/spherecast", title: "Sphere cast"},
+    { id: "Blueprint/structure", title: "Structure"},
+    { id: "Blueprint/timeControl", title: "Time Control"},
+    { id: "Blueprint/trigger", title: "Trigger"},
+    { id: "Blueprint/moveActore", title: "двигать акторы"},
+
+
+    { id: "Blueprint/uxui", title: "UX UI"},   
+    { id: "Blueprint/vectors", title: "Vectors"},
   ],
   Cinematic: [
     { id: "Cinematic/camerarigs", title: "край и рельсы" },
@@ -108,11 +110,11 @@ function toggleSubNav(topic) {
     isAnimating = true;
     subNav.style.maxHeight = "0";
 
-    // ждём окончания анимации (0.4s как в CSS)
+    // ждём окончания анимации (0.5s как в CSS)
     setTimeout(() => {
       showNewSubNav(topic);
       isAnimating = false;
-    }, 400);
+    }, 500);
   } else {
     // если ничего не открыто — сразу показать новую
     showNewSubNav(topic);
@@ -133,8 +135,7 @@ function showNewSubNav(topic) {
     });
   }
 
-  // subNav.style.maxHeight = "60px"; // высота панели
-  subNav.style.maxHeight = "100%"; // высота панели
+  subNav.style.maxHeight = "80px"; // высота панели
   currentTopic = topic;
 }
 

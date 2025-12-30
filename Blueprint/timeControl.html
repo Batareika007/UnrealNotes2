@@ -1,0 +1,82 @@
+<h1> Time Control - timeline - нода в которой програмирую действие на отрезке определённого времени</h1>
+<img src="/Blueprint/images/timeControl1.png" alt="">
+<p>Update - будет действовать каждый фрейм
+    Finished - сделает только в конце
+</p>
+<img src="/Blueprint/images/timeControl2.png" alt="">
+<p>Там выбираем что нам надо </p>
+<img src="/Blueprint/images/timeControl3.png" alt="">
+<p>Float track - стандартный. Есть ось X - это время (сколько будет длится действие) и ость Y это значение которые мы получаем каждый фрейм. </p>
+<img src="/Blueprint/images/timeControl4.png" alt="">
+<p>Vector Track - создает три вектора xyz их по одному можно настраивать по отдельности, так же есть глазик и замочек, что было легче редактировать, закрывать или скрывать</p>
+<img src="/Blueprint/images/timeControl5.png" alt="">
+<p>На выходе получае вариант с векторами </p>
+<img src="/Blueprint/images/timeControl6.png" alt="">
+<p>Так же можно его разбить на три оси</p>
+<img src="/Blueprint/images/timeControl7.png" alt="">
+<p>Event Track - у value  нет значения, интересуют только время, в котором будут происходить события, например каждую секунду персонаж прыгал на протяжение 3 секунд. Грубо говорят, Update делает каждый фрейм, а Event каждый промежуток который мы задаём</p>
+<img src="/Blueprint/images/timeControl8.png" alt="">
+<img src="/Blueprint/images/timeControl9.png" alt="">
+<p>Color Track - назначает и меняет цвета во времени, например можно назначит градиент и он будет меняться на назначенном времени, в течени трех секунд будет происходить переменна цвета</p>
+<img src="/Blueprint/images/timeControl10.png" alt="">
+<p>Что это работало надо создать материал, дать имя пример - </p>
+<img src="/Blueprint/images/timeControl11.png" alt="">
+<p>И настроить в графе далее, и там же задать имя которые использовали для материала</p>
+<p>Создаем Dynamic Materual Instance и подключаем к set vector Parameter Value</p>
+<p>SourcMaterial - блюпринт которые создали</p>
+<p>В ParameterName - имя как назвали цвет</p>
+<img src="/Blueprint/images/timeControl12.png" alt="">
+<p>** чтоб делать более интересную анимацию, используют custom curve  - обычно это делают аниматоры **</p>
+<p>Стандартный loop можно сделать одним кликом </p>
+<img src="/Blueprint/images/timeControl13.png" alt="">
+<p>Главное чтоб последний фрейм был такой же как первый, чтоб анимация не прыгала. </p>
+<p>Для более полного функционала, используем set looping - чтоб он работал нам надо наш таймлан перенести в граф </p>
+<img src="/Blueprint/images/timeControl14.png" alt="">
+<p>И подключить к нему функцию  set looping</p>
+<img src="/Blueprint/images/timeControl15.png" alt="">
+<p>Зажимаем булеан и может менять будет ли бесконечный луп или конечный </p>
+<p> 
+    Изменять время выполнения - вытаскиваем наш таймлай и задаём ему новое значение, только надо точно знать что будет, анимация может резко прекратиться или наоборот будет большая задержка. 
+</p>
+<img src="/Blueprint/images/timeControl16.png" alt="">
+<p>Начать анимацию с другой позиции во времени, например не с нуля а с 2 секунд</p>
+<img src="/Blueprint/images/timeControl17.png" alt="">
+<p>Get playback position- показывает на какой стадии мы находимся на данный момент, на какой секунде происходит действие</p>
+<p>Set playback Position -  назначает на какой секунде начат выполнения графа анимации</p>
+<img src="/Blueprint/images/timeControl18.png" alt="">
+
+<p>Автоматическое включение с начала уровня, нет необходимости использовать Event tick или Begin play</p>
+<p>Только одну кнопку, и всё будет двигаться автоматически</p>
+
+<img src="/Blueprint/images/timeControl19.png" alt="">
+
+<p>Timer - для примера сделаем восстановление здоровья.</p>
+<p>В основном пользуются двумя таймера- timer by event, timer by function name</p>
+
+<img src="/Blueprint/images/timeControl20.png" alt="">
+
+<p>Timer by Event - таймер будет вызван опеределлым евентом </p>
+<p>Создаем эвент востановления здоровья, тригер на сцене на который будет наступать.</p>
+<img src="/Blueprint/images/timeControl21.png" alt="">
+
+<p>Далее создаем ещё два евента, при входи на тригер и выход с тригера, и создаем таймер, при входе запускаем таймер который будет повторятся и работать каждую 0.5 секунд и останавливаем таймер при выходе, в остановке мы подключаем какой именно таймер надо остановить.</p>
+
+<img src="/Blueprint/images/timeControl22.png" alt="">
+
+<p>Так же останавливаем таймер в бранче, как только здоровья дошла до максимума, иначе будет постоянно показывать что здоровье полное без остановки.</p>
+
+<img src="/Blueprint/images/timeControl23.png" alt="">
+<p>Чтоб всё это работало надо указать в нашем тригере каст на персонажа</p>
+<img src="/Blueprint/images/timeControl24.png" alt="">
+
+<p>Timer by Function - для этого надо создать функцию, напишем туже логику только уже внутри функции. Данный вариант немого почище и удобней для чтения</p>
+<img src="/Blueprint/images/timeControl25.png" alt="">
+<p>И в самом BP назначаем создаем таймер и даем ему имя функции, так как в предыдущем один раз это для входа на тригер и для выхода</p>
+<img src="/Blueprint/images/timeControl26.png" alt="">
+<p>В саму функцию тоже добавляем clear timer by function </p>
+<img src="/Blueprint/images/timeControl27.png" alt="">
+
+
+
+
+
