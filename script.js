@@ -38,9 +38,8 @@ const subTopics = {
     { id: "Blueprint/timeControl", title: "Time Control"},
     { id: "Blueprint/trigger", title: "Trigger"},
     { id: "Blueprint/moveActore", title: "двигать акторы"},
+    { id: "Blueprint/uxui", title: "UX UI"},
 
-
-    { id: "Blueprint/uxui", title: "UX UI"},   
     { id: "Blueprint/vectors", title: "Vectors"},
   ],
   Cinematic: [
@@ -90,59 +89,66 @@ const subTopics = {
 };
 
 let currentTopic = null;
-let isAnimating = false;
+/* Генерация меню */
+/* Генерация основного меню */
+window.onload = () => {
+  const mainNav = document.getElementById("main-nav");
 
-function toggleSubNav(topic) {
-  const subNav = document.getElementById("sub-nav");
+  Object.keys(subTopics).forEach(topic => {
+    const link = document.createElement("a");
+    link.href = "#";
+    link.textContent = topic;
+    link.onclick = () => showSubMenu(topic);
+    mainNav.appendChild(link);
+  });
+};
 
-  // если анимация уже идёт — игнорируем
-  if (isAnimating) return;
-
-  // если нажали на ту же тему — спрятать
-  if (currentTopic === topic) {
-    subNav.style.maxHeight = "0";
-    currentTopic = null;
-    return;
-  }
-
-  // если другая тема уже открыта — сначала спрятать
-  if (currentTopic !== null) {
-    isAnimating = true;
-    subNav.style.maxHeight = "0";
-
-    // ждём окончания анимации (0.5s как в CSS)
-    setTimeout(() => {
-      showNewSubNav(topic);
-      isAnimating = false;
-    }, 500);
-  } else {
-    // если ничего не открыто — сразу показать новую
-    showNewSubNav(topic);
-  }
-}
-
-function showNewSubNav(topic) {
+/* Показ подменю */
+function showSubMenu(topic) {
   const subNav = document.getElementById("sub-nav");
   subNav.innerHTML = "";
 
-  if (subTopics[topic]) {
-    subTopics[topic].forEach(sub => {
-      const link = document.createElement("a");
-      link.href = "#";
-      link.textContent = sub.title;
-      link.onclick = () => loadPage(sub.id);
-      subNav.appendChild(link);
-    });
-  }
+  // Подсветка активного раздела
+  document.querySelectorAll("#main-nav a").forEach(a => a.classList.remove("active"));
+  event.target.classList.add("active");
 
-  subNav.style.maxHeight = "80px"; // высота панели
-  currentTopic = topic;
+
+  subTopics[topic].forEach(sub => {
+    const link = document.createElement("a");
+    link.href = "#";
+    link.textContent = sub.title;
+    link.onclick = () => loadPage(sub.id);
+    subNav.appendChild(link);
+  });
 }
 
+/* Загрузка страниц */
 function loadPage(page) {
-  fetch( page + ".html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("content").innerHTML = html;
-    });
+const content = document.getElementById("content");
+
+  // Подсветка активного пункта
+  document.querySelectorAll("#sub-nav a").forEach(a => a.classList.remove("active"));
+  event.target.classList.add("active");
+
+  // 1. Плавно скрываем старый контент
+  content.classList.add("fade");
+
+  // 2. Ждём 300 мс (пока исчезает)
+  setTimeout(() => {
+    fetch(page + ".html")
+      .then(res => res.text())
+      .then(html => {
+
+        // 3. Меняем HTML, пока он невидим
+        content.innerHTML = html;
+
+        // 4. Принудительный reflow (важно!)
+        void content.offsetHeight;
+
+        // 5. Плавно показываем новый контент
+        content.classList.remove("fade");
+      });
+  }, 300); // ← длительность fade-out
+
 }
+
