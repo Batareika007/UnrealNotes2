@@ -68,6 +68,7 @@ body {
   background: var(--menu-bg);
   padding: 20px 0;
   border-right: 1px solid #333;
+  position: relative;
 }
 
 
@@ -88,6 +89,21 @@ body {
   transition: background 0.25s ease, color 0.25s ease;
 }
 
+#main-nav a.active,
+#sub-nav a.active {
+  color: #00eaff;
+  text-shadow:
+    0 0 6px #00eaff,
+    0 0 12px #00eaff,
+    0 0 18px #00aaff;
+}
+
+
+
+
+
+
+
 
 #main-nav a:hover {
   background: var(--menu-hover);
@@ -95,25 +111,16 @@ body {
 
 }
 
-#main-nav a.active {
-  /* background: var(--menu-active);
-  color: var(--menu-text-active); */
 
-}
 
 
 /* Подменю */
 #sub-nav {
-  /* max-height: 0; */
-  /* overflow: hidden; */
+
   transition: max-height 0.35s ease;
   padding-bottom: 20px;
 }
 
-#sub-nav.open {
-  /* max-height: 800px; достаточно большое значение */
-  /* max-height: 110vh; достаточно большое значение */
-}
 
 
 #sub-nav a {
@@ -125,11 +132,6 @@ body {
   /* font-size: 14px; */
 }
 
-#sub-nav a.active {
-  /* background: var(--menu-active);
-  color: var(--menu-text-active); */
-
-}
 
 
 #sub-nav a:hover {
@@ -142,43 +144,6 @@ body {
 #sub-nav a {
   position: relative;
 }
-
-#main-nav a::before,
-#sub-nav a::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 3px;              /* толщина линии */
-  height: 100%;
-  background: var(--menu-active);
-  transform: scaleY(0);    /* линия скрыта */
-  transform-origin: top;
-  transition: transform 0.25s ease;
-}
-
-#main-nav a.active::before,
-#sub-nav a.active::before {
-  transform: scaleY(1); /* линия появляется */
-}
-
-#main-nav a::before,
-#sub-nav a::before {
-  transition:
-    transform 0.25s ease,
-    top 0.25s ease;
-}
-
-#main-nav a:hover,
-#sub-nav a:hover {
-  background: var(--menu-hover);
-  color: var(--menu-text-active);
-}
-
-
-
-
-
 
 /* Контент */
 #content {
@@ -268,14 +233,6 @@ img.loaded {
 
 }
 
-/* #img-viewer img {
-  height: auto !important;
-  width: auto !important;
-  max-width: 90vw;
-  max-height: 90vh;
-  object-fit: contain;
-} */
-
 #img-viewer img {
   width: 80vw !important;
   height: auto !important;
@@ -311,3 +268,27 @@ img.loaded {
 #content img.loaded {
   opacity: 1;
 }
+
+
+
+/* линия которая бегает по меню */
+#active-line {
+  position: absolute;
+  left: 0;
+  width: 4px;
+  background: linear-gradient(
+    to bottom,
+    #00eaff,
+    #0088ff
+  );
+  box-shadow:
+    0 0 8px #00eaff,
+    0 0 16px #00eaff,
+    0 0 24px #0088ff,
+    inset 0 0 6px #00eaff;
+  border-radius: 2px;
+  transition: top 0.25s ease, height 0.25s ease;
+  z-index: 1;
+}
+
+

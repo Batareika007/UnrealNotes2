@@ -1,7 +1,7 @@
 const subTopics = {
   Home: [
     { id: "Home/cheatshet", title: "Шпаргалка" },
-    { id: "Home/etc", title: "Разные полезности в анрил" },
+    { id: "Home/usefullStuff", title: "Разные полезности в анрил" },
     { id: "Home/git", title: "GIT" },
   ],
   Animation: [    
@@ -16,7 +16,9 @@ const subTopics = {
     { id: "BasicMovementUE5/movmentUE5", title: "Базовое движение" },
   ],
   Blueprints: [
-    { id: "Blueprint/bpcommunication", title: "Blueprint Communications"},
+    { id: "Blueprint/directcommunication", title: "прямая коммуникация"},
+    { id: "Blueprint/casting", title: "Cast"},
+    { id: "Blueprint/interface", title: "Interface"},
     { id: "Blueprint/blueprint", title: "blueprint"},
     { id: "Blueprint/bpclasses", title: "Classes"},
     { id: "Blueprint/collision", title: "Collison"},
@@ -40,10 +42,7 @@ const subTopics = {
     { id: "Blueprint/moveActore", title: "двигать акторы"},
     { id: "Blueprint/uxui", title: "UX UI"},
     { id: "Blueprint/vectors", title: "Vectors"},
-    { id: "Blueprint/vectors", title: "Vectors"},
-    { id: "Blueprint/vectors", title: "Vectors"},
-    { id: "Blueprint/vectors", title: "Vectors"},
-    { id: "Blueprint/vectors", title: "Vectors"},
+
   ],
   Cinematic: [
     { id: "Cinematic/camerarigs", title: "край и рельсы" },
@@ -101,13 +100,22 @@ window.onload = () => {
     const link = document.createElement("a");
     link.href = "#";
     link.textContent = topic;
-    link.onclick = () => showSubMenu(topic);
+    link.onclick = (e) => showSubMenu(topic, e.target);
     mainNav.appendChild(link);
   });
+  // === АВТОВЫБОР HOME ===
+  const firstLink = document.querySelector("#main-nav a");
+  firstLink.classList.add("active");
+
+  showSubMenu("Home", firstLink);
+
+  initActiveLine();
+
+  loadPage(subTopics["Home"][0].id);
 };
 
 /* Показ подменю */
-function showSubMenu(topic) {
+function showSubMenu(topic, element) {
   const subNav = document.getElementById("sub-nav");
 
   // Переключаем анимацию
@@ -120,7 +128,7 @@ function showSubMenu(topic) {
       const link = document.createElement("a");
       link.href = "#";
       link.textContent = sub.title;
-      link.onclick = () => loadPage(sub.id);
+      link.onclick = (ev) => { ev.preventDefault(); loadPage(sub.id, ev.target); };
       subNav.appendChild(link);
     });
 
@@ -130,10 +138,18 @@ function showSubMenu(topic) {
   }, 150);
 
   // Подсветка активного раздела
-  document.querySelectorAll("#main-nav a").forEach(a => a.classList.remove("active"));
-  event.target.classList.add("active");
+  document.querySelectorAll("#main-nav a").forEach(a => a.classList.remove("active")); 
+  element.classList.add("active");
+
+  moveActiveLine(element);
 
 }
+
+
+
+
+
+
 
 /* Загрузка страниц */
 function loadPage(page) {
@@ -224,4 +240,38 @@ function enableImageViewer() {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") viewer.classList.remove("active");
   });
+}
+document.querySelectorAll("#main-nav a").forEach(a => {
+  a.addEventListener("click", () => moveActiveLine(a));
+});
+
+// линия которая бегает по всему меню
+function moveActiveLine(el) {
+  const line = document.getElementById("active-line");
+  const rect = el.getBoundingClientRect();
+  const navRect = document.getElementById("main-nav").getBoundingClientRect();
+
+  line.style.top = (rect.top - navRect.top) + "px";
+  line.style.height = rect.height + "px";
+}
+
+function initActiveLine() {
+  const line = document.getElementById("active-line");
+  const links = document.querySelectorAll("#main-nav a");
+
+  if (!links.length) return;
+
+  links.forEach(a => {
+    a.addEventListener("click", () => {
+      moveActiveLine(a);
+    });
+  });
+
+  const active = document.querySelector("#main-nav a.active");
+  if (active) {
+    moveActiveLine(active);
+  } else {
+    const first = document.querySelector("#main-nav a");
+    if (first) moveActiveLine(first);
+  }
 }
