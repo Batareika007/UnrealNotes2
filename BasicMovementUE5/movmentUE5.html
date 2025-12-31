@@ -7,20 +7,20 @@
 <p>
     Для начала создаём вводы для управления, например прыжок, ходьба (клавиатура) и расмотор окружения с помощью мыши
 </p>
-<img src="../BasicMovementUE5/images/image1.png" alt="">
+<img src="/BasicMovementUE5/images/image1.png" alt="">
 <p>И называем их по назначению, например так</p>
-<img src="../BasicMovementUE5/images/image2.png" alt="">
+<img src="/BasicMovementUE5/images/image2.png" alt="">
 
 <p>Для Jump делаем такие настройки</p>
-<img src="../BasicMovementUE5/images/image3.png" alt="">
+<img src="/BasicMovementUE5/images/image3.png" alt="">
 
 <p>Для move and look</p>
-<img src="../BasicMovementUE5/images/image4.png" alt="">
+<img src="/BasicMovementUE5/images/image4.png" alt="">
 
 <p>
     Далее создаём IMP - input mapping context для нашего персонажа, можно также указать его имя
 </p>
-<img src="../BasicMovementUE5/images/image5.png" alt="">
+<img src="/BasicMovementUE5/images/image5.png" alt="">
 
 
 <p>
@@ -28,7 +28,7 @@
     А вод для движения немного сложнее
 </p>
 
-<img src="../BasicMovementUE5/images/image6.png" alt="">
+<img src="/BasicMovementUE5/images/image6.png" alt="">
 
 <pre>
     Для движение вперед выбираем swizzle input axis values, и в Order - YXZ 
@@ -37,7 +37,7 @@
     А вот для движение направо можно ничего не указывать, он автоматом подхавит управление, то есть не важно какую клавишу мы укажим, он пойдем направа 
     
 </pre>
-<img src="../BasicMovementUE5/images/image7.png" alt="">
+<img src="/BasicMovementUE5/images/image7.png" alt="">
 
 <p>Далее создаем персонажа если у нас его ещё нет, blueprint class - character</p>
 
@@ -45,7 +45,7 @@
     Задаем mesh может быть всё что угодно, хоть квадрат.
     Создаем SpringArm - что-то типа селфи палки, пока она выделена - добавляем камеру и она автоматом прикрепится .
 </p>
-<img src="../BasicMovementUE5/images/image8.png" alt="">
+<img src="/BasicMovementUE5/images/image8.png" alt="">
 
 
 <p>
@@ -53,33 +53,33 @@
     У главного BP в разделе pawn убираем галочку use controller rotation yaw
 </p>
 
-<img src="../BasicMovementUE5/images/image9.png" alt="">
+<img src="/BasicMovementUE5/images/image9.png" alt="">
 
 <p>SpringArm - в разделе pawn - use pawn control rotation есть галочка</p>
 
-<img src="../BasicMovementUE5/images/image10.png" alt="">
+<img src="/BasicMovementUE5/images/image10.png" alt="">
 
 <p>
     Camera - в разделе pawn - use pawn control rotation нет галочки 
 </p>
 
-<img src="../BasicMovementUE5/images/image11.png" alt="">
+<img src="/BasicMovementUE5/images/image11.png" alt="">
 
 
 <p>
     Character movement - ставим галочку Orient rotation to Movement - не смотря на движение камеры персонаж всегда будет двигаться в заданом направлении, если бежит на право, не важно как мы поворачиваем камеру он будет продолжать бежать в права
 </p>
-<img src="../BasicMovementUE5/images/image12.png" alt="">
+<img src="/BasicMovementUE5/images/image12.png" alt="">
 
 <p>   
     Настройка в Blueprint 
     Захват персонажа и передача контроля 
 </p>
-<img src="../BasicMovementUE5/images/image13.png" alt="">
+<img src="/BasicMovementUE5/images/image13.png" alt="">
 
 <p>Прыжок - выбираем наш созданый input action </p>
-<img src="../BasicMovementUE5/images/image14.png" alt="">
-<img src="../BasicMovementUE5/images/image15.png" alt="">
-<img src="../BasicMovementUE5/images/image16.png" alt="">
+<img src="/BasicMovementUE5/images/image14.png" alt="">
+<img src="/BasicMovementUE5/images/image15.png" alt="">
+<img src="/BasicMovementUE5/images/image16.png" alt="">
 
 <p>Само движение</p>

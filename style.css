@@ -1,9 +1,20 @@
+:root {
+  --menu-bg: #1e1e1e;
+  --menu-hover: #2a2a2a;
+  --menu-active: #007acc;
+  --menu-text: hsla(0,0%,100%,.411);
+  --menu-text-active: #ffffff;
+}
+
+
 /* Базовые стили */
 body {
   margin: 0;
   font-family: sans-serif;
-  background-color: #2b2b2b;
-  color: white;
+  background: #121212;
+  color: #ddd;
+  font-family: system-ui, sans-serif;
+
   display: flex;
 }
 
@@ -33,60 +44,270 @@ body {
   padding-top: 20px;
 }
 
+#sub-sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+#sub-sidebar::-webkit-scrollbar-track {
+  background: #1f1f1f;
+}
+
+#sub-sidebar::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+#sub-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+
 /* Основное меню */
+#main-nav {
+  background: var(--menu-bg);
+  padding: 20px 0;
+  border-right: 1px solid #333;
+}
+
+
+
+
 #main-nav a {
   display: block;
   padding: 12px 20px;
-  color: #ddd;
+  color: var(--menu-text);
   text-decoration: none;
-  transition: background 0.2s;
-  font-size: 15px;
+  transition: background 0.25s ease, color 0.25s ease;
+
+  /* font-size: 15px; */
 }
 
+#main-nav a,
+#sub-nav a {
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+
 #main-nav a:hover {
-  background: #333;
+  background: var(--menu-hover);
+  color: var(--menu-text-active);
+
 }
 
 #main-nav a.active {
-  background: #444;
-  color: #fff;
+  /* background: var(--menu-active);
+  color: var(--menu-text-active); */
+
 }
 
 
 /* Подменю */
+#sub-nav {
+  /* max-height: 0; */
+  /* overflow: hidden; */
+  transition: max-height 0.35s ease;
+  padding-bottom: 20px;
+}
+
+#sub-nav.open {
+  /* max-height: 800px; достаточно большое значение */
+  /* max-height: 110vh; достаточно большое значение */
+}
+
+
 #sub-nav a {
   display: block;
   padding: 10px 25px;
-  color: #ccc;
+  color: var(--menu-text);
   text-decoration: none;
-  transition: background 0.2s;
-  font-size: 14px;
+  transition: background 0.25s ease, color 0.25s ease;
+  /* font-size: 14px; */
 }
 
 #sub-nav a.active {
-  background: #4a4a4a;
-  color: #fff;
+  /* background: var(--menu-active);
+  color: var(--menu-text-active); */
+
 }
 
 
 #sub-nav a:hover {
-  background: #3a3a3a;
+  background: var(--menu-hover);
+  color: var(--menu-text-active);
+
 }
+
+#main-nav a,
+#sub-nav a {
+  position: relative;
+}
+
+#main-nav a::before,
+#sub-nav a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;              /* толщина линии */
+  height: 100%;
+  background: var(--menu-active);
+  transform: scaleY(0);    /* линия скрыта */
+  transform-origin: top;
+  transition: transform 0.25s ease;
+}
+
+#main-nav a.active::before,
+#sub-nav a.active::before {
+  transform: scaleY(1); /* линия появляется */
+}
+
+#main-nav a::before,
+#sub-nav a::before {
+  transition:
+    transform 0.25s ease,
+    top 0.25s ease;
+}
+
+#main-nav a:hover,
+#sub-nav a:hover {
+  background: var(--menu-hover);
+  color: var(--menu-text-active);
+}
+
+
+
+
+
 
 /* Контент */
 #content {
   margin-left: 460px;
   padding: 40px;
   max-width: 900px;
-  opacity: 1;
-  transition: opacity 0.3s ease;
+  /* opacity: 1;
+  transition: opacity 0.3s ease; */
+
+  opacity: 0;
+  transform: translateY(10px);
+  filter: blur(4px);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    filter 0.35s ease;
+
 }
 
 #content.fade {
   opacity: 0;
 }
 
+#content.loaded {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+
+/* === картинка === */
 
 img {
-  max-width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: #3a3a3a;
+  border: 1px solid #555;
+  height: 150px;
+}
+
+img.loaded {
+  opacity: 1;
+  background: none;
+  border: none;
+}
+
+/* === картинка на весь экран === */
+
+/* Оверлей */
+#img-viewer {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+/* Активное состояние */
+#img-viewer.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Картинка в полноэкранном режиме */
+#img-full {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+/* Анимация увеличения */
+#img-viewer.active #img-full {
+  transform: scale(1);
+}
+#img-viewer.active img{
+  opacity: 1;
+  transform: scale(1);
+
+}
+
+/* #img-viewer img {
+  height: auto !important;
+  width: auto !important;
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+} */
+
+#img-viewer img {
+  width: 80vw !important;
+  height: auto !important;
+  /* max-height: 90vh; */
+  object-fit: contain;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+
+}
+
+
+/* Крестик */
+#img-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s ease;
+}
+
+#img-close:hover {
+  opacity: 0.6;
+}
+
+#content img {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#content img.loaded {
+  opacity: 1;
 }

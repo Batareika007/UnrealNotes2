@@ -39,7 +39,10 @@ const subTopics = {
     { id: "Blueprint/trigger", title: "Trigger"},
     { id: "Blueprint/moveActore", title: "двигать акторы"},
     { id: "Blueprint/uxui", title: "UX UI"},
-
+    { id: "Blueprint/vectors", title: "Vectors"},
+    { id: "Blueprint/vectors", title: "Vectors"},
+    { id: "Blueprint/vectors", title: "Vectors"},
+    { id: "Blueprint/vectors", title: "Vectors"},
     { id: "Blueprint/vectors", title: "Vectors"},
   ],
   Cinematic: [
@@ -106,49 +109,119 @@ window.onload = () => {
 /* Показ подменю */
 function showSubMenu(topic) {
   const subNav = document.getElementById("sub-nav");
-  subNav.innerHTML = "";
+
+  // Переключаем анимацию
+  subNav.classList.remove("open");
+
+  setTimeout(() => {
+    subNav.innerHTML = "";
+
+    subTopics[topic].forEach(sub => {
+      const link = document.createElement("a");
+      link.href = "#";
+      link.textContent = sub.title;
+      link.onclick = () => loadPage(sub.id);
+      subNav.appendChild(link);
+    });
+
+    // Запускаем раскрытие
+    void subNav.offsetHeight;
+    subNav.classList.add("open");
+  }, 150);
 
   // Подсветка активного раздела
   document.querySelectorAll("#main-nav a").forEach(a => a.classList.remove("active"));
   event.target.classList.add("active");
 
-
-  subTopics[topic].forEach(sub => {
-    const link = document.createElement("a");
-    link.href = "#";
-    link.textContent = sub.title;
-    link.onclick = () => loadPage(sub.id);
-    subNav.appendChild(link);
-  });
 }
 
 /* Загрузка страниц */
 function loadPage(page) {
-const content = document.getElementById("content");
+  const content = document.getElementById("content");
 
   // Подсветка активного пункта
   document.querySelectorAll("#sub-nav a").forEach(a => a.classList.remove("active"));
   event.target.classList.add("active");
 
   // 1. Плавно скрываем старый контент
-  content.classList.add("fade");
+  content.classList.remove("loaded");
 
-  // 2. Ждём 300 мс (пока исчезает)
+  // 2. Ждём fade-out
   setTimeout(() => {
     fetch(page + ".html")
       .then(res => res.text())
       .then(html => {
 
-        // 3. Меняем HTML, пока он невидим
+        // 3. Вставляем новый HTML
         content.innerHTML = html;
 
-        // 4. Принудительный reflow (важно!)
+        // 4. Обрабатываем картинки (плавная загрузка)
+        processImages();
+
+        // 5. Включаем просмотр картинок (fullscreen)
+        enableImageViewer();
+
+        // 6. Принудительный reflow
         void content.offsetHeight;
 
-        // 5. Плавно показываем новый контент
-        content.classList.remove("fade");
+        // 7. Плавно показываем новый контент
+        content.classList.add("loaded");
       });
-  }, 300); // ← длительность fade-out
-
+  }, 350);
 }
 
+
+function processImages() {
+  const images = document.querySelectorAll("#content img");
+
+  images.forEach(img => {
+    // Если картинка уже загружена (кеш)
+    if (img.complete) {
+      img.classList.add("loaded");
+      return;
+    }
+
+    // Если загружается — ждём
+    img.addEventListener("load", () => {
+      img.classList.add("loaded");
+    });
+
+    // Если ошибка загрузки
+    img.addEventListener("error", () => {
+      img.classList.add("loaded");
+    });
+  });
+}
+
+
+// Фуллскрин просмотр картинок
+function enableImageViewer() {
+  const viewer = document.getElementById("img-viewer");
+  const viewerImg = document.getElementById("img-full");
+  const closeBtn = document.getElementById("img-close");
+
+  // Навешиваем обработчики на все картинки внутри контента
+  document.querySelectorAll("#content img").forEach(img => {
+    img.style.cursor = "zoom-in";
+
+    img.addEventListener("click", () => {
+      viewerImg.src = img.src;
+      viewer.classList.add("active");
+    });
+  });
+
+  // Закрытие по крестику
+  closeBtn.addEventListener("click", () => {
+    viewer.classList.remove("active");
+  });
+
+  // Закрытие по клику вне картинки
+  viewer.addEventListener("click", (e) => {
+    if (e.target === viewer) viewer.classList.remove("active");
+  });
+
+  // Закрытие по ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") viewer.classList.remove("active");
+  });
+}
