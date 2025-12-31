@@ -6,42 +6,48 @@
   --menu-text-active: #ffffff;
 }
 
-
 /* Базовые стили */
 body {
   margin: 0;
   font-family: sans-serif;
-  background: #121212;
   color: #ddd;
   font-family: system-ui, sans-serif;
+  /* background: linear-gradient(to bottom, #0A3139, #000000); */
+  background: radial-gradient(circle at top right, #0A3139 0%, transparent 70%), radial-gradient(circle at bottom left, #0A3139 0%, transparent 70%), #000000;
 
-  display: flex;
+  background-attachment: fixed;
 }
 
 /* Основное меню слева */
 #sidebar {
   width: 220px;
-  background: #1f1f1f;
   height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
   overflow-y: auto;
-  border-right: 1px solid #333;
   padding-top: 20px;
+  background: rgba(0, 0, 0, 0.35); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); 
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  /* box-shadow: inset 0 0 20px rgba(255,255,255,0.03); */
 }
 
 /* Подменю справа от основного */
 #sub-sidebar {
   width: 240px;
-  background: #252525;
   height: 100vh;
   position: fixed;
   left: 220px;
   top: 0;
   overflow-y: auto;
-  border-right: 1px solid #333;
-  padding-top: 20px;
+  padding-top: 20px; 
+  background: rgba(0, 0, 0, 0.28); 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  
 }
 
 #sub-sidebar::-webkit-scrollbar {
@@ -61,18 +67,13 @@ body {
   background: #555;
 }
 
-
-
 /* Основное меню */
 #main-nav {
-  background: var(--menu-bg);
+  /* background: var(--menu-bg); */
   padding: 20px 0;
-  border-right: 1px solid #333;
+  /* border-right: 1px solid #333; */
   position: relative;
 }
-
-
-
 
 #main-nav a {
   display: block;
@@ -98,30 +99,52 @@ body {
     0 0 18px #00aaff;
 }
 
-
-
-
-
-
-
-
-#main-nav a:hover {
-  background: var(--menu-hover);
-  color: var(--menu-text-active);
-
+#main-nav a {
+  position: relative;
+  transition: color 0.5s ease, text-shadow 0.5s ease;
 }
 
+#main-nav a:hover {
+  background: linear-gradient(to right,
+  rgba(255, 255, 255, 0.05),
+  rgba(255, 255, 255, 0)
+);
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(255,255,255,0.6);
+  /* box-shadow: 0 0 8px rgba(0, 170, 255, 0.4); */
+}
+
+
+#main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(to right,
+    rgba(0, 170, 255, 0.25) 0%,
+    rgba(0, 170, 255, 0.10) 40%,
+    rgba(0, 170, 255, 0.00) 100%
+  );
+  border-radius: inherit;
+  filter: blur(6px);
+  opacity: 0; /* скрыто */ 
+  transition: opacity 0.5s ease; /* плавное появление */
+}
+
+#main-nav a:hover::after{ 
+  opacity: 1; 
+}
 
 
 
 /* Подменю */
 #sub-nav {
-
   transition: max-height 0.35s ease;
   padding-bottom: 20px;
 }
-
-
 
 #sub-nav a {
   display: block;
@@ -130,15 +153,44 @@ body {
   text-decoration: none;
   transition: background 0.25s ease, color 0.25s ease;
   /* font-size: 14px; */
+  position: relative; 
+  overflow: hidden;
+  transition: color 0.5s ease, text-shadow 0.5s ease;
 }
-
-
 
 #sub-nav a:hover {
-  background: var(--menu-hover);
-  color: var(--menu-text-active);
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(255,255,255,0.6);
+}
+
+
+#sub-nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 140%;
+  height: 140%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  color: white;
+  background: radial-gradient(
+    circle,
+    rgba(0, 170, 255, 0.25) 0%,
+    rgba(0, 170, 255, 0.10) 40%,
+    rgba(0, 170, 255, 0.00) 70%
+  );
+
+  filter: blur(10px);
+  opacity: 0; /* скрыто по умолчанию */ 
+  transition: opacity 0.5s ease; /* плавное появление */ 
+}
+
+ #sub-nav a:hover::after { 
+  opacity: 1; /* плавно проявляется */ 
 
 }
+
 
 #main-nav a,
 #sub-nav a {
@@ -173,7 +225,6 @@ body {
   transform: translateY(0);
   filter: blur(0);
 }
-
 
 /* === картинка === */
 
@@ -243,7 +294,6 @@ img.loaded {
 
 }
 
-
 /* Крестик */
 #img-close {
   position: absolute;
@@ -269,8 +319,6 @@ img.loaded {
   opacity: 1;
 }
 
-
-
 /* линия которая бегает по меню */
 #active-line {
   position: absolute;
@@ -290,5 +338,147 @@ img.loaded {
   transition: top 0.25s ease, height 0.25s ease;
   z-index: 1;
 }
+/* === блоки главного контента */
+/* ------------------------------
+   1. Главный заголовок страницы
+------------------------------ */
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #ffffff;
+  border-bottom: 2px solid rgba(255,255,255,0.1);
+  padding-bottom: 10px;
+}
 
+/* ------------------------------
+   2. Заголовки разделов
+------------------------------ */
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: #00eaff;
+}
+
+/* ------------------------------
+   3. Подзаголовки
+------------------------------ */
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #7ddfff;
+}
+
+/* ------------------------------
+   4. Параграфы
+------------------------------ */
+p {
+  line-height: 1.6;
+  margin: 12px 0;
+  color: #e0e0e0;
+  font-size: 16px;
+}
+
+/* ------------------------------
+   5. Списки
+------------------------------ */
+ul, ol {
+  margin: 12px 0 12px 25px;
+  line-height: 1.6;
+  color: #dcdcdc;
+}
+
+/* ------------------------------
+   6. Названия нод Unreal Engine
+------------------------------ */
+.node {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #00000015;
+  border-radius: 3px;
+  border-top: 6px solid #3aff855b; /* цвет полосы сверху */
+  color: #d9f3ff;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+  margin: 4px 0;
+  /* user-select: none; */
+  box-shadow: 0 0 6px rgba(0, 170, 255, 0.4), inset 0 0 4px rgba(0, 170, 255, 0.2);
+}
+
+/* ------------------------------
+   7. Кнопки интерфейса
+------------------------------ */
+.ui-btn {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #1a1a1a;
+  border: 1px solid #3a3a3a;
+  border-radius: 6px;
+  color: #e6e6e6;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: Consolas, monospace;
+  box-shadow:
+    0 2px 0 #000,
+    inset 0 1px 0 rgba(255,255,255,0.1);
+  /* user-select: none; */
+  
+}
+
+/* ------------------------------
+   8. Блоки кода
+------------------------------ */
+.code {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 12px;
+  border-radius: 6px;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+  white-space: pre-wrap;
+  margin: 15px 0;
+  color: #c8f7ff;
+}
+
+
+
+
+
+
+
+/* === adaptaiton === */
+
+@media (max-width: 900px) {
+  #sidebar {
+    width: 160px;
+  }
+
+  #sub-sidebar {
+    left: 160px;
+    width: 180px;
+  }
+
+  #content {
+    margin-left: 340px; /* 160 + 180 */
+  }
+}
+
+@media (max-width: 700px) {
+  #sidebar {
+    width: 130px;
+  }
+
+  #sub-sidebar {
+    left: 130px;
+    width: 150px;
+  }
+
+  #content {
+    margin-left: 280px;
+  }
+}
 
