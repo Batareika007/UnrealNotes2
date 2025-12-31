@@ -20,18 +20,18 @@
 прямая коммуникация, создаём BP с которым хотим общаться, никаких особых настроек не надо, только BP. Далее объект который должен комуницировать, например это наш персонаж, у него создаём новую переменную и в типе выбираем наш BP - Object Reference
     
 </p> 
-<img src="/Blueprint/images/communication1.png" alt="">
+<img src="Blueprint/images/communication1.png" alt="">
 
 <p>
     Далее в персонаже добавляем его в Event Graph, и стороим логику и механику что должно происходить, например - открываться дверь 
     
 </p> 
-<img src="/Blueprint/images/communication2.png" alt="">
+<img src="Blueprint/images/communication2.png" alt="">
 
 <p>
     Чтоб это работало, наша переменная должна быть глобально доступна - глазик, и уже на сцене, нашему персонажу включаем доступность 
 </p> 
-<img src="/Blueprint/images/communication3.png" alt="">
+<img src="Blueprint/images/communication3.png" alt="">
  
 <h2>Cast</h2>
 <p>
@@ -49,13 +49,13 @@
     Обекту говорим чтоб он нашел нашего персонажа - cast и запустил действие 
 </p> 
 
-<img src="/Blueprint/images/communication4.png" alt="">
+<img src="Blueprint/images/communication4.png" alt="">
 
 <p>Например у персонажа создаем новый эвент </p>
-<img src="/Blueprint/images/communication5.png" alt="">
+<img src="Blueprint/images/communication5.png" alt="">
 
 <p>И это эвент будет запускаться уже в нашем обекте</p>
-<img src="/Blueprint/images/communication6.png" alt="">
+<img src="Blueprint/images/communication6.png" alt="">
 
  
 <h2>Interfaces</h2>
@@ -63,56 +63,56 @@
     Взаимодействовать с разными блюпринтами на одной и той же клавишей 
     Создается BP интерфейсе 
 </p>
-<img src="/Blueprint/images/communication7.png" alt="">
+<img src="Blueprint/images/communication7.png" alt="">
 
 <p>
     Там только функции, которые можно вызывать в разных блюпринтах
     Называем нашу функцию 
 </p>
-<img src="/Blueprint/images/communication8.png" alt="">
+<img src="Blueprint/images/communication8.png" alt="">
 
 
 <p>
     Чтоб это всё работала, надо подключить к персонажу - который будет взаимодействовать со всеми объектами, и через sphere trace или подобное, то есть, персонаж при столкновением с объектом будет запускать интеракцию, и уже зависит от объекта будет запускаться разное действие
 </p> 
 
-<img src="/Blueprint/images/communication9.png" alt="">
-<img src="/Blueprint/images/communication10.png" alt="">
+<img src="Blueprint/images/communication9.png" alt="">
+<img src="Blueprint/images/communication10.png" alt="">
 <p>
     
     Далее любой меш, с которым мы хотим интерактировать, подключаем его к интерфейсу.
     Выбираем class Settings, это делаем с каждым мешом с которым хотим интеракции
     
 </p>
-<img src="/Blueprint/images/communication11.png" alt="">
+<img src="Blueprint/images/communication11.png" alt="">
 
 <p>
     Далее в Interfaces добавляем на BP имено так как мы его назвали, он будет со знаком круглишка со стрелками
 </p>  
-<img src="/Blueprint/images/communication12.png" alt="">
+<img src="Blueprint/images/communication12.png" alt="">
 
 <p>Добавляем event в наш event graph </p>
-<img src="/Blueprint/images/communication13.png" alt="">
+<img src="Blueprint/images/communication13.png" alt="">
 
 <p>
     Или двойной клик на вкладку interact 
     
 </p> 
-<img src="/Blueprint/images/communication14.png" alt="">
+<img src="Blueprint/images/communication14.png" alt="">
 
 <p>К евенту подключаем логику и другие ноды</p>
 
-<img src="/Blueprint/images/communication15.png" alt="">
+<img src="Blueprint/images/communication15.png" alt="">
 
 <p>
     Inputs - добавляем дополнительные параметры например здоровье и мана, и дальше при определённых обстоятельствах можем назначать что происходит например при открытию двери расходуется мана или её должно быть определённое количество чтоб открыть дверь
     
 </p> 
-<img src="/Blueprint/images/communication16.png" alt="">
+<img src="Blueprint/images/communication16.png" alt="">
 
 
 <p>И их видно сразу везде где использовали</p>
-<img src="/Blueprint/images/communication17.png" alt="">
+<img src="Blueprint/images/communication17.png" alt="">
 
 
 
@@ -121,32 +121,32 @@
     
 </p> 
 
-<img src="/Blueprint/images/communication18.png" alt="">
+<img src="Blueprint/images/communication18.png" alt="">
 
 <p>
     Сразу же меняется во всех блюпринтах настройк, например у персонажа сразу добавляется строка, (не обращать внимания на разные название, в процессе изучения менял много)
     
 </p> 
 
-<img src="/Blueprint/images/communication19.png" alt="">
+<img src="Blueprint/images/communication19.png" alt="">
 
 <p>
     И в блюпринтах теперь наш эвент сломан и надо заного его настроить, только теперь это функция. Удаляем старый эвент и передвигаем новый - это уже функция
     
 </p> 
 
-<img src="/Blueprint/images/communication20.png" alt="">
+<img src="Blueprint/images/communication20.png" alt="">
  
 <p>
     В функции настраиваем как угодно, напирмер если у нас меньше 200 мана то добавляем 50 если больше то продолжаем без добавления 
     
 </p> 
 
-<img src="/Blueprint/images/communication21.png" alt="">
+<img src="Blueprint/images/communication21.png" alt="">
 
 <p>Так же в персонаже настраиваем что получаем на выходе</p>
 
-<img src="/Blueprint/images/communication22.png" alt="">
+<img src="Blueprint/images/communication22.png" alt="">
 
  
 <h2>Event Dispatcher</h2>
@@ -157,19 +157,19 @@
     
 </p>
 
-<img src="/Blueprint/images/communication23.png" alt="">
+<img src="Blueprint/images/communication23.png" alt="">
 
 <p>
     Далее обект который должен ответить на запрос, добавляем ему, но перед этим надо захватить персонажа который будет кидать запрос. И подключаем к нему event dispatcher
     
 </p> 
 
-<img src="/Blueprint/images/communication24.png" alt="">
+<img src="Blueprint/images/communication24.png" alt="">
 <p>
     Далее назначаем что должно произойти, на пример при нажатии поворачиватся 
     
 </p> 
-<img src="/Blueprint/images/communication25.png" alt="">
+<img src="Blueprint/images/communication25.png" alt="">
 <p>
     Так же эту логику можно подключить многим акторам и при нажатии одной кнопки все они будут делать то что запрограмировано 
     
