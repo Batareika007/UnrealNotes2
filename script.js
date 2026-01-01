@@ -71,9 +71,6 @@ const subTopics = {
     { id: "Plugins/pluginsfab", title: "плагины из фаба" },
     { id: "Plugins/mychose", title: "плагины" },
   ],
-  Steam: [
-    { id: "Steam/steam", title: "загрузить в стим" },
-  ],
   Editor: [
     { id: "Editor/about", title: "какие-то данные про движок" },
     { id: "Editor/editorsetup", title: "Настройка редактора" },
@@ -89,8 +86,12 @@ const subTopics = {
     { id: "Theory/modeplace", title: "размещение объектов разных классов" },
     { id: "Theory/naming", title: "Объекты" },
     { id: "Theory/proffesion", title: "Проффесии" },
-
+    
   ],
+  Steam: [
+    { id: "Steam/steam", title: "загрузить в стим" },
+  ],
+  
 };
 
 let currentTopic = null;
@@ -183,27 +184,53 @@ function loadPage(page, linkElement) {
 }
 
 
+// function processImages() {
+//   const images = document.querySelectorAll("#content img");
+
+//   images.forEach(img => {
+//     // Если картинка уже загружена (кеш)
+//     if (img.complete) {
+//       img.classList.add("loaded");
+//       return;
+//     }
+
+//     // Если загружается — ждём
+//     img.addEventListener("load", () => {
+//       img.classList.add("loaded");
+//     });
+
+//     // Если ошибка загрузки
+//     img.addEventListener("error", () => {
+//       img.classList.add("loaded");
+//     });
+//   });
+// }
+
+
 function processImages() {
   const images = document.querySelectorAll("#content img");
 
   images.forEach(img => {
+    // Если картинка ещё не обёрнута
+    if (!img.parentElement.classList.contains("image-block")) {
+      const wrapper = document.createElement("div");
+      wrapper.className = "image-block";
+
+      img.parentNode.insertBefore(wrapper, img);
+      wrapper.appendChild(img);
+    }
+
     // Если картинка уже загружена (кеш)
     if (img.complete) {
       img.classList.add("loaded");
       return;
     }
 
-    // Если загружается — ждём
-    img.addEventListener("load", () => {
-      img.classList.add("loaded");
-    });
-
-    // Если ошибка загрузки
-    img.addEventListener("error", () => {
-      img.classList.add("loaded");
-    });
+    img.addEventListener("load", () => img.classList.add("loaded"));
+    img.addEventListener("error", () => img.classList.add("loaded"));
   });
 }
+
 
 
 // Фуллскрин просмотр картинок
@@ -271,3 +298,17 @@ function initActiveLine() {
     if (first) moveActiveLine(first);
   }
 }
+
+
+const toggleBtn = document.getElementById("toggle-sidebar");
+
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("sidebar-collapsed");
+
+  // Меняем стрелку
+  if (document.body.classList.contains("sidebar-collapsed")) {
+    toggleBtn.textContent = "⮞"; // панель скрыта → стрелка вправо
+  } else {
+    toggleBtn.textContent = "⮜"; // панель открыта → стрелка влево
+  }
+});

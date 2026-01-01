@@ -42,7 +42,7 @@ body {
   width: 240px;
   height: 100vh;
   position: fixed;
-  left: 220px;
+  left:0;
   top: 0;
   overflow-y: auto;
   padding-top: 20px; 
@@ -228,8 +228,6 @@ body {
 img {
   opacity: 0;
   transition: opacity 0.3s ease;
-  background: #3a3a3a;
-  border: 1px solid #555;
   height: 150px;
 }
 
@@ -335,6 +333,10 @@ img.loaded {
   transition: top 0.25s ease, height 0.25s ease;
   z-index: 1;
 }
+
+
+
+
 /* === блоки главного контента */
 /* ------------------------------
    1. Главный заголовок страницы
@@ -436,7 +438,6 @@ ul, ol {
 
 .image-block { 
   margin: 20px 0; 
-  /* text-align: center;  */
 } 
 .image-block img { 
   max-width: 100%; 
@@ -444,7 +445,157 @@ ul, ol {
   border: 1px solid rgba(255,255,255,0.1); 
   box-shadow: 0 0 12px rgba(0, 234, 255, 0.3); }
 
+/* ------------------------------
+   9. Предупреждение об устаревших данных
+------------------------------ */
+.warning-red {
+  padding: 18px 20px;
+  margin: 25px 0;
+  border-radius: 8px;
 
+  background: rgba(255, 60, 60, 0.12);
+  border: 1px solid rgba(255, 100, 100, 0.25);
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  color: #ffb3b3;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 55px;
+
+  box-shadow:
+    0 0 12px rgba(255, 60, 60, 0.25),
+    inset 0 0 8px rgba(255, 60, 60, 0.15);
+}
+
+.warning-red::before {
+  content: "⚠";
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 26px;
+  color: #ff6b6b;
+  text-shadow: 0 0 8px rgba(255, 60, 60, 0.6);
+}
+
+/* ------------------------------
+   10. Предупреждение об требование проверки и дополнений
+------------------------------ */
+.warning-yellow {
+  padding: 18px 20px;
+  margin: 25px 0;
+  border-radius: 8px;
+
+  background: rgba(255, 200, 60, 0.12);
+  border: 1px solid rgba(255, 210, 100, 0.25);
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  color: #ffe9b3;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 55px;
+
+  box-shadow:
+    0 0 12px rgba(255, 200, 60, 0.25),
+    inset 0 0 8px rgba(255, 200, 60, 0.15);
+}
+
+.warning-yellow::before {
+  content: "✎";
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: #ffd86b;
+  text-shadow: 0 0 8px rgba(255, 200, 60, 0.6);
+}
+/* ------------------------------
+   11. Предупреждение об готовой информации
+------------------------------ */
+.warning-green {
+  padding: 18px 20px;
+  margin: 25px 0;
+  border-radius: 8px;
+
+  background: rgba(60, 255, 120, 0.12);
+  border: 1px solid rgba(100, 255, 150, 0.25);
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  color: #c7ffd9;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 55px;
+
+  box-shadow:
+    0 0 12px rgba(60, 255, 120, 0.25),
+    inset 0 0 8px rgba(60, 255, 120, 0.15);
+}
+
+.warning-green::before {
+  content: "✔";
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: #6bff9a;
+  text-shadow: 0 0 8px rgba(60, 255, 120, 0.6);
+}
+
+
+
+/* Кнопка скрытия панели */
+.sidebar-toggle {
+  position: fixed;
+  top: 15px;
+  left: 20px; /* рядом с панелью */
+  z-index: 9999;
+  
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+
+  transition: left 0.3s ease, background 0.3s ease;
+}
+
+/* Когда панель скрыта — кнопка смещается */
+.sidebar-collapsed .sidebar-toggle {
+  left: 20px;
+}
+
+/* Анимация боковой панели */
+#sidebar {
+  width: 240px;
+  transition: transform 0.35s ease;
+}
+
+.sidebar-collapsed #sidebar {
+  transform: translateX(-240px);
+}
+
+/* Чтобы контент смещался */
+#sub-sidebar {
+  transition: margin-left 0.35s ease;
+  margin-left: 240px;
+}
+
+.sidebar-collapsed #sub-sidebar {
+  margin-left: 0;
+}
 
 
 
