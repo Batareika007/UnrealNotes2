@@ -1,28 +1,26 @@
 <div class="warning-red">
   Старая информация. Требуется перепроверить, обновить или удалить.
 </div>
-
 <h1>добавить анимации к персонажу</h1>
 <p>Создать <span class="ui-btn">Blueprint Character</span> и настроить его параметры.</p>
 
 <h2>Шаги:</h2>
 <ol>
-  <li>создать blueprint персонажа</li>
+  <li>создать <span class="ui-btn">blueprint</span> персонажа</li>
   <div class="image-block">
     <img src="Animation/images/createBPcharacter.png" alt="Пример персонажа" loading="lazy">
   </div>
   <li>создать анимация и выбрать скелет</li>
   <img src="Animation/images/animBP.png" alt="">
   <img src="Animation/images/choseSkeleton.png" alt="">
-  <li>Create Blend space - real time animations 
-  Chose blend space 1D for a graph - for example speed and insert animatons 
+  <li>Создать <span class="ui-btn">Blend space</span> - real time animations
+  <br> 
+  выбрать <span class="ui-btn">blend space 1D</span> - для примера сделаем скорость
 </li>
 <img src="Animation/images/CreateBlendSpace.png" alt="">
 <img src="Animation/images/BlendspaceInside.png" alt="">
 <li>
-  <pre>
-    Открываем Animation bluprint - AnimGraph  просто добавляет разные анимации и разные названия -  добавляем туда наш новый blend space данную скорость превращаем в переменную - например назовём Ground Speed 
-  </pre>
+    Открываем <span class="ui-btn">Animation bluprint</span> - AnimGraph  просто добавляет разные анимации и разные названия -  добавляем туда наш новый blend space данную скорость превращаем в переменную - например назовём <span class="node">Ground Speed</span > 
 </li>
 <img src="Animation/images/animGraph.png" alt="">
 <li>
@@ -38,55 +36,55 @@
 </li>
 <img src="Animation/images/animGraph5.png" alt="">
 <img src="Animation/images/animGraph6.png" alt="">
-<pre>Далее добавляем все другие необходимые стейты и переходы между ними </pre>
+<p>Далее добавляем все другие необходимые стейты и переходы между ними </p>
 <img src="Animation/images/animGraph7.png" alt="">
-<pre>В переходе между idle -> walk делаем логику что если скорость больше нуля то переходим из стейта idle в стейт walk </pre>
+<p>В переходе между idle -> walk делаем логику что если скорость больше нуля то переходим из стейта idle в стейт walk </p>
 <img src="Animation/images/animGraph8.png" alt="">
-<pre>Тоже самое делаем из режима бега в idle</pre>
+<p>Тоже самое делаем из режима бега в idle</p>
 <img src="Animation/images/animGraph9.png" alt="">
 <li>Добавляем второй стейт машин для прыжка, а первы сохраним в кеш чтоб потом им пользоваться </li>
-<pre>Сохроняем предыдущий стейт в кеш </pre>
+<p>Сохроняем предыдущий стейт в кеш </p>
 <img src="Animation/images/animGraph10.png" alt="">
-<pre>Называем его </pre>
+<p>Называем его </p>
 <img src="Animation/images/animGraph11.png" alt="">
-<pre>Создадим новый стейт и назовем в воздухе</pre>
+<p>Создадим новый стейт и назовем в воздухе</p>
 <img src="Animation/images/animGraph12.png" alt="">
 <li>В новом стейте добавляем наш кеш, чтоб анимации бега работали </li>
 <img src="Animation/images/animGraph13.png" alt="">
-<pre>И подключем </pre>
+<p>И подключем </p>
 <img src="Animation/images/animGraph14.png" alt="">
 <li>Создаем стейты для прыжка </li>
 <img src="Animation/images/animGraph15.png" alt="">
-<pre>И в каждый стейт загружаем анимации 
+<p>И в каждый стейт загружаем анимации 
   
   Далее в переходах с земли на прыжок и создаем новую переменную которой будем пользоваться, называем её isInAir? И если она правдива значит наш персонаж в воздухе и можно переходить стадии прыжка
-</pre>
+</p>
 <img src="Animation/images/animGraph16.png" alt="">
 <img src="Animation/images/animGraph17.png" alt="">
 <li>Из прыжка на падение можно поставить автоматический переход</li>
 <img src="Animation/images/animGraph18.png" alt="">
 <li>Из воздуха на землю, ставим нашу переменную если персонаж в воздухе, и добавляем булеан NOT - то есть персонаж уже не в воздухе и можно отработать анимацию приземления</li>
 <img src="Animation/images/animGraph19.png" alt="">
-<pre>И из приземления в Idle - тоже делаем автоматический переход
+<p>И из приземления в Idle - тоже делаем автоматический переход
   
   В event graph добавляем новую ноду - is falling и добавляем логику, если в воздухе или падаем, то наша переменная будет правдива
-</pre>
+</p>
 <img src="Animation/images/animGraph20.png" alt="">
 <li>
-  <pre>Меняем прижок на две части - прижек в движении и прыжок во время бега. 
+  <p>Меняем прижок на две части - прижек в движении и прыжок во время бега. 
     Для этого создаем новый blendspace 1D указываем скорость в графе и назначем на маленькую скорость чтоб прыгал на месте, а на большую скорость прыжок в движении - то есть нам нужны две новые анимации 
-  </pre>
+  </p>
 </li>
 <img src="Animation/images/animGraph21.png" alt="">
-<pre>Так же меняем В AnimGraph - прыжок, теперь его заменяет наш новый блендспейс</pre>
+<p>Так же меняем В AnimGraph - прыжок, теперь его заменяет наш новый блендспейс</p>
 <img src="Animation/images/animGraph22.png" alt="">
-<pre>
+<p>
   Меняем логику в АirLocomotion
-</pre>
+</p>
 <img src="Animation/images/animGraph23.png" alt="">
-<pre>
+<p>
   В каждый добавляем нужную анимация - в Land - ставим галочку что он может переходить в следущий стейт
-</pre>
+</p>
 <li>Переход из fall to land </li>
 <img src="Animation/images/animGraph24.png" alt="">
 

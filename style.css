@@ -225,17 +225,18 @@ body {
 
 /* === картинка === */
 
-img {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  height: 150px;
+ img {
+  /* opacity: 0; */
+  /* transition: opacity 0.3s ease; */
+  height: auto;
+  width: 50%;
 }
 
-img.loaded {
+/* img.loaded {
   opacity: 1;
   background: none;
   border: none;
-}
+}  */
 
 /* === картинка на весь экран === */
 
@@ -452,18 +453,12 @@ ul, ol {
   padding: 18px 20px;
   margin: 25px 0;
   border-radius: 8px;
-
   background: rgba(255, 60, 60, 0.12);
   border: 1px solid rgba(255, 100, 100, 0.25);
-
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-
   color: #ffb3b3;
   line-height: 1.5;
   position: relative;
   padding-left: 55px;
-
   box-shadow:
     0 0 12px rgba(255, 60, 60, 0.25),
     inset 0 0 8px rgba(255, 60, 60, 0.15);
@@ -478,6 +473,7 @@ ul, ol {
   font-size: 26px;
   color: #ff6b6b;
   text-shadow: 0 0 8px rgba(255, 60, 60, 0.6);
+  
 }
 
 /* ------------------------------
@@ -490,9 +486,6 @@ ul, ol {
 
   background: rgba(255, 200, 60, 0.12);
   border: 1px solid rgba(255, 210, 100, 0.25);
-
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
 
   color: #ffe9b3;
   line-height: 1.5;
@@ -525,8 +518,7 @@ ul, ol {
   background: rgba(60, 255, 120, 0.12);
   border: 1px solid rgba(100, 255, 150, 0.25);
 
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+
 
   color: #c7ffd9;
   line-height: 1.5;
@@ -548,7 +540,6 @@ ul, ol {
   color: #6bff9a;
   text-shadow: 0 0 8px rgba(60, 255, 120, 0.6);
 }
-
 
 
 /* Кнопка скрытия панели */
@@ -609,8 +600,8 @@ ul, ol {
   }
 
   #sub-sidebar {
-    left: 160px;
     width: 180px;
+    margin-left: 160px;
   }
 
   #content {
@@ -624,12 +615,12 @@ ul, ol {
   }
 
   #sub-sidebar {
-    left: 130px;
     width: 150px;
+    margin-left: 130px;
   }
 
   #content {
-    margin-left: 280px;
+    margin-left: 270px;
   }
 }
 

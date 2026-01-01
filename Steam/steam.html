@@ -1,3 +1,6 @@
+<div class="warning-red">
+нужно жесткое редактирование
+</div>
 <h1>плагины</h1>
 <ol>
     <li>Online Subsystem</li>
@@ -29,29 +32,35 @@
 <p>UPDATE - DefaultEngine.ini - in my game!</p>
 
 <p>Open defailtEngine.ini and add these lines, got from the documentation</p>
-<pre>
+<p class="code">
 [/Script/Engine.GameEngine]
-        +NetDriverDefinitions=(DefName="GameNetDriver",DriverClassName="OnlineSubsystemSteam.SteamNetDriver",DriverClassNameFallback="OnlineSubsystemUtils.IpNetDriver")
+        +NetDriverDefinitions=(DefName="GameNetDriver",
+        DriverClassName="OnlineSubsystemSteam.SteamNetDriver",
+        DriverClassNameFallback="OnlineSubsystemUtils.IpNetDriver")
+
 [OnlineSubsystem]
       DefaultPlatformService=Steam
+
 [OnlineSubsystemSteam]
       bEnabled=true
       SteamDevAppId=480
+
 [/Script/OnlineSubsystemSteam.SteamNetDriver]
       NetConnectionClassName="OnlineSubsystemSteam.SteamNetConnection"
-</pre>
+</p>
 <p><b>STEAM APP NEED TO BE RUNNING</b></p>
 <p>** IF all done right, start the game in “stand alone game” press shifit + tab, steam window shuld pop up “</p>
 
 
 Add achievements by add it in steam and add to same defailtEngine.ini like that:
 
-<p>
-    <p><code>[OnlineSubsystemSteam]</code> </p>
-    <p><code>bEnabled=true</code> </p>
-    <p><code>SteamDevAppId=480</code> –  remove 480 add your build numer!! or use 480 for test</p>
-    <p><code>Achievement_0_Id=</code> name of your achievement in steam page</p>
+
+<p class="code">[OnlineSubsystemSteam]
+bEnabled=true
 </p>
+<p><span class="code">SteamDevAppId=480</span> – remove 480 add your build numer!! or use 480 for test</p>
+<p><span class="code">Achievement_0_Id=</span> name of your achievement in steam page</p>
+
 
 <p>That’s it, only add blueprint logic and save</p>
 

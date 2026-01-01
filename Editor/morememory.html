@@ -1,11 +1,14 @@
-<pre>
-    Увеличение памяти для движка, чтоб узнать сколько памяти выделено, используй команду в консоле:
-r.TexturePoolSize
+<div class="warning-red">
+нужно жесткое редактирование
+</div>
 
-Чтоб установить постоянный размер, редактируем файл в папке с нашим проектом
-Unreal Projects\Project name\Config\DefaulEngine.ini
 
+<p>Увеличение памяти для движка, чтоб узнать сколько памяти выделено, используй команду в консоле:</p>
+<p class="code">r.TexturePoolSize</p>
+
+<p>Чтоб установить постоянный размер, редактируем файл в папке с нашим проектом</p>
+<p class="code">Unreal Projects\Project name\Config\DefaulEngine.ini
 [/Script/Engine.RendererSettings]
 r.Streaming.PoolSize=2000
+</p>
 
-</pre>

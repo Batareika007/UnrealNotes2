@@ -1,6 +1,6 @@
 const subTopics = {
   Home: [
-    { id: "Home/demo", title: "demo" },
+    // { id: "Home/demo", title: "demo" },
     { id: "Home/cheatshet", title: "Шпаргалка" },
     { id: "Home/usefullStuff", title: "Разные полезности в анрил" },
     { id: "Home/git", title: "GIT" },
@@ -29,8 +29,6 @@ const subTopics = {
     { id: "Blueprint/Enumerators", title: "Enumerators"},
     { id: "Blueprint/eventDispatchers", title: "Event Dispatchers"},
     { id: "Blueprint/footsteps1stPerson", title: "footsteps1stPerson"},
-    { id: "Blueprint/functionsEventsMacros", title: "Functions Events Macros"},
-    { id: "Blueprint/functionsEventsMacros_AI", title: "Functions Events Macros AI"},
     { id: "Blueprint/functionsEventsMacros", title: "Functions Events Macros"},
     { id: "Blueprint/gameMode", title: "GameMode"},
     { id: "Blueprint/hud", title: "HUD"},
@@ -91,7 +89,6 @@ const subTopics = {
   Steam: [
     { id: "Steam/steam", title: "загрузить в стим" },
   ],
-  
 };
 
 let currentTopic = null;
