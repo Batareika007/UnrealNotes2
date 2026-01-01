@@ -5,6 +5,9 @@
   --menu-text: hsla(0,0%,100%,.411);
   --menu-text-active: #ffffff;
 }
+html {
+  font-size: clamp(16px, 1vw + 12px, 22px);
+}
 
 /* Базовые стили */
 body {
@@ -81,8 +84,6 @@ body {
   color: var(--menu-text);
   text-decoration: none;
   transition: background 0.25s ease, color 0.25s ease;
-
-  /* font-size: 15px; */
 }
 
 #main-nav a,
@@ -137,9 +138,6 @@ body {
 #main-nav a:hover::after{ 
   opacity: 1; 
 }
-
-
-
 /* Подменю */
 #sub-nav {
   transition: max-height 0.35s ease;
@@ -152,7 +150,6 @@ body {
   color: var(--menu-text);
   text-decoration: none;
   transition: background 0.25s ease, color 0.25s ease;
-  /* font-size: 14px; */
   position: relative; 
   overflow: hidden;
   transition: color 0.5s ease, text-shadow 0.5s ease;
@@ -343,7 +340,6 @@ img.loaded {
    1. Главный заголовок страницы
 ------------------------------ */
 h1 {
-  font-size: 32px;
   font-weight: 700;
   margin-bottom: 25px;
   color: #ffffff;
@@ -355,7 +351,6 @@ h1 {
    2. Заголовки разделов
 ------------------------------ */
 h2 {
-  font-size: 24px;
   font-weight: 600;
   margin-top: 40px;
   margin-bottom: 15px;
@@ -366,7 +361,6 @@ h2 {
    3. Подзаголовки
 ------------------------------ */
 h3 {
-  font-size: 20px;
   font-weight: 500;
   margin-top: 25px;
   margin-bottom: 10px;
@@ -380,7 +374,6 @@ p {
   line-height: 1.6;
   margin: 12px 0;
   color: #e0e0e0;
-  font-size: 16px;
 }
 
 /* ------------------------------
@@ -403,7 +396,6 @@ ul, ol {
   border-top: 6px solid #3aff855b; /* цвет полосы сверху */
   color: #d9f3ff;
   font-family: Consolas, monospace;
-  font-size: 14px;
   margin: 4px 0;
   /* user-select: none; */
   box-shadow: 0 0 6px rgba(0, 170, 255, 0.4), inset 0 0 4px rgba(0, 170, 255, 0.2);
@@ -419,7 +411,6 @@ ul, ol {
   border: 1px solid #3a3a3a;
   border-radius: 6px;
   color: #e6e6e6;
-  font-size: 14px;
   font-weight: 500;
   font-family: Consolas, monospace;
   box-shadow:
@@ -438,11 +429,20 @@ ul, ol {
   padding: 12px;
   border-radius: 6px;
   font-family: Consolas, monospace;
-  font-size: 14px;
   white-space: pre-wrap;
   margin: 15px 0;
   color: #c8f7ff;
 }
+
+.image-block { 
+  margin: 20px 0; 
+  /* text-align: center;  */
+} 
+.image-block img { 
+  max-width: 100%; 
+  border-radius: 8px; 
+  border: 1px solid rgba(255,255,255,0.1); 
+  box-shadow: 0 0 12px rgba(0, 234, 255, 0.3); }
 
 
 

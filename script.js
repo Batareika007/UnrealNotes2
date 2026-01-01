@@ -148,19 +148,12 @@ function showSubMenu(topic, element) {
 
 }
 
-
-
-
-
-
-
 /* Загрузка страниц */
-function loadPage(page) {
+function loadPage(page, linkElement) {
   const content = document.getElementById("content");
 
   // Подсветка активного пункта
-  document.querySelectorAll("#sub-nav a").forEach(a => a.classList.remove("active"));
-  event.target.classList.add("active");
+  document.querySelectorAll("#sub-nav a").forEach(a => a.classList.remove("active")); if (linkElement) linkElement.classList.add("active");
 
   // 1. Плавно скрываем старый контент
   content.classList.remove("loaded");
