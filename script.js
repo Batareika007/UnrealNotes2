@@ -13,7 +13,7 @@ const subTopics = {
   Audio: [
     { id: "Audio/audio", title: "Audio" },
   ],
-  BasicMovementUE5: [
+  Input: [
     { id: "BasicMovementUE5/movmentUE5", title: "Базовое движение" },
   ],
   Blueprints: [
@@ -46,7 +46,7 @@ const subTopics = {
 
   ],
   Cinematic: [
-    { id: "Cinematic/camerarigs", title: "край и рельсы" },
+    { id: "Cinematic/camerarigs", title: "кран и рельсы" },
     { id: "Cinematic/firststeps", title: "создание первого сиквенсера" },
     { id: "Cinematic/plugins", title: "плагины" },
   ],

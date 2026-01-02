@@ -2,38 +2,34 @@
 нужно жесткое редактирование
 </div>
 <h1>Debug</h1>
+Cmd:
 <ul>
-    Cmd:
-    <li>Stat fps</li>
-    <li>Stat unit</li>
-    <li>Stat game</li>
+    <li><span class="code">Stat fps</span></li>
+    <li><span class="code">Stat unit</span></li>
+    <li><span class="code">Stat game</span></li>
 </ul>
 
-
-
-
-
 <p>Назначать количество максимальных фреймов</p>
-<code>t.maxfps 30</code>
+<code class="code">t.maxfps 30</code>
 
-<p><code>Event tick delta</code> - сколько секунд фрейма от фрейма</p>
+<p><span class="node">delta time</span> - сколько секунд фрейма от фрейма</p>
 
 <p>
     Увеличить потребляемой памяти видео карты для прорисовки больше текстур 
-    <code>r.Streaming.PoolSize 3000</code> - вместо 3000 пишем сколько памяти хотим
+    <code class="code">r.Streaming.PoolSize 3000</code> - вместо 3000 пишем сколько памяти хотим
 </p>
 
 <p>
     Так же можно это настроить в самой программе - заходим в папку с установленым анрилом
-    Далее по папкам <code>- enginr – config –windows – windows engine -- устанавливаем set big RAM USE</code>
+    Далее по папкам <span class="ui-btn">- enginr – config – windows – windows engine</span> устанавливаем set big RAM USE
     
 </p>
-
-<p>Проверяем сколько весят наши асторы и что требуют </p>
+<hr>
+<p>Проверяем сколько весят наши акторы и что требуют </p>
 <ul>
     <li>Правой кнопкой на актор.</li>
-    <li>Reference viewer  - смотри на что ссылается наш блюпринт, с чем он связан</li>
-    <li>Size map - сколько занимает места на диски и в памяти</li>
+    <li><span class="ui-btn">Reference viewer</span>  - смотри на что ссылается наш блюпринт, с чем он связан</li>
+    <li><span class="ui-btn">Size map</span> - сколько занимает места на диски и в памяти</li>
 </ul>
 <img src="Debug/debug.png" alt="">
 

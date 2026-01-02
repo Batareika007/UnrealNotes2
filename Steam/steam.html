@@ -15,23 +15,23 @@
     <li>Online Subsystem Utils</li>
 </ol>
 	
-<h2>Download steam SDK</h2>
+<h3>Download steam SDK</h3>
 <p>Documentation to steam <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/online-subsystem-steam-interface-in-unreal-engine?application_version=5.1" target="_blank">https://dev.epicgames.com/documentation/en-us/unreal-engine/online-subsystem-steam-interface-in-unreal-engine?application_version=5.1</a>
-<br>
+</p>
+
 
 <del>
     Download sdk from steam and past it in unreal folder – the Unreal Enging version of the game
     And change the version to the version of SDK from steam, for now it’s 1.62 
     Open file Steamworks.build.cs and change the version to 1.62 or hire 
 </del>
-
+<p class="warning-red">
+    не обновлять версию SDK, иначе проект выдают ошибку при упаковке, используй только встроенную версию
 </p>
 
-<strong>It cannot packeg progect ! Don’t update sdk version, use in build unreal version</strong>
+<p>Обновить файл <span class="ui-btn"> DefaultEngine.ini</span> в проекте</p>
 
-<p>UPDATE - DefaultEngine.ini - in my game!</p>
-
-<p>Open defailtEngine.ini and add these lines, got from the documentation</p>
+<p>открыть <span class="ui-btn">defailtEngine.ini</span> и добавить строки, данные есть в официальной документации эпиков </p>
 <p class="code">
 [/Script/Engine.GameEngine]
         +NetDriverDefinitions=(DefName="GameNetDriver",
@@ -48,21 +48,25 @@
 [/Script/OnlineSubsystemSteam.SteamNetDriver]
       NetConnectionClassName="OnlineSubsystemSteam.SteamNetConnection"
 </p>
-<p><b>STEAM APP NEED TO BE RUNNING</b></p>
-<p>** IF all done right, start the game in “stand alone game” press shifit + tab, steam window shuld pop up “</p>
 
+<h3>Проверка на работоспособность</h3>
+<p><b>Приложение Steam должно быть включено</b></p>
 
-Add achievements by add it in steam and add to same defailtEngine.ini like that:
+<p>Если всё сделано правильно запускаем проект в отдельном окне <span class="ui-btn">stand alone game</span> нажимаем  <span class="ui-btn">shift</span> + <span class="ui-btn">tab</span>, окошко Steam полжно показаться на экране </p>
+
+<h3>Добавить ачивки в стим</h3>
+<p>
+    на старницы стима добавляем ачивки для нашей игры и только после этого редактируем <span class="ui-btn">defailtEngine.ini</span>
+    
+</p>
 
 
 <p class="code">[OnlineSubsystemSteam]
 bEnabled=true
 </p>
-<p><span class="code">SteamDevAppId=480</span> – remove 480 add your build numer!! or use 480 for test</p>
-<p><span class="code">Achievement_0_Id=</span> name of your achievement in steam page</p>
+<p><span class="code">SteamDevAppId=480</span> – убрать 480, написать твой номер сборки! или использовать 480 для</p>
+<p><span class="code">Achievement_0_Id=</span> название твоей ачивки на странице steam</p>
 
-
-<p>That’s it, only add blueprint logic and save</p>
-
+<p>вот и всё, теперь только добавлять логику блюпринтов </p>
 
 
