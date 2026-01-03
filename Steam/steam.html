@@ -1,12 +1,13 @@
-<div class="warning-red">
-нужно жесткое редактирование
+<div class="warning-green">
+ Информация актуальна на конец 2025, возможны небольшие изменения в будущих версиях Unreal Engine и Steamworks. 
 </div>
-<h1>плагины</h1>
+<h1>Необходимые плагины</h1>
 <ol>
     <li>Online Subsystem</li>
     <li>Online subsystem steam</li>
 </ol>
-<h2>Плагины не уверен нужны ли</h2>
+<h2>Дополнительные плагины (обычно не нужны)</h2>
+<p>Эти плагины включать не обязательно. Они используются только в специфических проектах.</p>
 <ol>
     <li>Online Base</li>
     <li>Online Framework Plugin</li>
@@ -15,8 +16,11 @@
     <li>Online Subsystem Utils</li>
 </ol>
 	
-<h3>Download steam SDK</h3>
-<p>Documentation to steam <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/online-subsystem-steam-interface-in-unreal-engine?application_version=5.1" target="_blank">https://dev.epicgames.com/documentation/en-us/unreal-engine/online-subsystem-steam-interface-in-unreal-engine?application_version=5.1</a>
+<h3>Steam SDK</h3>
+<p> Unreal Engine уже содержит встроенную версию Steam SDK. <b>Не обновляйте SDK вручную</b> — это вызывает ошибки при упаковке проекта. </p>
+
+<p>Документация Epic Games:
+    <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/online-subsystem-steam-interface-in-unreal-engine?application_version=5.1" target="_blank">Online Subsystem Steam</a>
 </p>
 
 
@@ -26,12 +30,12 @@
     Open file Steamworks.build.cs and change the version to 1.62 or hire 
 </del>
 <p class="warning-red">
-    не обновлять версию SDK, иначе проект выдают ошибку при упаковке, используй только встроенную версию
+    Hе обновлять версию SDK!  Используйте только встроенный Steam SDK, который идёт вместе с версией Unreal Engine.
 </p>
 
-<p>Обновить файл <span class="ui-btn"> DefaultEngine.ini</span> в проекте</p>
+ <h3>Настройка DefaultEngine.ini</h3>
+<p>Открыть файл <span class="ui-btn"> DefaultEngine.ini</span> в проекте и добавьте строки:</p>
 
-<p>открыть <span class="ui-btn">defailtEngine.ini</span> и добавить строки, данные есть в официальной документации эпиков </p>
 <p class="code">
 [/Script/Engine.GameEngine]
         +NetDriverDefinitions=(DefName="GameNetDriver",
@@ -50,23 +54,26 @@
 </p>
 
 <h3>Проверка на работоспособность</h3>
-<p><b>Приложение Steam должно быть включено</b></p>
+<p><b>Steam-клиент должен быть запущен</b></p>
 
-<p>Если всё сделано правильно запускаем проект в отдельном окне <span class="ui-btn">stand alone game</span> нажимаем  <span class="ui-btn">shift</span> + <span class="ui-btn">tab</span>, окошко Steam полжно показаться на экране </p>
-
-<h3>Добавить ачивки в стим</h3>
 <p>
-    на старницы стима добавляем ачивки для нашей игры и только после этого редактируем <span class="ui-btn">defailtEngine.ini</span>
-    
+    Запустите проект в режиме <span class="ui-btn">Standalone Game</span>. Нажмите <span class="ui-btn">Shift</span> + <span class="ui-btn">Tab</span>. Если всё настроено правильно — появится оверлей Steam.
 </p>
+
+<h3>Добавление достижений (Achievements)</h3>
+<p> Сначала создайте достижения на странице вашей игры в Steamworks. После этого добавьте их в <span class="ui-btn">DefaultEngine.ini</span>. </p>
 
 
 <p class="code">[OnlineSubsystemSteam]
 bEnabled=true
 </p>
-<p><span class="code">SteamDevAppId=480</span> – убрать 480, написать твой номер сборки! или использовать 480 для</p>
-<p><span class="code">Achievement_0_Id=</span> название твоей ачивки на странице steam</p>
+<p>
+     <span class="code">SteamDevAppId=480</span> — замените 480 на ID игры. 480 можно использовать только для тестирования.
+</p>
+<p>
+     <span class="code">Achievement_0_Id=</span> идентификатор достижения из Steamworks (название ачивки)
+</p>
 
-<p>вот и всё, теперь только добавлять логику блюпринтов </p>
+<p>После этого можно добавлять логику в Blueprints или C++.</p>
 
 

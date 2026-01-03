@@ -63,14 +63,14 @@ const subTopics = {
     { id: "Light/light", title: "свет и туман" },
   ],
   Physics: [
-    { id: "Physics/physics", title: "физика материалов" },
+    { id: "Physics/physics", title: "Physical Materials" },
   ],
   Plugins: [
-    { id: "Plugins/pluginsfab", title: "плагины из фаба" },
-    { id: "Plugins/mychose", title: "плагины" },
+    { id: "Plugins/pluginsfab", title: "Плагины, которые стоит изучить" },
+    { id: "Plugins/mychose", title: "Плагины, которые я использую  " },
   ],
   Editor: [
-    { id: "Editor/about", title: "какие-то данные про движок" },
+    { id: "Editor/about", title: "Базовые понятия Unreal Engine" },
     { id: "Editor/editorsetup", title: "Настройка редактора" },
     { id: "Editor/morememory", title: "Увеличение памяти для движка" },
     { id: "Editor/navigation", title: "Навигация" },
@@ -80,14 +80,14 @@ const subTopics = {
   ],
   Theory: [
     { id: "Theory/mechaniks", title: "Механики" },
-    { id: "Theory/modepaint", title: "режим раскраски объектов " },
-    { id: "Theory/modeplace", title: "размещение объектов разных классов" },
-    { id: "Theory/naming", title: "Объекты" },
+    { id: "Theory/modepaint", title: "Paint" },
+    { id: "Theory/modeplace", title: "Place Actors" },
+    { id: "Theory/naming", title: "Базовые элементы движка" },
     { id: "Theory/proffesion", title: "Проффесии" },
     
   ],
   Steam: [
-    { id: "Steam/steam", title: "загрузить в стим" },
+    { id: "Steam/steam", title: "Интеграция Steam в Unreal Engine" },
   ],
 };
 

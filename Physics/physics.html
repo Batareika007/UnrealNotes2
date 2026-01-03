@@ -1,19 +1,25 @@
-<div class="warning-red">
-нужно жесткое редактирование
+<div class="warning-green">
+Материал готов к использованию в проекте.
 </div>
-<H1>Физика для материалов </H1>
+<H1>Физические материалы для поверхностей</H1>
+<p> Чтобы объекты в проекте корректно реагировали на разные поверхности (звук шагов, трение, отскок и т. д.), необходимо настроить физические материалы и назначить их на меши. </p>
 
-<p>Project settings – Engine – Physics </p>
-<p>Добавляем физику для поверхностей </p>
+<h2>1. Включение физических поверхностей</h2>
+<p> Откройте <span class="ui-btn">Project Settings</span> → <span class="ui-btn">Engine</span> → <span class="ui-btn">Physics</span> и добавьте свои типы поверхностей. </p>
 <img src="Physics/physics1.png" alt="">
-<p> 2. Создаем материалы физики </p>
+
+
+
+ <h2>2. Создание Physical Material</h2>
+ <p> В Content Browser создайте новый физический материал <span class="ui-btn">Add</span> → <span class="ui-btn">Physics</span> → <span class="ui-btn">Physical Material</span>. </p>
 <img src="Physics/physics2.png" alt="">
 
-<p>3. в созданном материале физики выбираем из списка созданных в проекте </p> 
+
+ <h2>3. Привязка к Surface Type</h2>
+ <p> Внутри созданного Physical Material выберите нужный Surface Type, который вы добавили в настройках проекта. </p>
 <img src="Physics/physics3.png" alt="">
-<p>
-    4. На любой объект назначаем этот материал в графе collision – Phys Material Override
-    Если он сам не назначен по умолчанию на меш
-</p>
+ <h2>4. Назначение физического материала объекту</h2>
+<p> Выберите любой объект на сцене и назначьте Physical Material в разделе <span class="ui-btn">Collision</span> → <span class="ui-btn">Phys Material Override</span>. Если материал не назначен автоматически, укажите его вручную. </p>
+
 <img src="Physics/physics4.png" alt="">
  
