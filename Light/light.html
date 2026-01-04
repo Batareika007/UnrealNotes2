@@ -1,47 +1,58 @@
-<div class="warning-red">
-нужно жесткое редактирование
+<div class="warning-green">
+база готова
 </div>
 <h1>Свет и туман</h1>
 
-<h2>Light</h2>
+<p>
+    Освещение и туман — ключевые элементы атмосферы сцены. 
+    Unreal Engine предоставляет несколько типов источников света и гибкие настройки тумана, 
+    позволяющие создавать реалистичную или стилизованную визуальную среду.
+</p>
+
+<h2>Типы источников света</h2>
 <ul>
-    <li>Direction light - общее светило (солнце)</li>
-    <li>Point light - обычная лампочка, светит во все стороны</li>
-    <li>Spot light - направленный источник света</li>
-    <li>Rect light – квадратный источник света, подходит для красивого и ровного освещения 
-</li>
+    <li><b>Directional Light</b> — основное «солнце» сцены. Светит параллельными лучами, подходит для дня/ночи.</li>
+    <li><b>Point Light</b> — точечный источник света, светит во все стороны. Аналог лампочки.</li>
+    <li><b>Spot Light</b> — направленный световой конус. Используется для фонарей, прожекторов.</li>
+    <li><b>Rect Light</b> — прямоугольный источник света. Даёт мягкое, ровное освещение, подходит для окон, экранов, неона.</li>
 </ul>
 
+<h3>Отключение Lumen</h3>
+<p>
+    Если нужно отключить глобальное освещение Lumen:
+</p>
+<p><code class="code">r.DynamicGlobalIlluminationMethod 0</code></p>
+<p>Включить обратно: <code class="code">r.DynamicGlobalIlluminationMethod 1</code></p>
 
-<p>Отключить люмен</p>
-<p><code>r.DynamicGlobalIlluminationMethod 0</code> включить  - 1</p>
-
-
-
-<h2>FOG</h2>
+<h2>Туман (Fog)</h2>
+<p>Основные параметры Exponential Height Fog:</p>
 <ul>
-    <li>Fog density - на сколько будет густой туман, чем выше значение тем гуще и ничего не видно</li>
-    <li>Fog height fallof - как сильно будет подниматься, </li>
-    <li>Start dastans - на каком растояние от персонажа не будет тумана </li>
+    <li><b>Fog Density</b> — плотность тумана. Чем выше значение, тем гуще туман.</li>
+    <li><b>Fog Height Falloff</b> — скорость уменьшения плотности по высоте. 
+        Чем выше значение, тем быстрее туман «рассеивается» вверх.</li>
+    <li><b>Start Distance</b> — расстояние от камеры, на котором туман начинает проявляться.</li>
 </ul>
 
+<h2>Создание туманного света (Volumetric Fog Light)</h2>
+<p>
+    Чтобы получить красивый «кинематографичный» свет в тумане (лучи света, объёмный свет), 
+    выполните следующие шаги:
+</p>
 
-
-<h2>
-    Create foggy light
-</h2>
-
-<p>1.	Set post process volume</p>
+<h3>1. Post Process Volume</h3>
 <ul>
-    <li>inbound infinity ( or make it bigger ) </li>
-    <li>temperature  (if need)</li>
-    <li>exposure – manual if need</li>
+    <li><b>Infinite Extent (Unbound)</b> — применяет эффект ко всей сцене.</li>
+    <li><b>Temperature</b> — настройка цветовой температуры (по желанию).</li>
+    <li><b>Exposure</b> — при необходимости установить Manual для стабильной яркости.</li>
 </ul>
-<p>2.	Exponental Height Fog</p>
+
+<h3>2. Exponential Height Fog</h3>
 <ul>
-    <li>volumetric for “check”	</li>
+    <li><b>Enable Volumetric Fog</b> — включить объёмный туман.</li>
 </ul>
-<p>3.	Any light on scene </p>
+
+<h3>3. Любой источник света</h3>
 <ul>
-    <li>volumetric scattering intensity > 10 </li>
+    <li><b>Volumetric Scattering Intensity</b> — увеличить значение (обычно 5–20), 
+        чтобы световые лучи были заметны в тумане.</li>
 </ul>

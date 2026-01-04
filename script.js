@@ -52,12 +52,18 @@ const subTopics = {
   ],
   Debug: [
     { id: "Debug/debug", title: "Debug" },
+    { id: "Debug/debug2", title: "Debug 2" },
   ],
   Landscape: [
-    { id: "Landscape/landscape", title: "landscape" },
-    { id: "Landscape/landscapesculpt", title: "sculpt" },
-    { id: "Landscape/brushpaint", title: "brush and paint" },
-    { id: "Landscape/foliage", title: "foliage" },
+    { id: "Landscape/landscape_main", title: "Основы Landscape" },
+    { id: "Landscape/landscape_sculpting", title: "Sculpting" },
+    { id: "Landscape/landscape_painting", title: "Painting" },
+    { id: "Landscape/landscape_foliage", title: "Foliage" },
+    { id: "Landscape/landscape_advancedTools", title: "Advanced Landscape Tools" },
+    // { id: "Landscape/landscape", title: "landscape" },
+    // { id: "Landscape/landscapesculpt", title: "sculpt" },
+    // { id: "Landscape/brushpaint", title: "brush and paint" },
+    // { id: "Landscape/foliage", title: "foliage" },
   ],
   Light: [
     { id: "Light/light", title: "свет и туман" },
