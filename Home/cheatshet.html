@@ -1,94 +1,120 @@
-<div class="warning-red">
-в будущем распределить по нужным разделам
+<div class="warning-green">
+Моя личная шпаргалка — заметки с начала изучения движка.
 </div>
 <h1>Шпаргалка</h1>
-<p>Каждый юнит = 1см</p>
+<p>Каждый юнит = 1 см</p>
 <hr>
-<p>Три стрелки на объекте называются <span class="ui-btn">gizmo</span> </p>
+
+<p>Три стрелки на объекте называются <span class="ui-btn">gizmo</span>.</p>
+
 <hr>
-<p>Цент стрелок на объекте – <span class="ui-btn">pivot point</span></p>
+<p>Центр стрелок на объекте — <span class="ui-btn">pivot point</span>.</p>
+
 <hr>
+
 <p>Meshes:</p>
 <ul>
-<li>Static mesh - статичный меш, двигается как одна целая модель </li>
-<li>Skeleton mesh - меш с двигаюшимся частями</li>
+<li>Static Mesh — статичный меш, двигается как одна целая модель.</li>
+<li>Skeletal Mesh — меш с подвижными частями.</li>
 </ul>
+
 <hr>
-<p>Skybox – огромная полая сфера</p>
+<p>Skybox — огромная полая сфера.</p>
+
 <hr>
-<p>временно переместить <b>pivot point</b> – на одно из стрелок <span class="ui-btn">alt</span> +  <span class="ui-btn">СКМ</span> или нажать на сам <span class="ui-btn">pivot point</span> + <span class="ui-btn">СКП</span></p>
+<p>Временно переместить <b>pivot point</b>: 
+  <br>
+  на одну из стрелок <span class="ui-btn">alt</span> +  <span class="ui-btn">СКМ</span> 
+  <br>
+  или нажать на сам <span class="ui-btn">pivot point</span> + <span class="ui-btn">СКМ</span></p>
+
 <hr>
-<p><span class="ui-btn">End</span> – опустить выделенный объект на поверхность, только если объект  нет пересечяется с другими коллизиями </p>
+<p><span class="ui-btn">End</span> — опустить выделенный объект на поверхность (если нет пересечений с другими коллизиями).</p>
+
+
 <hr>
-<p><span class="ui-btn">Surface snapping</span> – распределять объекты поверх других объектов учитывая угол</p>
+
+<p><span class="ui-btn">Surface Snapping</span> — размещать объекты по поверхности с учётом угла.</p>
+
 <hr>
+
 <p><span class="ui-btn">Surface offset</span> – расстояние между объектами, будет прилегать на расстояние которое указали а не впритык </p>
+
 <hr>
-<p><span class="ui-btn">Blueprint – flow control</span> - базовые команды для действий </p>
+<p><span class="ui-btn">Blueprint — Flow Control</span> - базовые управляющие ноды </p>
+
 <hr>
-<p><span class="ui-btn">F11</span> – immersive mode – во весь экран </p>
+<p><span class="ui-btn">F11</span> – Immersive Mode (во весь экран) </p>
+
 <hr>
-<p><span class="ui-btn">Content browser</span> – удобно отфильтровать по ассетам Assets</p>
+<p><span class="ui-btn">Content Browser</span> – удобно фильтровать ассеты</p>
+
 <hr>
-<p>Выделить объект, и подлетеь к нему с  клавишей <span class="ui-btn">F</span>
+<p>Выделить объект и подлететь к нему — клавиша <span class="ui-btn">F</span>
+
+  <hr>
+<p>Зажать  <span class="ui-btn">Alt</span> при выделенном объекте — вращение камеры вокруг него.</p>
+
 <hr>
-<p>зажать <span class="ui-btn">alt</span> при выделеном объекте, позвлдяет летать вокруг него</p>
+<p><span class="ui-btn">ПКМ</span> – <span class="ui-btn">Browse to Asset</span> или <span class="ui-btn">Ctrl</span> + <span class="ui-btn">B</span> – найти объект в Content Browser. </p>
+
 <hr>
-<p><span class="ui-btn">ПКМ</span> – <span class="ui-btn">brows to asset</span> или <span class="ui-btn">ctrl</span> + <span class="ui-btn">B</span> – найти этот объект в месте расположения, там же можно найти все ассеты, которые пользуются в сцене</p>
-<hr>
-<h3>LOD – Level of detail coloration</h3> 
-<p>
-Система подстраивает уровень детализации объекта в зависимости от удаления от камеры, при большой наличии высоко детализированных объектов в поле зрения, не перегружать систему, детализация объектов снижается при удалении от них.
-<br>
-В объекте можно настроить его детализацию, при удалении на сколько меньше может быть полигон </p>
+<h3>LOD — Level of Detail</h3> 
+<p> Система снижает детализацию объекта при удалении от камеры. В настройках объекта можно задать, насколько уменьшается количество полигонов. </p>
+
 <hr>
 <h3>Создание референса на игрока</h3>
 <img src="images/home/CreatePlayerRef.png" alt="картинка как получить референс на персонажа с помощью cast">
+
 <hr>
-<p>Создавать камеру для быстрово перемещения <span class="ui-btn">ctrl</span> + <span class="ui-btn">0</span>-<span class="ui-btn">9</span></p>
-<p>Выбирать камеры <span class="ui-btn">0</span>-<span class="ui-btn">9</span></p>
+<p>Создать камеру для быстрого перемещения: <span class="ui-btn">Ctrl</span> + <span class="ui-btn">0–9</span>.</p> <p>Выбрать сохранённую камеру: <span class="ui-btn">0–9</span>.</p>
+
+
 <hr>
-<p>Пилотировать света - чтоб было легче направлять свет, <span class="ui-btn">пкм</span> на актор - <span class="ui-btn">pilot “… light”</span> или <span class="ui-btn">ctrl</span> + <span class="ui-btn">shift</span> + <span class="ui-btn">p</span></p>
+<p> Пилотировать свет: <span class="ui-btn">ПКМ</span> по источнику света → <span class="ui-btn">Pilot “... Light”</span> или <span class="ui-btn">Ctrl</span> + <span class="ui-btn">Shift</span> + <span class="ui-btn">P</span>. </p>
+
+
+
 <hr>
-<h3>Настройка input </h3>
-<p>В ноде можно обозначить если инпут будет работать во время паузы, надо только установить галочку </p>
+<h3>Настройка Input</h3>
+<p>Чтобы инпут работал во время паузы — включить галочку “Execute When Paused”.</p>
 <img src="images/home/execute when paused.png" alt="input - execute when Paused">
+
 <hr>
 <h4>Level</h4>
-<p>
-a collection of objects and their properties that together define an area of gameplay</p>
+<p>A collection of objects and their properties that define an area of gameplay.</p>
+
 <h4>Volumes</h4> 
-<p>
-  3D area space, invisible to the player, and have specific purpose pending on their type</p>
-  <h4>Heightmap</h4>
-<p>
-  for landscape generator</p>
-  <h4>Skulpt</h4>
-<p>
-  pinCut – cut 3d models</p>
+<p>3D‑области, невидимые игроку, выполняют разные функции.</p>
+
+<h4>Heightmap</h4>
+<p>Используется для генерации ландшафта.</p>
+
+<h4>Sculpt</h4>
+<p>PinCut — вырезание 3D‑моделей.</p>
+
   <hr>
-<h4>World setting </h4>
-<p>можно настроить свой kill zone - убивает всё что в него попадает</p>
+<h4>World Settings</h4>
+<p>Можно настроить Kill Z — уничтожает всё, что падает ниже указанной высоты.</p>
 <p>По дефолту можно настроить прямо в настройках мира</p>
  <img src="images/home/KIllZ.png" alt="скрин с настройками мира и растояние Kill Z">
-<p>Чтоб это отменить убираем галочку с bounds</p>
+<p>Чтобы отключить — убрать галочку “Enable World Bounds Checks”.</p>
  <img src="images/home/enableWorldBounds.png" alt="убрать галочку Enable World Bounds Checks">
-<hr>
-<p>Physics</p>
-<p>Linear damping – push</p>
-<p>Angular damping – rotate </p>
-<p>Оптимизация</p>
-<ol>
-  <li>Use LOD asset</li>
-  <li>Disable shadows</li>
-  <li>Virtual shadows</li>
-</ol>
+
+ <hr>
+<h4>Physics</h4>
+<p>Linear Damping — сопротивление движению.</p>
+<p>Angular Damping — сопротивление вращению.</p>
+<h4>Оптимизация</h4>
+<ol> <li>Использовать LOD.</li> <li>Отключить тени.</li> <li>Использовать Virtual Shadows.</li> </ol>
+
 <hr>
 <h4>Property Matrix</h4>
-<p>Инструмент для просмотра и редактирования нескольких свойств нескольких субъектов одновременно.</p>
+<p>Редактирование свойств нескольких объектов одновременно.</p>
+
 <hr>
 
 <h4>Полигон</h4>
-<p>основной элемент для создания 3Д элементов</p>
-<p>Состоит из вершиг, ребер и граней </p>
+<p>Основной элемент 3D‑модели.</p>
+<p>Состоит из вершин, рёбер и граней.</p>
 <img src="images/home/poligon.png" alt="картинка показывает что такое вершина, ребро и грань">

@@ -3,32 +3,79 @@
 </div>
 <h1>Разные полезности в анрил</h1>
 <ol>
-    <li>Приватность - не отправлять личную информацию
-Privacy – usage data: ip, isp (провайдер), континент, страна, город, аккаунт ID, название проекта</li>
-    <li>Color piker - при выборе цвета, можно сохранить и делать наборы</li>
-    <li>Highlight objects under mouse cursor - в viewport подсвечивать объекты на которые наведена мыш  </li>
-    <li>Убрать Developer folder из билда – project settings – packaging – directories to never cook... developers</li>
-    <li>Reference viewer - нажать на любой объект и узнать с чем он связан</li>
-    <li>Заменить повторяющиеся ассеты - выбираем одинаковые ассеты - asset action – replace references - выбираем какой оставить - consp;odate assets – unreal автоматически подставит нужный reference для всех объектов
-Инструмент заменяет абсолютно всё, может поменять материал так и меш</li>
-    <li>Global asset picker , ctrl + p -- глобальный поиск ассетов, можно фильтровать, не зависим от папок</li>
-    <li>Property matrix - редактировать за один раз несколько объектов</li>
-    <li>Выбрать все одинаковые акторы на сцене  - shifr + E
-Middle mouse – move point</li>
-    <li>Merge actors - выбрать акторы, верху в меню actor – merge, можно сделать копию, создать новый на уровне, сделать инстанс
+<li>Приватность - не отправлять личную информацию. 
+<br>
+<span class="ui-btn">Privacy</span> → <span class="ui-btn">usage data</span>: ip, isp (провайдер), континент, страна, город, аккаунт ID, название проекта</li>
+
+<li><span class="ui-btn">Color piker</span> - при выборе цвета можно сохранять пресеты и делать наборы</li>
+    
+<li><span class="ui-btn">Highlight objects under mouse cursor</span> - подсвечивать объекты в viewport при наведении мыши.</li>
+    
+<li>Убрать Developer folder из билда:
+    <br>
+     <span class="ui-btn">Project Settings</span> → <span class="ui-btn">Packaging</span> → <span class="ui-btn">Directories to never cook</span> → добавить Developers.</li>
+    
+<li><span class="ui-btn">Reference viewer</span> - нажать на любой объект и узнать с чем он связан</li>
+    
+<li>
+    Заменить повторяющиеся ассеты: 
+    <br>
+    выбрать ассеты → <span class="ui-btn">Asset Actions</span> → <span class="ui-btn">Replace References</span> → выбрать, какой оставить → <span class="ui-btn">Consolidate Assets</span>.
+    <br>
+    unreal автоматически подставит нужный reference для всех объектов
+    <br>
+Инструмент заменяет всё: материалы, меши, ссылки
+
 </li>
-    <li>Game mode - нода Restart Player at Player Start - вернуть игрока на стартовую позиуию</li>
-    <li>Target point - объект удобен для разных указаний в какой части что-то сделать  - look at target, spawn sfx  и тд
+    
+<li><span class="ui-btn">Global Asset Picker (Ctrl + P) </span>—  глобальный поиск ассетов, можно фильтровать, не зависим от папок</li>
+    
+<li><span class="ui-btn">Property matrix </span>- редактировать за один раз несколько объектов</li>
+    
+<li>Выбрать все одинаковые акторы на сцене — <span class="ui-btn">Shift + E</span>. 
+    <br>
+    <span class="ui-btn">Middle Mouse</span> — переместить точку (pivot).</li>
+    
+<li><span class="ui-btn">Merge Actors</span> — выбрать акторы → <span class="ui-btn">меню Actor</span> → <span class="ui-btn">Merge</span>. 
+    <br>
+    Можно сделать копию, создать новый объект на уровне или инстанс.
 </li>
-    <li>Play in game “shift + F1” - show cursour/  во время симуляции “К” сохранить изменения обхектов </li>
-    <li>Platform – cooking on the fly - во время разработки и тестирования, в экспорте убрать галочку</li>
-    <li>Редактировать уровни из другого уровня, без необходимости его открывать: windows – levels –add exsisting level и его редактируем
+    
+<li>
+    <span class="ui-btn">Game Mode</span> — нода <span class="node">Restart Player at Player Start</span> возвращает игрока на стартовую позицию.</li>
+    
+<li>
+     <span class="ui-btn">Target Point</span> — удобный объект для указания позиции: Look At Target, Spawn SFX и т.д.
 </li>
-    <li>Обновить ноды в акторе  - refresh all nodes - если есть проблемы в логике, решает их</li>
-    <li>Макрос - тоже самое как colaps node. Создать независимвй Blueprint – blueprint macro library – actor - вызывается в любих акторах. Но иногда проще просто сделать collaps
+    
+<li>Play in Game: <span class="ui-btn">Shift + F1</span> — показать курсор. 
+    <br>
+    во время симуляции <span class="ui-btn">К</span> сохранить изменения обхектов </li>
+    
+<li><span class="ui-btn">Platform</span> → <span class="ui-btn">Cooking on the Fly</span> — используется при разработке и тестировании. В экспорте галочку нужно убрать.</li>
+    
+<li>Редактировать уровни из другого уровня: 
+    <br>
+    <span class="ui-btn">Window</span> → <span class="ui-btn">Levels</span> → <span class="ui-btn">Add Existing Level</span> → редактируем его без открытия.
 </li>
-    <li>Functions - функция которая происходит моментально, без времени </li>
-    <li>Unreal Diff tool - сравнить два объекта на различия, увидеть изменения если они одинаоквые </li>
-    <li>Widget  - с помощью ctrl двигаем одуванчик 
+    
+<li>Обновить ноды в акторе — <span class="ui-btn">Refresh All Nodes</span> 
+    <br>
+    Если есть проблемы в логике, часто помогает.</li>
+    
+<li><span class="ui-btn">Макрос</span> — то же, что <span class="ui-btn">Collapse Nodes</span>, но глобальный. 
+    <br>
+     <span class="ui-btn">Blueprint Macro Library</span> →<span class="ui-btn"> Actor</span> — доступен в любых акторах
+    <br>
+    Но иногда проще просто сделать collaps
+</li>
+    
+<li><span class="ui-btn">Functions</span> — выполняются моментально, без задержки.</li>
+    
+<li> 
+ <span class="ui-btn">Unreal Diff Tool</span> — сравнить два объекта, увидеть различия, если они похожи.
+</li>
+    
+<li><span class="ui-btn">Widget</span> — с помощью <span class="ui-btn">Ctrl</span> можно двигать pivot (одуванчик).
 </li>
 </ol>

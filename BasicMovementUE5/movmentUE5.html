@@ -1,89 +1,134 @@
-<div class="warning-red">
-    устарелая информация, нужно перепроверить и обновить!
+<div class="warning-green">
+    базовые настройки
 </div>
-<h1>Basic Movement</h1>
+
+<h1>Basic Movement — базовое управление персонажем</h1>
+
 <p>
-    <span class="ui-btn">Action mapping</span> - button press (one press per action)
-    <br>
-    <span class="ui-btn">Axis mapping</span> - continuous action (mouse move)
+    В Unreal Engine 5 используется система <b>Enhanced Input</b>.  
+    Она заменяет старые Action/Axis Mapping и позволяет гибко настраивать управление.
+</p>
+
+<h2>Action Mapping и Axis Mapping</h2>
+
+<p>
+    <span class="ui-btn">Action Mapping</span> — срабатывает один раз при нажатии кнопки (Jump, Interact).<br>
+    <span class="ui-btn">Axis Mapping</span> — непрерывный ввод (движение мыши, движение персонажа).
 </p>
 
 <p>
-    Для начала создаём вводы для управления, например прыжок, ходьба (клавиатура) и расмотор окружения с помощью мыши
+    Для начала создаём Input Actions для основных действий: движение, прыжок, поворот камеры.
 </p>
+
 <img src="BasicMovementUE5/images/image1.png" alt="">
-<p>И называем их по назначению, например так</p>
+
+<p>Названия должны отражать назначение:</p>
+
 <img src="BasicMovementUE5/images/image2.png" alt="">
 
-<p>Для Jump делаем такие настройки</p>
+<h2>Настройка Input Action — Jump</h2>
+
+<p>
+    Для прыжка достаточно одного триггера — <b>Triggered</b> при нажатии кнопки.
+</p>
+
 <img src="BasicMovementUE5/images/image3.png" alt="">
 
-<p>Для move and look</p>
+<h2>Настройка Input Actions — Move и Look</h2>
+
+<p>
+    Move — это векторное действие (2D Vector),  
+    Look — это поворот камеры (Mouse Delta).
+</p>
+
 <img src="BasicMovementUE5/images/image4.png" alt="">
 
+<h2>Создание Input Mapping Context (IMC)</h2>
+
 <p>
-    Далее создаём IMP - input mapping context для нашего персонажа, можно также указать его имя
+    Создаём новый <b>Input Mapping Context</b> — это набор всех действий управления.
 </p>
+
 <img src="BasicMovementUE5/images/image5.png" alt="">
 
+<p>
+    Внутри IMC добавляем созданные Input Actions и назначаем клавиши.
+</p>
+
+<h2>Настройка движения (Move)</h2>
 
 <p>
-    И там прописываем для каждого созданного инпута как им управлять, для прыжка и управлением камерой, можно оставить простые настройки
-    А вод для движения немного сложнее
+    Движение — самое сложное, потому что нужно правильно преобразовать оси.
 </p>
 
 <img src="BasicMovementUE5/images/image6.png" alt="">
 
 <div>
-    <p>Для движение вперед выбираем swizzle input axis values, и в Order - YXZ </p>
-    <p>Для движение налево - Negate и оставляем все галочки</p>
-    <p>Для движения назад - выбираем и swizzle и negate вместе и все галочки на месте</p>
-    <p>А вот для движение направо можно ничего не указывать, он автоматом подхавит управление, то есть не важно какую клавишу мы укажим, он пойдем направа </p>
-    
+    <p><b>Вперёд (W):</b> используем <b>Swizzle Input Axis Values</b>, порядок <b>YXZ</b>.</p>
+    <p><b>Влево (A):</b> включаем <b>Negate</b> — инвертирует направление.</p>
+    <p><b>Назад (S):</b> включаем <b>Swizzle + Negate</b>.</p>
+    <p><b>Вправо (D):</b> можно оставить без изменений — UE сам корректно обработает ось.</p>
 </div>
+
 <img src="BasicMovementUE5/images/image7.png" alt="">
 
-<p>Далее создаем персонажа если у нас его ещё нет, blueprint class - character</p>
+<h2>Создание персонажа</h2>
 
 <p>
-    Задаем mesh может быть всё что угодно, хоть квадрат.
-    Создаем SpringArm - что-то типа селфи палки, пока она выделена - добавляем камеру и она автоматом прикрепится .
+    Если персонажа ещё нет — создаём Blueprint Class → <b>Character</b>.
 </p>
+
+<p>
+    Mesh может быть любым.  
+    Добавляем <b>SpringArm</b> (селфи‑палка), затем добавляем <b>Camera</b> — она автоматически прикрепится.
+</p>
+
 <img src="BasicMovementUE5/images/image8.png" alt="">
 
+<h2>Настройка камеры</h2>
 
-<p>
-    Настройка движения камеры
-    У главного BP в разделе pawn убираем галочку use controller rotation yaw
-</p>
+<p><b>В Character (BP):</b></p>
+<p>Отключаем <b>Use Controller Rotation Yaw</b> — чтобы камера не вращала персонажа напрямую.</p>
 
 <img src="BasicMovementUE5/images/image9.png" alt="">
 
-<p>SpringArm - в разделе pawn - use pawn control rotation есть галочка</p>
+<p><b>SpringArm:</b> включаем <b>Use Pawn Control Rotation</b>.</p>
 
 <img src="BasicMovementUE5/images/image10.png" alt="">
 
-<p>
-    Camera - в разделе pawn - use pawn control rotation нет галочки 
-</p>
+<p><b>Camera:</b> отключаем <b>Use Pawn Control Rotation</b>.</p>
 
 <img src="BasicMovementUE5/images/image11.png" alt="">
 
+<h2>Настройка движения персонажа</h2>
 
 <p>
-    Character movement - ставим галочку Orient rotation to Movement - не смотря на движение камеры персонаж всегда будет двигаться в заданом направлении, если бежит на право, не важно как мы поворачиваем камеру он будет продолжать бежать в права
+    В компоненте <b>Character Movement</b> включаем <b>Orient Rotation to Movement</b>.  
+    Теперь персонаж всегда поворачивается в сторону движения, независимо от камеры.
 </p>
+
 <img src="BasicMovementUE5/images/image12.png" alt="">
 
-<p>   
-    Настройка в Blueprint 
-    Захват персонажа и передача контроля 
+<h2>Подключение управления в Blueprint</h2>
+
+<p>
+    В Event Graph захватываем управление и активируем Input Mapping Context.
 </p>
+
 <img src="BasicMovementUE5/images/image13.png" alt="">
 
-<p>Прыжок - выбираем наш созданый input action </p>
+<h2>Прыжок</h2>
+
+<p>
+    Выбираем созданный Input Action Jump и вызываем функцию <b>Jump</b>.
+</p>
+
 <img src="BasicMovementUE5/images/image14.png" alt="">
 <img src="BasicMovementUE5/images/image15.png" alt="">
 <img src="BasicMovementUE5/images/image16.png" alt="">
 
-<p>Само движение</p>
+<h2>Движение</h2>
+
+<p>
+    Движение создаётся через <b>Add Movement Input</b> с использованием направления камеры.
+</p>

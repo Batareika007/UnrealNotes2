@@ -1,21 +1,57 @@
-<div class="warning-red">
-  Старая информация. Требуется перепроверить, обновить или удалить.
+<div class="warning-green">
+только подготовка
 </div>
+
+
 <h1>Motion Matching animations</h1>
-<h2>для работы нужно установить следующие плагины</h2>
-<ul>
-    <li>Motion trajectory</li>
-    <li>Pose search</li>
-    <li>Motion warping</li>
-    <li>Animation warping</li>
-    <li>Chooser</li>
-    <li>Animation locomotion library</li>
-    <li>Deformer graph</li>
-</ul>
-<p>перезагрузить движок</p>
-<h3>мигрировать Блюпринт персонажа из другого проекта</h3>
+
 <p>
-    <span class="ui-btn">Right click</span> - <span class="ui-btn">asset action</span> - <span class="ui-btn">migrate</span>
+    Это базовый набор действий, который нужен, чтобы Motion Matching работал в проекте. 
+    Здесь нет сложной логики — только подготовка проекта и включение необходимых плагинов.
 </p>
-<p>в <span class="ui-btn">gamemode</span> выбрать нового персонажа</p>
+
+<h2>Необходимые плагины</h2>
+
+<p>Для работы Motion Matching нужно включить следующие плагины:</p>
+
+<ul>
+    <li>Motion Trajectory</li>
+    <li>Pose Search</li>
+    <li>Motion Warping</li>
+    <li>Animation Warping</li>
+    <li>Chooser</li>
+    <li>Animation Locomotion Library</li>
+    <li>Deformer Graph</li>
+</ul>
+
+<p>После включения всех плагинов — перезагрузить движок.</p>
+
+<h3>Дополнительно рекомендуется включить:</h3>
+<ul>
+    <li><b>Full Body IK</b> — улучшает работу поз и переходов</li>
+    <li><b>IK Rig</b> — если планируется ретаргетинг анимаций</li>
+</ul>
+
+<p>Эти плагины не обязательны, но часто используются вместе с Motion Matching.</p>
+
+<hr>
+
+<h2>Миграция персонажа</h2>
+
+<p>
+    Если вы используете готового персонажа из другого проекта (например, из шаблона Third Person), 
+    его можно перенести через миграцию.
+</p>
+
+<p>
+    <span class="ui-btn">Right click</span> → 
+    <span class="ui-btn">Asset Actions</span> → 
+    <span class="ui-btn">Migrate</span>
+</p>
+
+<p>
+    После миграции в <span class="ui-btn">GameMode</span> выбираем нового персонажа, 
+    чтобы он использовался по умолчанию.
+</p>
+
 
