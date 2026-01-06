@@ -28,7 +28,7 @@
     Если вычесть один вектор из другого, мы получим разницу по осям X, Y, Z.
 </p>
 
-<img src="/Blueprint/images/vectors1.png" alt="">
+<img src="Blueprint/images/vectors1.png" alt="">
 
 <p>
     Это не расстояние, а <b>вектор смещения</b>.
@@ -43,7 +43,7 @@
     В UE для этого есть нода <b>Vector Length</b>.
 </p>
 
-<img src="/Blueprint/images/vectors2.png" alt="">
+<img src="Blueprint/images/vectors2.png" alt="">
 
 <p>
     Она возвращает длину вектора — то есть прямое расстояние между точками.
@@ -53,7 +53,7 @@
     Есть также <b>Vector Length Squared</b> — расстояние в квадрате.
 </p>
 
-<img src="/Blueprint/images/vectors3.png" alt="">
+<img src="Blueprint/images/vectors3.png" alt="">
 
 <p>
     Это быстрее и полезно для оптимизации, когда не нужно точное расстояние.
@@ -67,7 +67,7 @@
     Самый простой способ узнать расстояние между двумя актёрами.
 </p>
 
-<img src="/Blueprint/images/vectors4.png" alt="">
+<img src="Blueprint/images/vectors4.png" alt="">
 
 <p>
     Возвращает расстояние в сантиметрах.
@@ -81,7 +81,7 @@
     Чтобы узнать расстояние только по одной оси:
 </p>
 
-<img src="/Blueprint/images/vectors5.png" alt="">
+<img src="Blueprint/images/vectors5.png" alt="">
 
 <ul>
     <li>по Z — вертикальное расстояние;</li>
@@ -96,7 +96,7 @@
     Нормализованный вектор — это вектор длиной 1 (единичный вектор).
 </p>
 
-<img src="/Blueprint/images/vectors6.png" alt="">
+<img src="Blueprint/images/vectors6.png" alt="">
 
 <p>
     Он показывает только <b>направление</b>, без расстояния.
@@ -127,15 +127,15 @@
 
 <h3>Forward Vector</h3>
 <p>Показывает, куда объект смотрит (ось X).</p>
-<img src="/Blueprint/images/vectors7.png" alt="">
+<img src="Blueprint/images/vectors7.png" alt="">
 
 <h3>Right Vector</h3>
 <p>Показывает правую сторону объекта (ось Y).</p>
-<img src="/Blueprint/images/vectors8.png" alt="">
+<img src="Blueprint/images/vectors8.png" alt="">
 
 <h3>Up Vector</h3>
 <p>Показывает вверх (ось Z).</p>
-<img src="/Blueprint/images/vectors9.png" alt="">
+<img src="Blueprint/images/vectors9.png" alt="">
 
 <p>
     Все эти вектора всегда нормализованы (длина = 1).
@@ -153,7 +153,7 @@
     Позволяет повернуть объект так, чтобы его ось X указывала в нужное направление.
 </p>
 
-<img src="/Blueprint/images/vectors10.png" alt="">
+<img src="Blueprint/images/vectors10.png" alt="">
 
 <p>
     Используется для:
@@ -174,7 +174,7 @@
     Поворачивает объект так, чтобы он смотрел на другой объект.
 </p>
 
-<img src="/Blueprint/images/vectors11.png" alt="">
+<img src="Blueprint/images/vectors11.png" alt="">
 
 <p>
     Нужно указать:
@@ -194,7 +194,7 @@
 
 <h2>9. Velocity — скорость персонажа</h2>
 
-<img src="/Blueprint/images/vectors12.png" alt="">
+<img src="Blueprint/images/vectors12.png" alt="">
 
 <p>
     Velocity — это вектор скорости по осям X, Y, Z.  
@@ -210,14 +210,14 @@
     Чтобы получить общую скорость:
 </p>
 
-<img src="/Blueprint/images/vectors13.png" alt="">
+<img src="Blueprint/images/vectors13.png" alt="">
 
 <p>
     Но скорость по Z (прыжок) увеличит значение.  
     Чтобы получить скорость только по земле:
 </p>
 
-<img src="/Blueprint/images/vectors14.png" alt="">
+<img src="Blueprint/images/vectors14.png" alt="">
 
 <hr>
 
@@ -239,40 +239,40 @@
 <!-- 
 <h1>vectors</h1>
 <p>Узнать расстояние между двумя векторами, просто путём вычитанем один у другого, но это дает нам растояние в xyz </p>
-<img src="/Blueprint/images/vectors1.png" alt="">
+<img src="Blueprint/images/vectors1.png" alt="">
 
 <p>Vector length </p>
 <p>Чтоб получить прямое растояние до обекта, надо применить теорему пифагору, для этого есть функция Vector Length</p>
-<img src="/Blueprint/images/vectors2.png" alt="">
+<img src="Blueprint/images/vectors2.png" alt="">
 
 <p>Так же можно получить результат в квадрате, для использования теоремы</p>
-<img src="/Blueprint/images/vectors3.png" alt="">
+<img src="Blueprint/images/vectors3.png" alt="">
 
 <p>Get Distance To</p>
 <p>Узнать расстояние между двумя объектами  - Get Distance To</p>
-<img src="/Blueprint/images/vectors4.png" alt="">
+<img src="Blueprint/images/vectors4.png" alt="">
 
 <p>Узнать только вертикально или горизонтально растояние до обекта </p>
-<img src="/Blueprint/images/vectors5.png" alt="">
+<img src="Blueprint/images/vectors5.png" alt="">
 
 <p>Vector Normalize - найти значение Normalize это может быть от 0-1  - то есть мы создаем новый вектор значения которого  по каждой оси будет максимум 1</p>
 <p>Нужен для расчета направления, куда смотерть, куда идти и тд.. </p>
 <p>Так же нужен для правильного рачета удара, силы, движения и к результат умнажаем или прибавляем для получение нужной цели.</p>
-<img src="/Blueprint/images/vectors6.png" alt="">
+<img src="Blueprint/images/vectors6.png" alt="">
 
 <p>Forward vector - всегда указывает куда смотри персонаж и у этого вектора всегда значение будет normalize то есть 0 - 1 по каждой оси xyz, forward vector показывает направление по оси X</p>
-<img src="/Blueprint/images/vectors7.png" alt="">
+<img src="Blueprint/images/vectors7.png" alt="">
 
 <p>Right vector - указывает правую сторону персонажа, так же всегда normalize 0-1 по оси Y</p>
-<img src="/Blueprint/images/vectors8.png" alt="">
+<img src="Blueprint/images/vectors8.png" alt="">
 
 <p>Up vector - указывает направление вверх так же от 0-1  по оси Z</p>
-<img src="/Blueprint/images/vectors9.png" alt="">
+<img src="Blueprint/images/vectors9.png" alt="">
 
 <p>Все эти векторые так же можно получить из ноды Get Rotation – там в результате будет все три параметра и можно вызвать каждый из них.</p>
 
 <p>С помощью данных вектора можно крутить другие обекты назначая им те же кординаты, это происходи с помощью Rotration from X vector</p>
-<img src="/Blueprint/images/vectors10.png" alt="">
+<img src="Blueprint/images/vectors10.png" alt="">
 
 <p>Создать объект чтоб наблюдал за персонажем</p>
 <p>Find Look at Rotation - будет вертеть объект и постоянно указывать на положение другого объекта </p>
@@ -282,18 +282,18 @@
     <li>** выбираем за кем будет следить </li>
         <li>И в конце назначаем какой объект будет двигаться за следящим</li> 
     </ul>
-    <img src="/Blueprint/images/vectors11.png" alt="">
+    <img src="Blueprint/images/vectors11.png" alt="">
     
     <p>Velocity - скорость персонажа</p>
-    <img src="/Blueprint/images/vectors12.png" alt="">
+    <img src="Blueprint/images/vectors12.png" alt="">
 
 <p>Будет указывать скорость персонажа по всем осям, то есть скорость по движению по xyz </p>
 <p>Скорость всегда сантиметр в секунду</p>
 <p>Так же скорость может быть отрицательно, если движение назад</p>
 <p>Результат всегда будет в трех параметрах xyz </p>
 <p>Может превратить в один с помощью vector length</p>
-<img src="/Blueprint/images/vectors13.png" alt="">
+<img src="Blueprint/images/vectors13.png" alt="">
 <p>Но! К обычной скорости, будет прибавляться скорость в прыжке и показатель будет увеличен
     Тогда можно подключить только x y 
 </p>
-<img src="/Blueprint/images/vectors14.png" alt="">
+<img src="Blueprint/images/vectors14.png" alt="">
