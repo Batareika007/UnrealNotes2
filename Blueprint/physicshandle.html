@@ -1,0 +1,221 @@
+<div class="warning-green">
+базовый пример, в игре нужно другое решение
+</div>
+<h1>Physics Handle — система поднятия и броска объектов</h1>
+
+<p>
+    Physics Handle — это компонент, который позволяет поднимать физические объекты, удерживать их 
+    перед игроком, перемещать вместе с ним и бросать с силой.  
+    Это основа любой системы наподобие Gravity Gun, Half-Life 2, Fortnite Pickup и т.д.
+</p>
+
+<p>
+    <b>Важно:</b> Sphere Cast в этом примере используется только как один из способов найти объект 
+    перед игроком.  
+    Вместо него можно использовать:
+</p>
+
+<ul>
+    <li>Line Trace</li>
+    <li>Capsule Trace</li>
+    <li>Box Trace</li>
+    <li>Overlap Sphere</li>
+    <li>Trigger Volume</li>
+    <li>Hit Events</li>
+</ul>
+
+<p>
+    Physics Handle работает одинаково независимо от того, как вы нашли объект.
+</p>
+
+<hr>
+
+<h2>1. Поиск объекта (пример: Sphere Cast)</h2>
+
+<p>
+    <span class="node">Sphere Cast</span> — это трассировка, которая запускает сферу вдоль направления взгляда.  
+    Она удобна тем, что имеет радиус и легче «ловит» объекты.
+</p>
+
+<img src="/Blueprint/images/spherecast1.png" alt="">
+
+<p>
+    Старт — позиция персонажа или камеры.
+</p>
+
+<img src="/Blueprint/images/spherecast2.png" alt="">
+
+<p>
+    Конец — направление взгляда × расстояние + позиция персонажа.
+</p>
+
+<img src="/Blueprint/images/spherecast3.png" alt="">
+
+<p>
+    Радиус задаём через переменную.
+</p>
+
+<img src="/Blueprint/images/spherecast4.png" alt="">
+
+<hr>
+
+<h2>2. Добавляем Physics Handle</h2>
+
+<p>
+    В компонент персонажа добавляем <span class="node">Physics Handle</span>.
+</p>
+
+<img src="/Blueprint/images/spherecast5.png" alt="">
+
+<p>
+    Он позволяет:
+</p>
+
+<ul>
+    <li>захватывать физические объекты;</li>
+    <li>удерживать их в воздухе;</li>
+    <li>перемещать вместе с игроком;</li>
+    <li>бросать с силой.</li>
+</ul>
+
+<hr>
+
+<h2>3. Захват объекта</h2>
+
+<p>
+    Используем ноду <span class="node">Grab Component At Location</span>.
+</p>
+
+<img src="/Blueprint/images/spherecast6.png" alt="">
+
+<p>
+    После <span class="node">Sphere Cast</span> проверяем, что мы попали в объект, и передаём его в Grab.
+</p>
+
+<img src="/Blueprint/images/spherecast7.png" alt="">
+<img src="/Blueprint/images/spherecast8.png" alt="">
+
+<hr>
+
+<h2>4. Точка удержания (Grab Point)</h2>
+
+<p>
+    Создаём пустой Scene Component — <b>Grab Point</b>.  
+    Это точка, где будет висеть объект.
+</p>
+
+<img src="/Blueprint/images/spherecast9.png" alt="">
+<img src="/Blueprint/images/spherecast10.png" alt="">
+
+<p>
+    Grab Point определяет:
+</p>
+
+<ul>
+    <li>расстояние удержания;</li>
+    <li>позицию объекта в воздухе;</li>
+    <li>куда Physics Handle будет тянуть объект.</li>
+</ul>
+
+<hr>
+
+<h2>5. Обновление позиции объекта</h2>
+
+<p>
+    В <span class="node">Event Tick</span> обновляем позицию Physics Handle, чтобы объект следовал за Grab Point.
+</p>
+
+<img src="/Blueprint/images/spherecast11.png" alt="">
+
+<p>
+    Обязательно делаем <span class="node">Branch</span> — проверяем, держим ли мы объект.
+</p>
+
+<img src="/Blueprint/images/spherecast12.png" alt="">
+
+<hr>
+
+<h2>6. Требования к объектам</h2>
+
+<p>
+    Чтобы объект можно было поднять:
+</p>
+
+<ul>
+    <li>включить <b>Simulate Physics</b>;</li>
+    <li>Mobility = <b>Movable</b>.</li>
+</ul>
+
+<img src="/Blueprint/images/spherecast13.png" alt="">
+<img src="/Blueprint/images/spherecast14.png" alt="">
+
+<hr>
+
+<h2>7. Логика поднятия и отпускания</h2>
+
+<p>
+    Создаём переменную <b>Держим (Boolean)</b>.
+</p>
+
+<img src="/Blueprint/images/spherecast15.png" alt="">
+<img src="/Blueprint/images/spherecast16.png" alt="">
+
+<p>
+    Логика:
+</p>
+
+<ul>
+    <li>Если объект не держим → пытаемся взять.</li>
+    <li>Если держим → отпускаем.</li>
+</ul>
+
+<p>
+    При отпускании объект сохраняет скорость и продолжает движение.
+</p>
+
+<hr>
+
+<h2>8. Бросок объекта</h2>
+
+<p>
+    Назначаем кнопку броска (например, ПКМ).
+</p>
+
+<img src="/Blueprint/images/spherecast17.png" alt="">
+
+<p>
+    Создаём переменную, чтобы хранить объект, который мы держим.
+</p>
+
+<img src="/Blueprint/images/spherecast18.png" alt="">
+<img src="/Blueprint/images/spherecast19.png" alt="">
+
+<p>
+    Теперь при нажатии кнопки мы можем бросить объект.
+</p>
+
+<img src="/Blueprint/images/spherecast20.png" alt="">
+
+<p>
+    Чтобы задать силу броска:
+</p>
+
+<ol>
+    <li>берём направление взгляда персонажа;</li>
+    <li>умножаем на переменную «Сила броска»;</li>
+    <li>передаём в Add Impulse.</li>
+</ol>
+
+<img src="/Blueprint/images/spherecast21.png" alt="">
+
+<p>
+    После броска:
+</p>
+
+<ul>
+    <li>отпускаем объект;</li>
+    <li>ставим переменную «Держим» в false;</li>
+    <li>обязательно включаем <b>Vel Change</b> — иначе импульс будет слабым.</li>
+</ul>
+
+<img src="/Blueprint/images/spherecast22.png" alt="">

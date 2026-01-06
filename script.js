@@ -63,11 +63,11 @@ const subTopics = {
   "Вlueprint Gameplay":[
     { id: "Blueprint/CreateFirstPersonCharacter", title: "Create First-Person Character"},
     { id: "Blueprint/collision", title: "Collison"},
-    { id: "Blueprint/DamageCollision", title: "Damage Collision"},
+    { id: "Blueprint/DamageCollision", title: "Event Hit — данные столкновений"},
     { id: "Blueprint/trigger", title: "Trigger"},
     { id: "Blueprint/interact", title: "Interact"},
     { id: "Blueprint/moveActore", title: "двигать акторы"},
-    { id: "Blueprint/spherecast", title: "Sphere cast"},
+    { id: "Blueprint/physicshandle", title: "Physics Handle"},
     { id: "Blueprint/timeControl", title: "Time Control"},
     { id: "Blueprint/footsteps1stPerson", title: "footsteps1stPerson"},
     { id: "Blueprint/gameMode", title: "GameMode"},

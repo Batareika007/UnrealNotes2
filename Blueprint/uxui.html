@@ -1,6 +1,292 @@
-<div class="warning-red">
-нужно жесткое редактирование
+<div class="warning-green">
+только базовые принципы работы с UX/UI. Все примеры, логика и Blueprint-схемы приведены исключительно для демонстрации и не являются рекомендованным или финальным туториалом
 </div>
+<h1>UX / UI — создание интерфейса в Unreal Engine</h1>
+
+<p>
+    UX/UI — это система интерфейсов, меню, кнопок, окон и элементов, с которыми взаимодействует игрок.
+    В Unreal Engine интерфейс создаётся через <b>Widget Blueprint</b>.
+</p>
+
+<hr>
+
+<h2>1. Создание UI Widget</h2>
+
+<p>
+    Создаём новый <b>User Widget</b> (например, <b>BP_UIWidget</b>).
+</p>
+
+<img src="/Blueprint/images/uxui1.png" alt="">
+<img src="/Blueprint/images/uxui2.png" alt="">
+
+<p>
+    Внутри виджета есть два режима:
+</p>
+
+<ul>
+    <li><b>Designer</b> — визуальное создание интерфейса.</li>
+    <li><b>Graph</b> — логика кнопок, событий и функций.</li>
+</ul>
+
+<img src="/Blueprint/images/uxui3.png" alt="">
+<p>значек а графе показывает что это только для интерфейса</p>
+
+<hr>
+
+<h2>2. Canvas Panel — основа интерфейса</h2>
+
+<p>
+    Canvas Panel — это главный контейнер, в котором можно размещать любые элементы UI.
+    Он позволяет свободно позиционировать объекты.
+</p>
+
+<img src="/Blueprint/images/uxui4.png" alt="">
+
+<p>
+    В Canvas можно добавлять:
+</p>
+
+<ul>
+    <li>кнопки;</li>
+    <li>текст;</li>
+    <li>картинки;</li>
+    <li>панели;</li>
+    <li>контейнеры (Box, Grid, Overlay).</li>
+</ul>
+
+<img src="/Blueprint/images/uxui5.png" alt="">
+
+<hr>
+
+<h2>3. Anchor Points — якоря</h2>
+
+<p>
+    Anchors определяют, как элемент будет вести себя при изменении разрешения экрана.
+</p>
+
+<img src="/Blueprint/images/uxui6.png" alt="">
+
+<p>
+    Примеры:
+</p>
+
+<ul>
+    <li>центр экрана;</li>
+    <li>левый верхний угол;</li>
+    <li>правый нижний угол;</li>
+    <li>растяжение по всей ширине/высоте.</li>
+</ul>
+
+<p>
+    Правильные Anchors — ключ к адаптивному UI.
+</p>
+
+<hr>
+
+<h2>4. Контейнеры UI</h2>
+
+<p>
+    Контейнеры автоматически размещают элементы внутри себя.
+</p>
+
+<h3>Vertical Box / Horizontal Box</h3>
+
+<img src="/Blueprint/images/uxui7.png" alt="">
+
+<p>
+    Элементы выстраиваются вертикально или горизонтально.
+</p>
+
+<h3>Grid Panel</h3>
+
+<p>
+    Позволяет размещать элементы по строкам и столбцам.
+</p>
+
+<hr>
+
+<h2>5. Показ и скрытие UI</h2>
+
+<p>
+    Чтобы показать UI в игре, нужно создать виджет и добавить его в Viewport.
+</p>
+
+<img src="/Blueprint/images/uxui8.png" alt="">
+<img src="/Blueprint/images/uxui9.png" alt="">
+
+<p>
+    Чтобы управлять UI, создаём переменную-ссылку на виджет.
+</p>
+
+<img src="/Blueprint/images/uxui10.png" alt="">
+
+<p>
+    Теперь можно:
+</p>
+
+<ul>
+    <li>показывать UI;</li>
+    <li>скрывать UI;</li>
+    <li>менять текст, картинки, кнопки.</li>
+</ul>
+
+<img src="/Blueprint/images/uxui11.png" alt="">
+<img src="/Blueprint/images/uxui12.png" alt="">
+
+<hr>
+
+<h2>6. Input Modes — управление вводом</h2>
+
+<p>
+    Input Mode определяет, кто получает управление: игра или UI.
+</p>
+
+<ul>
+    <li><b>Game Only</b> — управление персонажем, мышь скрыта.</li>
+    <li><b>Game and UI</b> — UI работает, но персонаж не двигается.</li>
+    <li><b>UI Only</b> — только UI, игра не реагирует.</li>
+</ul>
+
+<img src="/Blueprint/images/uxui13.png" alt="">
+
+<p>
+    Чтобы включить мышь:
+</p>
+
+<img src="/Blueprint/images/uxui14.png" alt="">
+
+<hr>
+
+<h2>7. Фокус UI и управление с клавиатуры</h2>
+
+<p>
+    Чтобы кнопка реагировала на клавиатуру, она должна быть в фокусе.
+</p>
+
+<img src="/Blueprint/images/uxui15.png" alt="">
+
+<p>
+    В Blueprint можно задать фокус вручную:
+</p>
+
+<img src="/Blueprint/images/uxui16.png" alt="">
+
+<hr>
+
+<h2>8. Логика кнопок</h2>
+
+<p>
+    В Designer выбираем кнопку → добавляем событие <b>OnClicked</b>.
+</p>
+
+<img src="/Blueprint/images/uxui17.png" alt="">
+
+<p>
+    В Graph появляется событие, где можно написать логику.
+</p>
+
+<p>Пример: увеличить HP персонажа.</p>
+
+<img src="/Blueprint/images/uxui18.png" alt="">
+<img src="/Blueprint/images/uxui19.png" alt="">
+
+<hr>
+
+<h2>9. Настройки кнопок</h2>
+
+<p>
+    В кнопке можно настроить:
+</p>
+
+<ul>
+    <li>анимацию наведения;</li>
+    <li>звук клика;</li>
+    <li>цвета состояний;</li>
+    <li>иконки;</li>
+    <li>стили.</li>
+</ul>
+
+<img src="/Blueprint/images/uxui20.png" alt="">
+
+<p>
+    Если звук не работает — проверь настройки аудио.</p>
+
+<img src="/Blueprint/images/uxui21.png" alt="">
+<img src="/Blueprint/images/uxui22.png" alt="">
+
+<hr>
+
+<h2>10. Создание Pause Menu</h2>
+
+<p>
+    Чтобы кнопки из картинок работали, каждой картинке нужно включить <b>Is Variable</b> и <b>Hit Test Visible</b>.
+</p>
+
+<img src="/Blueprint/images/uxui23.png" alt="">
+
+<h3>1. Создаём Player Controller</h3>
+
+<img src="/Blueprint/images/uxui24.png" alt="">
+<img src="/Blueprint/images/uxui25.png" alt="">
+
+<h3>2. Создаём меню</h3>
+
+<img src="/Blueprint/images/uxui26.png" alt="">
+
+<h3>3. Делаем переменную-ссылку на UI</h3>
+
+<img src="/Blueprint/images/uxui27.png" alt="">
+
+<h3>4. Добавляем UI на экран</h3>
+
+<img src="/Blueprint/images/uxui28.png" alt="">
+<img src="/Blueprint/images/uxui29.png" alt="">
+<img src="/Blueprint/images/uxui30.png" alt="">
+
+<h3>5. Создаём функцию Pause Game</h3>
+
+<img src="/Blueprint/images/uxui31.png" alt="">
+<img src="/Blueprint/images/uxui32.png" alt="">
+<img src="/Blueprint/images/uxui33.png" alt="">
+<img src="/Blueprint/images/uxui34.png" alt="">
+<img src="/Blueprint/images/uxui35.png" alt="">
+<img src="/Blueprint/images/uxui36.png" alt="">
+
+<h3>6. Функция Resume Game</h3>
+
+<img src="/Blueprint/images/uxui37.png" alt="">
+
+<h3>7. Кнопка “P” для паузы</h3>
+
+<img src="/Blueprint/images/uxui38.png" alt="">
+
+<h3>8. Логика кнопок в меню</h3>
+
+<img src="/Blueprint/images/uxui39.png" alt="">
+<img src="/Blueprint/images/uxui40.png" alt="">
+<img src="/Blueprint/images/uxui41.png" alt="">
+<img src="/Blueprint/images/uxui42.png" alt="">
+<img src="/Blueprint/images/uxui43.png" alt="">
+
+<hr>
+
+<h2>11. Лучшие практики UX/UI</h2>
+
+<ul>
+    <li>Используй Anchors для адаптивного интерфейса.</li>
+    <li>Храни UI в GameInstance, если он должен переживать смену уровней.</li>
+    <li>Показывай UI через PlayerController.</li>
+    <li>Используй Input Mode для меню и паузы.</li>
+    <li>Не перегружай Canvas — используй контейнеры.</li>
+    <li>Делай UI анимированным (Opacity, Scale, Move).</li>
+    <li>Добавляй звуки и визуальные эффекты кнопкам.</li>
+</ul>
+
+<p>
+    UX/UI — это лицо игры. Чем лучше интерфейс, тем комфортнее игроку.
+</p>
+
+<!-- 
 <h1>UX UI </h1>
 <p>Создать user interface и назовём его BP_UIWidget</p>
 <img src="/Blueprint/images/uxui1.png" alt="">

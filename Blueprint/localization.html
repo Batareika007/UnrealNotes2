@@ -1,6 +1,259 @@
 <div class="warning-red">
 нужно жесткое редактирование
 </div>
+<h1>Localization — система локализации текста в Unreal Engine</h1>
+
+<p>
+    Локализация — это процесс перевода всех текстов проекта на разные языки.  
+    Unreal Engine использует мощную систему, которая автоматически собирает все строки,
+    хранящиеся в формате <b>Text</b>, и позволяет переводить их через Localization Dashboard.
+</p>
+
+<p><b>Важно:</b> локализация работает только с типом данных <b>Text</b>.  
+Строки типа <b>String</b> не участвуют в переводе.</p>
+
+<hr>
+
+<h2>1. Открываем Localization Dashboard</h2>
+
+<img src="Blueprint/images/localization1.png" alt="">
+
+<p>
+    Dashboard — это центр управления локализацией.  
+    Здесь создаются языки, собираются тексты и выполняется компиляция переводов.
+</p>
+
+<hr>
+
+<h2>2. Настройка источников текста (Gather Text)</h2>
+
+<p>
+    Нужно указать, где движок будет искать тексты для перевода.
+</p>
+
+<img src="Blueprint/images/localization2.png" alt="">
+
+<p>
+    Обычно выбирают папку <b>Content</b> или конкретные директории, где находятся UI, диалоги, квесты и т.д.
+</p>
+
+<hr>
+
+<h2>3. Сбор текста (Gather Text)</h2>
+
+<p>
+    После настройки нажимаем <b>Gather Text</b>.
+</p>
+
+<img src="Blueprint/images/localization3.png" alt="">
+<img src="Blueprint/images/localization4.png" alt="">
+
+<p>
+    Процесс может занять время — движок ищет все Text-поля в проекте.
+</p>
+
+<p>
+    Внизу появится отчёт:
+</p>
+
+<img src="Blueprint/images/localization5.png" alt="">
+
+<p>
+    Здесь видно, сколько строк найдено и сколько нужно перевести.
+</p>
+
+<hr>
+
+<h2>4. Добавление языков (Cultures)</h2>
+
+<p>
+    Нажимаем <b>Add New Culture</b> и выбираем язык, например:
+</p>
+
+<ul>
+    <li>en — English</li>
+    <li>ru — Russian</li>
+    <li>fr — French</li>
+    <li>de — German</li>
+</ul>
+
+<p>
+    После добавления снова нажимаем <b>Gather Text</b>, чтобы обновить список строк.
+</p>
+
+<hr>
+
+<h2>5. Перевод строк</h2>
+
+<p>
+    В списке появятся две колонки:
+</p>
+
+<ul>
+    <li>Source (оригинальный язык)</li>
+    <li>Target (новый язык)</li>
+</ul>
+
+<p>
+    Выбираем язык → нажимаем <b>Edit Translations</b>.
+</p>
+
+<img src="Blueprint/images/localization6.png" alt="">
+
+<p>
+    В открывшемся окне переводим каждую строку вручную.
+</p>
+
+<hr>
+
+<h2>6. Компиляция переводов</h2>
+
+<p>
+    После завершения перевода нажимаем <b>Compile Translations</b>.
+</p>
+
+<img src="Blueprint/images/localization7.png" alt="">
+
+<p>
+    Это создаёт файлы локализации, которые будут использоваться в игре.
+</p>
+
+<p>
+    Кнопка <b>Count Words</b> показывает статистику перевода.
+</p>
+
+<img src="Blueprint/images/localization8.png" alt="">
+
+<hr>
+
+<h2>7. Проверка перевода в виджетах</h2>
+
+<p>
+    В любом Widget Blueprint сверху есть выбор языка.  
+    Можно переключать язык и проверять, как UI реагирует.
+</p>
+
+<p><b>Важно:</b> иногда изменения не отображаются сразу — нужно перезапустить редактор.</p>
+
+<hr>
+
+<h2>8. Смена языка в игре (Set Current Culture)</h2>
+
+<p>
+    Чтобы переключить язык во время игры, используем ноду:
+</p>
+
+<p><b>Set Current Culture</b></p>
+
+<p>
+    Вводим код языка:
+</p>
+
+<ul>
+    <li>en</li>
+    <li>ru</li>
+    <li>fr</li>
+</ul>
+
+<p>
+    После смены языка UI обновится автоматически.
+</p>
+
+<p><b>Важно:</b> в редакторе язык UI не меняется — только в Standalone или в собранной игре.</p>
+
+<hr>
+
+<h1>String Tables</h1>
+
+<p>
+    String Tables — это таблицы строк, которые позволяют хранить текст по ключам.
+    Это лучший способ локализовать большие проекты.
+</p>
+
+<img src="Blueprint/images/localization9.png" alt="">
+
+<p>
+    Принцип работы:
+</p>
+
+<ul>
+    <li>каждая строка имеет ключ;</li>
+    <li>в коде или UI используется ключ;</li>
+    <li>локализация переводит строки автоматически.</li>
+</ul>
+
+<hr>
+
+<h2>1. Создание String Table</h2>
+
+<img src="Blueprint/images/localization10.png" alt="">
+
+<p>
+    Или через поиск → <b>String Table</b>.
+</p>
+
+<p>
+    В таблице:
+</p>
+
+<ul>
+    <li><b>Key</b> — уникальное имя строки;</li>
+    <li><b>String</b> — текст, который будет отображаться.</li>
+</ul>
+
+<img src="Blueprint/images/localization11.png" alt="">
+<img src="Blueprint/images/localization12.png" alt="">
+
+<hr>
+
+<h2>2. Использование String Table в UI</h2>
+
+<p>
+    В любом Text поле можно выбрать:
+</p>
+
+<ul>
+    <li>String Table</li>
+    <li>Key</li>
+</ul>
+
+<img src="Blueprint/images/localization13.png" alt="">
+
+<p>
+    Теперь текст будет автоматически переводиться через Localization Dashboard.
+</p>
+
+<hr>
+
+<h2>3. Рекомендации по String Tables</h2>
+
+<ul>
+    <li>Используйте таблицы для диалогов, квестов, описаний предметов.</li>
+    <li>Создавайте отдельные таблицы для разных систем (UI, предметы, квесты).</li>
+    <li>Не используйте String — только Text.</li>
+    <li>Не меняйте ключи после перевода — это ломает локализацию.</li>
+</ul>
+
+<hr>
+
+<h2>4. Финальный процесс локализации</h2>
+
+<ol>
+    <li>Создать String Tables (если нужно).</li>
+    <li>Открыть Localization Dashboard.</li>
+    <li>Настроить источники текста.</li>
+    <li>Gather Text.</li>
+    <li>Add Cultures.</li>
+    <li>Перевести строки.</li>
+    <li>Compile Translations.</li>
+    <li>Проверить в игре через Set Current Culture.</li>
+</ol>
+
+<p>
+    После этого проект полностью готов к многоязычной поддержке.
+</p>
+
+<!-- 
 <h1>Localization </h1>
 <p>Возмет все тексты которые есть в проекте и переменные которые сохранены как text</p>
 <p>Открываем localization dashboard</p>
