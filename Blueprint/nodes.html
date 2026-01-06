@@ -3,54 +3,54 @@
 </div>
 <h1>Bluprint Nodes</h1>
 <p>Get world location - даёт данное положение игрока на сцене. По трем осям x y z</p>
-<img src="/Blueprint/images/nodes.png" alt="">
+<img src="Blueprint/images/nodes.png" alt="">
 <p>Relative location - даёт расстояние от родителя, если в самом блюпринте отодвинуть от начала</p>
 <p>Get world rotation - данные наклонения обекта на сцене по трем осям</p>
-<img src="/Blueprint/images/nodes2.png" alt="">
+<img src="Blueprint/images/nodes2.png" alt="">
 <p>Get relative rotation - данные наклона от сцены </p>
 <p>Get world scale - размер scale mesha</p>
-<img src="/Blueprint/images/nodes3.png" alt="">
+<img src="Blueprint/images/nodes3.png" alt="">
 <p>Get world Transform - показывает все параметры - location, rotation, scale </p>
-<img src="/Blueprint/images/nodes4.png" alt="">
+<img src="Blueprint/images/nodes4.png" alt="">
 <p>Spawn object - открываем blueprint всего уровня</p>
-<img src="/Blueprint/images/nodes5.png" alt="">
+<img src="Blueprint/images/nodes5.png" alt="">
 <p>Spawn actor from class </p>
-<img src="/Blueprint/images/nodes6.png" alt="">
+<img src="Blueprint/images/nodes6.png" alt="">
 <p>Spawn actro from class - можно добавить любому блюпринту и выбрать где будет спавнится новый обект</p>
 <p>Destroy actor - удалить актор с игры, тем самым очистить память , указывам какой актор удалить</p>
-<img src="/Blueprint/images/nodes7.png" alt="">
+<img src="Blueprint/images/nodes7.png" alt="">
 <p>Is valid ? - проверяеть валидность ноды, если существует проблема, программа не будет продолжаться чтоб не совершать будущих проблем</p>
-<img src="/Blueprint/images/nodes8.png" alt="">
+<img src="Blueprint/images/nodes8.png" alt="">
 <p>Get all actors of Class - получать доступ к акоторм на сцене, возвращает нам массив, далее этот массив можно превратить в переменную и ей задать различные манипуляции </p>
-<img src="/Blueprint/images/nodes9.png" alt="">
+<img src="Blueprint/images/nodes9.png" alt="">
 
 <p>Tags - каждому объекту можно добавить теги, тем самым дополнять функционал</p>
-<img src="/Blueprint/images/nodes10.png" alt="">
-<img src="/Blueprint/images/nodes11.png" alt="">
+<img src="Blueprint/images/nodes10.png" alt="">
+<img src="Blueprint/images/nodes11.png" alt="">
 
 <p>Пример применения </p>
-<img src="/Blueprint/images/nodes12.png" alt="">
+<img src="Blueprint/images/nodes12.png" alt="">
 
 <p>Set timer by event - будет запускать евент с интервалом, так же можно задать ему что повторялся бесконечно... кстати вместо event tick
 Надо будет создавать кастомный эвент
 </p>
-<img src="/Blueprint/images/nodes13.png" alt="">
+<img src="Blueprint/images/nodes13.png" alt="">
 
 <p>Clear timer - останавливает интервал таймер, надо только указать имея функции которую надо остановить  </p>
-<img src="/Blueprint/images/nodes14.png" alt="">
+<img src="Blueprint/images/nodes14.png" alt="">
 
 
 <p>Forward Vector - показывает в какую сторону персонажа направляется то есть куда лицом по осям, xyz  от -1.00 до 1.00 </p>
-<img src="/Blueprint/images/nodes15.png" alt="">
+<img src="Blueprint/images/nodes15.png" alt="">
 
 <p>Lerp - имеет два входных данных, этом может быть любые данные, номер, вектор, поворот и тд. 
 Разницу между ними это альфа - номер от 0-1 в процентах, то есть и этим легче управлять удалённо, например с глазиком
 Альфа 0 - 0% // альфа 0.5 - 50% 
 </p>
-<img src="/Blueprint/images/nodes16.png" alt="">
+<img src="Blueprint/images/nodes16.png" alt="">
 
 <p>Event Hit</p>
-<img src="/Blueprint/images/nodes17.png" alt="">
+<img src="Blueprint/images/nodes17.png" alt="">
 
 <p>
     <pre>
@@ -67,42 +67,42 @@ Hit - вся информация о столкновении в виде стр
 </p>
 
 <p>Event end play - почему актор перестал существовать на сцене</p>
-<img src="/Blueprint/images/nodes18.png" alt="">
+<img src="Blueprint/images/nodes18.png" alt="">
 
 <p>Event Receive Draw HUD</p>
 <p>Работает только в HUD  - нарисует маленьки квадра на который можно кликнуть</p>
-<img src="/Blueprint/images/nodes19.png" alt="">
+<img src="Blueprint/images/nodes19.png" alt="">
 <p>Switch Nodes - рабоатет как if else получает входные данные и выводит результат</p>
-<img src="/Blueprint/images/nodes20.png" alt="">
-<img src="/Blueprint/images/nodes21.png" alt="">
+<img src="Blueprint/images/nodes20.png" alt="">
+<img src="Blueprint/images/nodes21.png" alt="">
 <p>Do N - действие может выполниться ограниченное повторы, после чего перестает срабатывать, только если будет сделан рестарт. Он не выполняется подряд, а как только я хочу выполнить действие</p>
-<img src="/Blueprint/images/nodes22.png" alt="">
+<img src="Blueprint/images/nodes22.png" alt="">
 
 <p>DoOnce - делает что-то только один раз, можно начать сразу с запрета, на действие и перезапустить чтоб снова сработал</p>
-<img src="/Blueprint/images/nodes23.png" alt="">
+<img src="Blueprint/images/nodes23.png" alt="">
 
 <p>Flip Flop - каждый раз вызывает то одно ветвь то вторую, можно отслеживать какая ветвь была вызвана через булеан</p>
-<img src="/Blueprint/images/nodes24.png" alt="">
+<img src="Blueprint/images/nodes24.png" alt="">
 
 <p>For loop - сделает повторные действия столько раз сколько указано, одновремено, при больших числах может быть очень требователен </p>
-<img src="/Blueprint/images/nodes25.png" alt="">
+<img src="Blueprint/images/nodes25.png" alt="">
 <p>ForLoopWithBreak - тоже самое, только есть возможность остановить последовательность, например при достижение индекса </p>
-<img src="/Blueprint/images/nodes26.png" alt="">
+<img src="Blueprint/images/nodes26.png" alt="">
 
 <p>Gate - проверка открытия ворот, по умолчанию открыты, в Enter заходит логика, если ворота открыты она проходит дальше в exit если закрыты, то в exit не проходит, и есть возможность открыть и закрыть воврота, так же начать с того чтоб ворота были закрыты, и менять статус ворот </p>
-<img src="/Blueprint/images/nodes27.png" alt="">
+<img src="Blueprint/images/nodes27.png" alt="">
 <p>MultiGate - Это переключатель между несколькими выходами, который по очереди или случайно активирует один из них при каждом вызове.</p>
 
-<img src="/Blueprint/images/nodes28.png" alt="">
+<img src="Blueprint/images/nodes28.png" alt="">
 
 
 <p>Sequence - запустить несколько веток по порядку, однако скорей всего это будет выполнено практически одновременно -- это визуальный и логический помощник структурирования, чтоб было проще искать и поинмать логику</p>
-<img src="/Blueprint/images/nodes29.png" alt="">
+<img src="Blueprint/images/nodes29.png" alt="">
 
 
 <p>WhileLoop - повторять бесконечные действия пока True, и это может привести к зависанию игры. WhileLoop — это инструмент для мгновенных вычислений, не для визуальных или пошаговых действий. Он нужен, когда ты хочешь быстро пройти по логике, но тебе не важна задержка или визуальный эффект.</p>
 
-<img src="/Blueprint/images/nodes30.png" alt="">
+<img src="Blueprint/images/nodes30.png" alt="">
 
 
 

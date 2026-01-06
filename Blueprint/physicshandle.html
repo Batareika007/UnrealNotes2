@@ -37,25 +37,25 @@
     Она удобна тем, что имеет радиус и легче «ловит» объекты.
 </p>
 
-<img src="/Blueprint/images/spherecast1.png" alt="">
+<img src="Blueprint/images/spherecast1.png" alt="">
 
 <p>
     Старт — позиция персонажа или камеры.
 </p>
 
-<img src="/Blueprint/images/spherecast2.png" alt="">
+<img src="Blueprint/images/spherecast2.png" alt="">
 
 <p>
     Конец — направление взгляда × расстояние + позиция персонажа.
 </p>
 
-<img src="/Blueprint/images/spherecast3.png" alt="">
+<img src="Blueprint/images/spherecast3.png" alt="">
 
 <p>
     Радиус задаём через переменную.
 </p>
 
-<img src="/Blueprint/images/spherecast4.png" alt="">
+<img src="Blueprint/images/spherecast4.png" alt="">
 
 <hr>
 
@@ -65,7 +65,7 @@
     В компонент персонажа добавляем <span class="node">Physics Handle</span>.
 </p>
 
-<img src="/Blueprint/images/spherecast5.png" alt="">
+<img src="Blueprint/images/spherecast5.png" alt="">
 
 <p>
     Он позволяет:
@@ -86,14 +86,14 @@
     Используем ноду <span class="node">Grab Component At Location</span>.
 </p>
 
-<img src="/Blueprint/images/spherecast6.png" alt="">
+<img src="Blueprint/images/spherecast6.png" alt="">
 
 <p>
     После <span class="node">Sphere Cast</span> проверяем, что мы попали в объект, и передаём его в Grab.
 </p>
 
-<img src="/Blueprint/images/spherecast7.png" alt="">
-<img src="/Blueprint/images/spherecast8.png" alt="">
+<img src="Blueprint/images/spherecast7.png" alt="">
+<img src="Blueprint/images/spherecast8.png" alt="">
 
 <hr>
 
@@ -104,8 +104,8 @@
     Это точка, где будет висеть объект.
 </p>
 
-<img src="/Blueprint/images/spherecast9.png" alt="">
-<img src="/Blueprint/images/spherecast10.png" alt="">
+<img src="Blueprint/images/spherecast9.png" alt="">
+<img src="Blueprint/images/spherecast10.png" alt="">
 
 <p>
     Grab Point определяет:
@@ -125,13 +125,13 @@
     В <span class="node">Event Tick</span> обновляем позицию Physics Handle, чтобы объект следовал за Grab Point.
 </p>
 
-<img src="/Blueprint/images/spherecast11.png" alt="">
+<img src="Blueprint/images/spherecast11.png" alt="">
 
 <p>
     Обязательно делаем <span class="node">Branch</span> — проверяем, держим ли мы объект.
 </p>
 
-<img src="/Blueprint/images/spherecast12.png" alt="">
+<img src="Blueprint/images/spherecast12.png" alt="">
 
 <hr>
 
@@ -146,8 +146,8 @@
     <li>Mobility = <b>Movable</b>.</li>
 </ul>
 
-<img src="/Blueprint/images/spherecast13.png" alt="">
-<img src="/Blueprint/images/spherecast14.png" alt="">
+<img src="Blueprint/images/spherecast13.png" alt="">
+<img src="Blueprint/images/spherecast14.png" alt="">
 
 <hr>
 
@@ -157,8 +157,8 @@
     Создаём переменную <b>Держим (Boolean)</b>.
 </p>
 
-<img src="/Blueprint/images/spherecast15.png" alt="">
-<img src="/Blueprint/images/spherecast16.png" alt="">
+<img src="Blueprint/images/spherecast15.png" alt="">
+<img src="Blueprint/images/spherecast16.png" alt="">
 
 <p>
     Логика:
@@ -181,20 +181,20 @@
     Назначаем кнопку броска (например, ПКМ).
 </p>
 
-<img src="/Blueprint/images/spherecast17.png" alt="">
+<img src="Blueprint/images/spherecast17.png" alt="">
 
 <p>
     Создаём переменную, чтобы хранить объект, который мы держим.
 </p>
 
-<img src="/Blueprint/images/spherecast18.png" alt="">
-<img src="/Blueprint/images/spherecast19.png" alt="">
+<img src="Blueprint/images/spherecast18.png" alt="">
+<img src="Blueprint/images/spherecast19.png" alt="">
 
 <p>
     Теперь при нажатии кнопки мы можем бросить объект.
 </p>
 
-<img src="/Blueprint/images/spherecast20.png" alt="">
+<img src="Blueprint/images/spherecast20.png" alt="">
 
 <p>
     Чтобы задать силу броска:
@@ -206,7 +206,7 @@
     <li>передаём в Add Impulse.</li>
 </ol>
 
-<img src="/Blueprint/images/spherecast21.png" alt="">
+<img src="Blueprint/images/spherecast21.png" alt="">
 
 <p>
     После броска:
@@ -218,4 +218,4 @@
     <li>обязательно включаем <b>Vel Change</b> — иначе импульс будет слабым.</li>
 </ul>
 
-<img src="/Blueprint/images/spherecast22.png" alt="">
+<img src="Blueprint/images/spherecast22.png" alt="">

@@ -58,7 +58,7 @@ const subTopics = {
     { id: "Blueprint/interface", title: "Interface"},
     { id: "Blueprint/eventDispatchers", title: "Event Dispatchers"},
     { id: "Blueprint/structure", title: "Structure"},
-    { id: "Blueprint/Enumerators", title: "Enumerators"},
+    { id: "Blueprint/enumerators", title: "Enumerators"},
   ],
   "Вlueprint Gameplay":[
     { id: "Blueprint/CreateFirstPersonCharacter", title: "Create First-Person Character"},
@@ -81,7 +81,7 @@ const subTopics = {
 
   ],
   "Вlueprint Visual":[
-    { id: "Blueprint/Materialandcolor", title: "Material and color"},
+    { id: "Blueprint/materialandcolor", title: "Material and color"},
 
   ],
   "Вlueprint Math and Vectors":[

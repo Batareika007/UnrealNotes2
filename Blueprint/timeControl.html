@@ -25,7 +25,7 @@
     на отрезке времени. Можно анимировать числа, векторы, цвета и вызывать события в определённые моменты.
 </p>
 
-<img src="/Blueprint/images/timeControl1.png" alt="">
+<img src="Blueprint/images/timeControl1.png" alt="">
 
 <p>
     У Timeline есть два основных выхода:
@@ -36,13 +36,13 @@
     <li><b>Finished</b> — вызывается один раз, когда анимация дошла до конца.</li>
 </ul>
 
-<img src="/Blueprint/images/timeControl2.png" alt="">
+<img src="Blueprint/images/timeControl2.png" alt="">
 
 <p>
     Внутри Timeline можно создавать несколько типов дорожек (Tracks).
 </p>
 
-<img src="/Blueprint/images/timeControl3.png" alt="">
+<img src="Blueprint/images/timeControl3.png" alt="">
 
 <hr>
 
@@ -57,7 +57,7 @@
     <li>Ось Y — значение, которое мы получаем каждый кадр.</li>
 </ul>
 
-<img src="/Blueprint/images/timeControl4.png" alt="">
+<img src="Blueprint/images/timeControl4.png" alt="">
 
 <p>
     Примеры использования:
@@ -77,19 +77,19 @@
     <b>Vector Track</b> — создаёт три канала (X, Y, Z), каждый можно настраивать отдельно.
 </p>
 
-<img src="/Blueprint/images/timeControl5.png" alt="">
+<img src="Blueprint/images/timeControl5.png" alt="">
 
 <p>
     На выходе получаем один вектор.
 </p>
 
-<img src="/Blueprint/images/timeControl6.png" alt="">
+<img src="Blueprint/images/timeControl6.png" alt="">
 
 <p>
     Его можно также разбить на три оси, если нужно работать с каждой по отдельности.
 </p>
 
-<img src="/Blueprint/images/timeControl7.png" alt="">
+<img src="Blueprint/images/timeControl7.png" alt="">
 
 <p>
     Примеры:
@@ -109,8 +109,8 @@
     <b>Event Track</b> — дорожка, где важны только моменты времени.
 </p>
 
-<img src="/Blueprint/images/timeControl8.png" alt="">
-<img src="/Blueprint/images/timeControl9.png" alt="">
+<img src="Blueprint/images/timeControl8.png" alt="">
+<img src="Blueprint/images/timeControl9.png" alt="">
 
 <p>
     У Event Track нет значения (Value) — нас интересуют только точки времени, в которых 
@@ -139,7 +139,7 @@
     <b>Color Track</b> — анимация цвета во времени.
 </p>
 
-<img src="/Blueprint/images/timeControl10.png" alt="">
+<img src="Blueprint/images/timeControl10.png" alt="">
 
 <p>
     Пример:
@@ -160,7 +160,7 @@
     <li>Использовать этот параметр в материале.</li>
 </ol>
 
-<img src="/Blueprint/images/timeControl11.png" alt="">
+<img src="Blueprint/images/timeControl11.png" alt="">
 
 <p>
     В Blueprint:
@@ -173,7 +173,7 @@
     <li>В <b>Parameter Name</b> — имя параметра цвета.</li>
 </ol>
 
-<img src="/Blueprint/images/timeControl12.png" alt="">
+<img src="Blueprint/images/timeControl12.png" alt="">
 
 <hr>
 
@@ -197,7 +197,7 @@
     Timeline можно легко зациклить.
 </p>
 
-<img src="/Blueprint/images/timeControl13.png" alt="">
+<img src="Blueprint/images/timeControl13.png" alt="">
 
 <p>
     Если делать зацикленную анимацию, важно, чтобы последний ключ совпадал с первым — 
@@ -208,8 +208,8 @@
     Для более гибкого управления используем <b>Set Looping</b>.
 </p>
 
-<img src="/Blueprint/images/timeControl14.png" alt="">
-<img src="/Blueprint/images/timeControl15.png" alt="">
+<img src="Blueprint/images/timeControl14.png" alt="">
+<img src="Blueprint/images/timeControl15.png" alt="">
 
 <p>
     Можно включать или выключать зацикливание в любое время через Boolean.
@@ -223,7 +223,7 @@
     Можно динамически менять скорость или длительность Timeline.
 </p>
 
-<img src="/Blueprint/images/timeControl16.png" alt="">
+<img src="Blueprint/images/timeControl16.png" alt="">
 
 <p>
     Важно понимать:
@@ -242,7 +242,7 @@
     Иногда нужно запустить Timeline не с начала, а, например, с 2-й секунды.
 </p>
 
-<img src="/Blueprint/images/timeControl17.png" alt="">
+<img src="Blueprint/images/timeControl17.png" alt="">
 
 <p>
     Для этого используются:
@@ -253,7 +253,7 @@
     <li><b>Set Playback Position</b> — задать, с какой секунды начать или продолжить.</li>
 </ul>
 
-<img src="/Blueprint/images/timeControl18.png" alt="">
+<img src="Blueprint/images/timeControl18.png" alt="">
 
 <hr>
 
@@ -264,7 +264,7 @@
     достаточно один раз вызвать его из Begin Play или другого события.
 </p>
 
-<img src="/Blueprint/images/timeControl19.png" alt="">
+<img src="Blueprint/images/timeControl19.png" alt="">
 
 <hr>
 
@@ -280,7 +280,7 @@
     <li><b>Set Timer by Function Name</b></li>
 </ul>
 
-<img src="/Blueprint/images/timeControl20.png" alt="">
+<img src="Blueprint/images/timeControl20.png" alt="">
 
 <hr>
 
@@ -299,7 +299,7 @@
     <li>Создаём триггер на сцене, в который заходит персонаж.</li>
 </ol>
 
-<img src="/Blueprint/images/timeControl21.png" alt="">
+<img src="Blueprint/images/timeControl21.png" alt="">
 
 <p>
     Далее:
@@ -310,19 +310,19 @@
     <li>При выходе из триггера — останавливаем таймер.</li>
 </ol>
 
-<img src="/Blueprint/images/timeControl22.png" alt="">
+<img src="Blueprint/images/timeControl22.png" alt="">
 
 <p>
     Также важно остановить таймер, когда здоровье достигло максимума — через Branch.
 </p>
 
-<img src="/Blueprint/images/timeControl23.png" alt="">
+<img src="Blueprint/images/timeControl23.png" alt="">
 
 <p>
     Чтобы всё работало, нужно сделать Cast к персонажу в триггере.
 </p>
 
-<img src="/Blueprint/images/timeControl24.png" alt="">
+<img src="Blueprint/images/timeControl24.png" alt="">
 
 <hr>
 
@@ -340,19 +340,19 @@
     <li>Создаём функцию с логикой (например, восстановление здоровья).</li>
 </ol>
 
-<img src="/Blueprint/images/timeControl25.png" alt="">
+<img src="Blueprint/images/timeControl25.png" alt="">
 
 <ol start="2">
     <li>В Blueprint создаём таймер и указываем имя функции.</li>
 </ol>
 
-<img src="/Blueprint/images/timeControl26.png" alt="">
+<img src="Blueprint/images/timeControl26.png" alt="">
 
 <ol start="3">
     <li>В самой функции можно вызвать <b>Clear Timer by Function Name</b>, чтобы остановить таймер изнутри.</li>
 </ol>
 
-<img src="/Blueprint/images/timeControl27.png" alt="">
+<img src="Blueprint/images/timeControl27.png" alt="">
 
 <p>
     Такой подход чище и лучше читается, особенно если логика сложная.
