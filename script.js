@@ -16,7 +16,6 @@ const subTopics = {
   Input: [
     { id: "BasicMovementUE5/movmentUE5", title: "Enhanced Input — базовая настройка управления" },
   ],
-  
   'Вlueprint Basic':[
     { id: "Blueprint/blueprint", title: "blueprint"},
     { id: "Blueprint/bpclasses", title: "Classes"},
@@ -54,6 +53,8 @@ const subTopics = {
     { id: "Blueprint/hud", title: "HUD"},
     { id: "Blueprint/uxui", title: "UX UI"},
     { id: "Blueprint/localization", title: "Localization"},
+    { id: "Blueprint/visualeffects", title: "Визуальные Эфекты"},
+    { id: "Blueprint/fonts", title: "Fonts"},
 
   ],
   "Вlueprint Visual":[
@@ -106,6 +107,9 @@ const subTopics = {
     { id: "Theory/naming", title: "Базовые элементы движка" },
     { id: "Theory/proffesion", title: "Проффесии" },
     
+  ],
+  Optimize:[
+    { id: "Optimize/optimizegeometry", title: "Оптимизация Геометрии" },
   ],
   Steam: [
     { id: "Steam/steam", title: "Интеграция Steam в Unreal Engine" },
