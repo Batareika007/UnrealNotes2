@@ -16,6 +16,9 @@ const subTopics = {
   Input: [
     { id: "BasicMovementUE5/movmentUE5", title: "Enhanced Input — базовая настройка управления" },
   ],
+  "Static Meshe": [
+    { id: "StaticMesh/staticmesh", title: "Static Mesh" },
+  ],
   'Вlueprint Basic':[
     { id: "Blueprint/blueprint", title: "blueprint"},
     { id: "Blueprint/bpclasses", title: "Classes"},
