@@ -7,7 +7,8 @@ const subTopics = {
   Animation: [    
     { id: "Animation/animation", title: "Добавить анимации к персонажу" },
     { id: "Animation/motionmatching", title: "Motion Matching animations" },
-    { id: "Animation/animforotherchar", title: "Назначать анимацию на других персонажей" },  
+    { id: "Animation/animforotherchar", title: "Назначать анимацию на других персонажей" },
+    { id: "Animation/niagara", title: "Niagara Systems" },
   ],
   Audio: [
     { id: "Audio/audio", title: "Audio" },
@@ -26,6 +27,7 @@ const subTopics = {
     { id: "Blueprint/functionsEventsMacros", title: "Functions Events Macros"},
     { id: "Blueprint/variables", title: "Переменные"},
     { id: "Blueprint/comment", title: "comments"},
+    { id: "Blueprint/projectile", title: "снаряды"},
   ],
   'Вlueprint Nodes':[
     { id: "Blueprint/flowcontrol", title: "Flow Control"},
