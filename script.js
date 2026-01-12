@@ -12,6 +12,7 @@ const subTopics = {
   ],
   Audio: [
     { id: "Audio/audio", title: "Audio" },
+    { id: "Audio/metasound", title: "MetaSound" },
     { id: "Audio/audioadvanced", title: "Audio Advanced" },
   ],
   Input: [
