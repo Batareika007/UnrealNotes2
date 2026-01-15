@@ -20,11 +20,11 @@
     Для начала создаём Input Actions для основных действий: движение, прыжок, поворот камеры.
 </p>
 
-<img src="BasicMovementUE5/images/image1.png" alt="">
+<img src="Input/images/image1.png" alt="">
 
 <p>Названия должны отражать назначение:</p>
 
-<img src="BasicMovementUE5/images/image2.png" alt="">
+<img src="Input/images/image2.png" alt="">
 
 <h2>Настройка Input Action — Jump</h2>
 
@@ -32,7 +32,7 @@
     Для прыжка достаточно одного триггера — <b>Triggered</b> при нажатии кнопки.
 </p>
 
-<img src="BasicMovementUE5/images/image3.png" alt="">
+<img src="Input/images/image3.png" alt="">
 
 <h2>Настройка Input Actions — Move и Look</h2>
 
@@ -41,7 +41,7 @@
     Look — это поворот камеры (Mouse Delta).
 </p>
 
-<img src="BasicMovementUE5/images/image4.png" alt="">
+<img src="Input/images/image4.png" alt="">
 
 <h2>Создание Input Mapping Context (IMC)</h2>
 
@@ -49,7 +49,7 @@
     Создаём новый <b>Input Mapping Context</b> — это набор всех действий управления.
 </p>
 
-<img src="BasicMovementUE5/images/image5.png" alt="">
+<img src="Input/images/image5.png" alt="">
 
 <p>
     Внутри IMC добавляем созданные Input Actions и назначаем клавиши.
@@ -61,7 +61,7 @@
     Движение — самое сложное, потому что нужно правильно преобразовать оси.
 </p>
 
-<img src="BasicMovementUE5/images/image6.png" alt="">
+<img src="Input/images/image6.png" alt="">
 
 <div>
     <p><b>Вперёд (W):</b> используем <b>Swizzle Input Axis Values</b>, порядок <b>YXZ</b>.</p>
@@ -70,7 +70,7 @@
     <p><b>Вправо (D):</b> можно оставить без изменений — UE сам корректно обработает ось.</p>
 </div>
 
-<img src="BasicMovementUE5/images/image7.png" alt="">
+<img src="Input/images/image7.png" alt="">
 
 <h2>Создание персонажа</h2>
 
@@ -83,22 +83,22 @@
     Добавляем <b>SpringArm</b> (селфи‑палка), затем добавляем <b>Camera</b> — она автоматически прикрепится.
 </p>
 
-<img src="BasicMovementUE5/images/image8.png" alt="">
+<img src="Input/images/image8.png" alt="">
 
 <h2>Настройка камеры</h2>
 
 <p><b>В Character (BP):</b></p>
 <p>Отключаем <b>Use Controller Rotation Yaw</b> — чтобы камера не вращала персонажа напрямую.</p>
 
-<img src="BasicMovementUE5/images/image9.png" alt="">
+<img src="Input/images/image9.png" alt="">
 
 <p><b>SpringArm:</b> включаем <b>Use Pawn Control Rotation</b>.</p>
 
-<img src="BasicMovementUE5/images/image10.png" alt="">
+<img src="Input/images/image10.png" alt="">
 
 <p><b>Camera:</b> отключаем <b>Use Pawn Control Rotation</b>.</p>
 
-<img src="BasicMovementUE5/images/image11.png" alt="">
+<img src="Input/images/image11.png" alt="">
 
 <h2>Настройка движения персонажа</h2>
 
@@ -107,7 +107,7 @@
     Теперь персонаж всегда поворачивается в сторону движения, независимо от камеры.
 </p>
 
-<img src="BasicMovementUE5/images/image12.png" alt="">
+<img src="Input/images/image12.png" alt="">
 
 <h2>Подключение управления в Blueprint</h2>
 
@@ -115,7 +115,7 @@
     В Event Graph захватываем управление и активируем Input Mapping Context.
 </p>
 
-<img src="BasicMovementUE5/images/image13.png" alt="">
+<img src="Input/images/image13.png" alt="">
 
 <h2>Прыжок</h2>
 
@@ -123,9 +123,9 @@
     Выбираем созданный Input Action Jump и вызываем функцию <b>Jump</b>.
 </p>
 
-<img src="BasicMovementUE5/images/image14.png" alt="">
-<img src="BasicMovementUE5/images/image15.png" alt="">
-<img src="BasicMovementUE5/images/image16.png" alt="">
+<img src="Input/images/image14.png" alt="">
+<img src="Input/images/image15.png" alt="">
+<img src="Input/images/image16.png" alt="">
 
 <h2>Движение</h2>
 

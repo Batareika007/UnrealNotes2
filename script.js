@@ -16,7 +16,10 @@ const subTopics = {
     { id: "Audio/audioadvanced", title: "Audio Advanced" },
   ],
   Input: [
-    { id: "BasicMovementUE5/movmentUE5", title: "Enhanced Input — базовая настройка управления" },
+    { id: "input/enhancedinput", title: "Enhanced Input — базовая настройка управления" },
+    { id: "input/inputAction", title: "Input — Action" },
+    { id: "input/inputMappingContext", title: "Input — Mapping" },
+    { id: "input/inputnodes", title: "Input — Node в EventGraph" },
   ],
   "Static Meshe": [
     { id: "StaticMesh/staticmesh", title: "Static Mesh" },
