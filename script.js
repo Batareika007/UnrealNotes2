@@ -111,6 +111,7 @@ const subTopics = {
   ],
   Theory: [
     { id: "Theory/mechaniks", title: "Механики" },
+    { id: "Theory/collisions", title: "Теория про коллизии" },
     { id: "Theory/modepaint", title: "Paint" },
     { id: "Theory/modeplace", title: "Place Actors" },
     { id: "Theory/naming", title: "Базовые элементы движка" },

@@ -1,0 +1,69 @@
+<h1>Теория про коллизии</h1>
+
+<p><span class="ui-btn">Scene Component</span> - нет коллизии</p>
+<p><span class="ui-btn">Primitive Component</span> - может иметь коллизию</p>
+<p><span class="ui-btn">Static Mesh Component</span> / <span class="ui-btn">Sphere Component</span> - унаследуют данные коллизии от примитива</p>
+
+<h2>Objects с коллизиями:</h2>
+<p>Primitive Components</p>
+<ul>
+    <li>Statick Mesh Component</li>
+    <li>Sphere Component</li>
+    <li>Capsule Component</li>
+    <li>etc</li>
+</ul>
+
+<p><span class="ui-btn">Actor</span> - <span class="ui-btn">Root Component</span> - может иметь несколько компонентво с коллизиями или не иметь вообще</p>
+
+<h2>Collisions vs Queries</h2>
+<h3>Collisions</h3>
+<p>проверка геометрии  объекта на столкновение или пересечение</p>
+<p>объекты двигаются друг к другу и в какой-то момент они встерчаются и происходит столкновение</p>
+<h3>Queries</h3>
+<p>Проверка окружения для определения возможности столкновения.</p>
+<p><b>line Trace</b> - пускать луч и проверять столкнется ли он с чем то</p>
+<p><b>Shape Sweep</b> - пускать определенную формк для проверки столкновения</p>
+<p><b>Overlap Query</b> - проверка пересечения </p>
+
+<h2>Collision Geometry - геометрия коллизий</h2>
+<p><b>Mesh</b> - состоит из треугольников, использует свою геомертри как коллизию - Complex Geometry</p>
+<p><b>Simple Collision</b> - Convex Hull или Collision Hull. простая геометрия Simple Geometry, предпочтительней сложной, меньше потребляет ресурсы</p>
+<p>
+    <b>Shape Components</b> - сфера, коробка, капсула и тд.
+    так же есть разные коллизии вида: Foliage, Landscapes, Physics Assets
+</p>
+<h2>Collision Setting - как движок математически расчитывает коллизии</h2>
+<p>Physics System</p>
+<p>Query System</p>
+
+<p><span class="ui-btn">Collision Enabled</span> - задействовано и Query System и Physics System</p>
+
+<p><span class="ui-btn">No Collision</span> - нет колиззий вообще</p>
+
+<p>
+    <span class="ui-btn">Query Only (No Physics Collision)</span>
+    чтоб определить столкновение использует только Query System - overlap, trace, sweeps. нету физических столкновений.
+</p>
+
+<p>
+    <span class="ui-btn">Physics Only (No Query Collision) </span>
+    задействована только Physics System, определяет столкновение только физический ударом, Force это та сила которая предотвращает объекты пересекаться.
+</p>
+
+<p>
+    <span class="ui-btn">Probe Only (Contact Data, no Query or Physics Collision)</span>
+    объектры при пересечения не используют force.
+    но они знаю об столкновения и могу вернуть hit callbacks. математически определяем физическое столкновение, но не force чтоб объект двигался, не работает Query System, не будет работать trace, overlap, sweep.
+</p>
+
+<p>
+    <span class="ui-btn">Query and Probe (Query Collision and Contact Data, no Physics Collision)</span>
+    использует Query System, нет force от удара, но знает где произошел удар и возвращает hit callbacks
+</p>
+
+<h2>Встрея двух Объектов</h2>
+<p>
+    когда два объеката пересекаются, у них есть данные как каждый должен себя вести с другим, и если данные схожи то происходит столкновение. 
+    если данные у каждого разные, будет использоваться наименее сталкивающийся, в приоретете будет игнорирвание друг друга, потом пересечение и только тогда блокирования.
+</p>
+<p>если один объект блокирует а другой пересекате, у них конфлика и будет выбран наименее блокирубщий вариант, в этом случае будет пересекание. </p>
