@@ -61,6 +61,8 @@ const subTopics = {
   "Вlueprint UXUI":[
     { id: "Blueprint/hud", title: "HUD"},
     { id: "Blueprint/uxui", title: "UX UI"},
+    { id: "Blueprint/widget", title: "Widget - теория"},
+    { id: "Blueprint/widget2", title: "Widget настройка"},
     { id: "Blueprint/localization", title: "Localization"},
     { id: "Blueprint/visualeffects", title: "Визуальные Эфекты"},
     { id: "Blueprint/fonts", title: "Fonts"},
