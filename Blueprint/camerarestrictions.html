@@ -1,0 +1,19 @@
+<div class="warning-yellow">
+рабочая схема
+</div>
+
+<h1>ограничить Pitch (наклон вверх-вниз) камеры у персонажа</h1>
+<p>В Unreal Engine за ограничения обзора отвечает специальный класс — <span class="ui-btn">PlayerCameraManager</span> - создать и дать название например BP_MyGameCameraManager</p>
+
+<p>в разделе <span class="ui-btn">Details</span> категория <span class="ui-btn">View Pitch Min</span> и <span class="ui-btn">View Pitch Max</span>.</p>
+
+<p>По умолчанию там -89.0 и 89.0.</p>
+
+<p><b>ограничение смотреть вниз</b> - View Pitch Min например -60</p>
+
+<p><b>ограничение смотерть вверх</b> - View Pitch Max например 70</p>
+
+
+<p>открыть <span class="ui-btn">PlayerController</span> - если его нет, нужно создать и привязать к своеум gamemode</p>
+
+<p>В настройках PlayerController - пункт Player Camera Manager Class и выбрать там свой BP_MyGameCameraManager.</p>
