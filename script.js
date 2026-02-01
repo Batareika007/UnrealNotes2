@@ -6,6 +6,7 @@ const subTopics = {
   ],
   Animation: [    
     { id: "Animation/intro", title: "вводные данные для анимаций" },
+    { id: "Animation/soundtoanimations", title: "Добавить звук анимации" },
     { id: "Animation/animation", title: "Добавить анимации к персонажу" },
     { id: "Animation/motionmatching", title: "Motion Matching animations" },
     { id: "Animation/animforotherchar", title: "Назначать анимацию на других персонажей" },
