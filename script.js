@@ -80,6 +80,9 @@ const subTopics = {
     { id: "Blueprint/vectors", title: "Vectors"},
 
   ],
+  "Level Design & World Building": [
+    { id: "LevelDesign/LevelInstancePackedLevelActor", title: "Level Instance / Packed Level Actor" },
+  ],
   Cinematic: [
     { id: "Cinematic/camerarigs", title: "кран и рельсы" },
     { id: "Cinematic/firststeps", title: "создание первого сиквенсера" },
