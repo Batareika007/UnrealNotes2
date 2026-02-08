@@ -32,7 +32,7 @@ const subTopics = {
     { id: "Blueprint/bpclasses", title: "Classes"},
     { id: "Blueprint/nodes", title: "Nodes"},
     { id: "Blueprint/functionsEventsMacros", title: "Functions Events Macros"},
-    { id: "Blueprint/variables", title: "Переменные"},
+    { id: "Blueprint/variables", title: "Переменные / типы данных"},
     { id: "Blueprint/comment", title: "comments"},
     { id: "Blueprint/projectile", title: "снаряды"},
   ],
