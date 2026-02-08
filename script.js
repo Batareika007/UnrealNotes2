@@ -91,6 +91,7 @@ const subTopics = {
   Debug: [
     { id: "Debug/debug", title: "Debug" },
     { id: "Debug/debug2", title: "Debug 2" },
+    { id: "Debug/debugconcole", title: "консольные команды" },
   ],
   Landscape: [
     { id: "Landscape/landscape_main", title: "Основы Landscape" },
