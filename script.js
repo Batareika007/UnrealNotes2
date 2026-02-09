@@ -4,6 +4,10 @@ const subTopics = {
     { id: "Home/usefullStuff", title: "Разные полезности в анрил" },
     { id: "Home/git", title: "GIT" },
   ],
+  "2D": [
+    { id: "2D/home", title: "игра в 2Д" },
+    
+  ],
   Animation: [    
     { id: "Animation/intro", title: "вводные данные для анимаций" },
     { id: "Animation/soundtoanimations", title: "Добавить звук анимации" },
