@@ -134,6 +134,8 @@ const subTopics = {
   ],
   Optimize:[
     { id: "Optimize/optimizegeometry", title: "Оптимизация Геометрии" },
+    { id: "Optimize/optimizematerial", title: "Оптимизация Материала" },
+    { id: "Optimize/OptimizeData", title: "Общие данные для Оптимизации" },
   ],
   Steam: [
     { id: "Steam/steam", title: "Интеграция Steam в Unreal Engine" },
