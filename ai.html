@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unreal Engine Camera Shake Cheat Sheet</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background-color: #1a1a1a;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #3498db;
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2ecc71;
+            margin-top: 30px;
+        }
+        .card {
+            background: #2c3e50;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: #243342;
+        }
+        th, td {
+            border: 1px solid #3e5871;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #34495e;
+            color: #3498db;
+        }
+        .highlight {
+            color: #f1c40f;
+            font-weight: bold;
+        }
+        code {
+            background: #000;
+            padding: 2px 5px;
+            border-radius: 4px;
+            color: #e74c3c;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Шпаргалка: Camera Shake (Wave Oscillator)</h1>
+
+    <div class="card">
+        <h2>1. Основные параметры осей</h2>
+        <p>Для каждой оси (X, Y, Z в Location и Rotation) настраиваются:</p>
+        <ul>
+            <li><span class="highlight">Amplitude:</span> Сила (насколько далеко отклонится камера).</li>
+            <li><span class="highlight">Frequency:</span> Скорость (как часто будет трястись в секунду).</li>
+            <li><span class="highlight">Wave Form:</span> <code>Sine</code> (плавно) или <code>Perlin Noise</code> (хаотично).</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>2. Рекомендуемые значения для состояний</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Состояние</th>
+                    <th>Amplitude (Сила)</th>
+                    <th>Frequency (Частота)</th>
+                    <th>Совет</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Idle (Дыхание)</b></td>
+                    <td>0.1 - 0.5</td>
+                    <td>0.2 - 0.5</td>
+                    <td>Используй только <i>Pitch</i> и <i>Roll</i></td>
+                </tr>
+                <tr>
+                    <td><b>Шаг (Walk)</b></td>
+                    <td>1.5 - 3.0</td>
+                    <td>6.0 - 8.0</td>
+                    <td>Основной упор на <i>Location Z</i> и <i>Roll</i></td>
+                </tr>
+                <tr>
+                    <td><b>Бег (Run)</b></td>
+                    <td>4.0 - 6.0</td>
+                    <td>10.0 - 14.0</td>
+                    <td>Добавь немного <i>Perlin Noise</i></td>
+                </tr>
+                <tr>
+                    <td><b>Ползание (Crawl)</b></td>
+                    <td>2.0 - 4.0</td>
+                    <td>3.0 - 4.0</td>
+                    <td>Медленно, но с большой амплитудой в <i>Yaw</i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>3. Глобальные настройки (Global Settings)</h2>
+        <ul>
+            <li><span class="highlight">Duration:</span> <code>0</code> — бесконечно (для ходьбы), <code>>0</code> — один раз (для удара).</li>
+            <li><span class="highlight">Blend In Time:</span> Время мягкого начала тряски (ставь <code>0.2</code>).</li>
+            <li><span class="highlight">Blend Out Time:</span> Время плавного затухания (ставь <code>0.2</code>).</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>4. Полезные оси для реализма</h2>
+        <ul>
+            <li><b>Rotation Roll:</b> Наклон к плечам. Создает ощущение переноса веса.</li>
+            <li><b>Location Z:</b> Движение вверх-вниз при шаге.</li>
+            <li><b>Pitch:</b> "Кивок" головой при приземлении стопы.</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        Создано для твоего проекта в Unreal Engine 5.7.3. Удачи в разработке!
+    </div>
+</div>
+
+</body>
+</html>

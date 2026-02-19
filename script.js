@@ -63,6 +63,7 @@ const subTopics = {
     { id: "Blueprint/footsteps1stPerson", title: "footsteps1stPerson"},
     { id: "Blueprint/gameMode", title: "GameMode"},
     { id: "Blueprint/camerarestrictions", title: "Ограничения угла камеры"},
+    { id: "Blueprint/cameraShake", title: "тряска камеры"},
 
 
   ],
