@@ -1,0 +1,34 @@
+<div class="warning-green">
+вроде рабочее решение, нолько нужно улучшение
+</div>
+<h1>Physics Handle — держать предмет при зажатии кнопки</h1>
+<p>только быстрое решение, база есть на прошлой страницы</p>
+<h2>назначить кнопку управление с тригемаит при нажатии и отпускании</h2>
+<p><span class="ui-btn">down</span> - будет срабатывать на выходи <span class="node">trigger</span> при держании клавиши </p>
+<img src="Blueprint/images/PhysicsHandle1.png" alt="">
+
+<h2>в персонаже добавляем следующие компоненты</h2>
+<img src="Blueprint/images/PhysicsHandle5.png" alt="">
+<ul>
+    <li><span class="ui-btn">PhysicsHandle</span> - компонент который отвечает за взятие объекта</li>
+    <li><span class="ui-btn">новая сцена Grab Point</span> - там мы укажем на каком растояние будет объект</li>
+    <li><span class="ui-btn">переменная</span> - к примеру <span class="code">Is Holding Object</span></li>
+</ul>
+
+<img src="Blueprint/images/PhysicsHandle2.png" alt="">
+
+<p><span class="node">Triggered</span> - будет постоянно обновлять положение объекта пока кнопка зажата</p>
+<p><span class="node">Completed</span> - когда мы отпустим кнопку, объект упадет</p>
+<p><span class="node">Started</span> - при однократном нажатии выпускаем трейс, ждя захвата объекта</p>
+
+<img src="Blueprint/images/PhysicsHandle3.png" alt="">
+
+<p>проверяем если мы не держим объект, то запускаем трейс</p>
+
+<img src="Blueprint/images/PhysicsHandle4.png" alt="">
+
+<p>проверяем если мы попали по объекту</p>
+<p>для примера, убираем колизию у объекта что она игнорировала персонажа, но лучше сделать это в самомо объекте.</p>
+<p>хватаем объект и назначаем переменной что мы его держим</p>
+
+<p>теперь всё работает, всегда есть место для улучшения, но пока что это простая и рабочая система на мой взгляд</p>

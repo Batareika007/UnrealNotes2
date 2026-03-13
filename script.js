@@ -59,6 +59,7 @@ const subTopics = {
     { id: "Blueprint/interact", title: "Interact"},
     { id: "Blueprint/moveActore", title: "двигать акторы"},
     { id: "Blueprint/physicshandle", title: "Physics Handle"},
+    { id: "Blueprint/physicshandle2", title: "Physics Handle - держим кнопку"},
     { id: "Blueprint/timeControl", title: "Time Control"},
     { id: "Blueprint/footsteps1stPerson", title: "footsteps1stPerson"},
     { id: "Blueprint/gameMode", title: "GameMode"},
