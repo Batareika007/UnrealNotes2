@@ -88,6 +88,7 @@ const subTopics = {
   ],
   "Level Design & World Building": [
     { id: "LevelDesign/LevelInstancePackedLevelActor", title: "Level Instance / Packed Level Actor" },
+    { id: "LevelDesign/DataLayer", title: "Data Layer" },
   ],
   Cinematic: [
     { id: "Cinematic/camerarigs", title: "кран и рельсы" },
