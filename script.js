@@ -42,6 +42,7 @@ const subTopics = {
   ],
   'Вlueprint Nodes':[
     { id: "Blueprint/flowcontrol", title: "Flow Control"},
+    { id: "Blueprint/savesystemtheory", title: "Ноды для сохранения"},
   ],
   "Вlueprint Communication":[
     { id: "Blueprint/directcommunication", title: "Прямая коммуникация"},
