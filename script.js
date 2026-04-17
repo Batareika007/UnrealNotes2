@@ -2,6 +2,7 @@ const subTopics = {
   Home: [
     { id: "Home/cheatshet", title: "Шпаргалка" },
     { id: "Home/usefullStuff", title: "Разные полезности в анрил" },
+    { id: "Home/ActorLifecycle", title: "последовательность загрузки объектов и акторов" },
     { id: "Home/git", title: "GIT" },
   ],
   "2D": [
