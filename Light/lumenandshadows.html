@@ -19,14 +19,27 @@
 
 <p><span class="ui-btn">Use Hardware Ray Tracing when available</span> - check (будет только работаеть если видео карта поддерживает RTX) но если есть проблемы в разработке лучше отключить </p>
 
-<p><span class="ui-btn">Ray Lighing Mode</span> - Surface Cache</p>
+<p><span class="ui-btn">Ray Lighing Mode</span> - Surface Cache. Hit Light намного точнее, но сожрёт видяху</p>
 
-<p><span class="ui-btn">Software Ray Tracing mode</span> - Detail Tracing - можно поставить на Global Tracing тогда будет более щедящий режим для производительнсоти, но менее эфективный визуально</p>
+<p><span class="ui-btn">Software Ray Tracing mode</span> - Detail Tracing - использует меши и нужне Nanit для скорости. можно поставить на Global Tracing тогда будет более щедящий режим для производительнсоти, но менее эфективный визуально. </p>
 
-<p><span class="ui-btn">Shadow Map Method</span> - Virtual Shadow Maps - более детальные тени</p>
+<p><span class="ui-btn">Shadow Map Method</span> - Virtual Shadow Maps (VSM)- более детальные тени, без Nanite может работать криво, нужно разбираться</p>
 
-<p><span class="ui-btn">Ray Traced Shadows</span> - работет только вместе с включеным Hardware Ray Tracing, акуратные тени но очень требовательны к железу</p>
+<p><span class="ui-btn">Ray Traced Shadows</span> - работет только вместе с включеным Hardware Ray Tracing, акуратные тени но очень требовательны к железу. можно выключить и оставить VSM</p>
 
 <p><span class="ui-btn">support Hardware Ray Tracing</span> - это главное значение если, без него вообще не будет работать Ray Tracing если выключить</p>
 
-<p><span class="ui-btn">Allow Static Lighing</span> - обязательно включить если мы хотим запекать свет </p>
+<p><span class="ui-btn">Allow Static Lighing</span> - обязательно включить если мы хотим запекать свет. Но с Lumen его выключают, люмен это только динамичный свет</p>
+
+<p>Anti-Aliasing Method: сглаживание</p>
+
+<p>FXAA - быстрый но рябь будет (под мобилки), Просто слегка размывает края пикселей. Очень дешево, но картинка «мыльная» и всё равно «лесенки» при движении.</p>
+
+<p>MSAA - Классика из старых игр. Не работает с современными методами освещения (Deferred Rendering), которые использует Unreal. Чтобы его включить, нужно переходить на Forward Shading, что отключит половину фишек движка. </p>
+
+<p>TAA - на слабых машинах но выдаёт отличну картинку. Сравнивает текущий кадр с предыдущими. Отлично убирает «шум» от динамического света и Nanite. При движении может давать «гостинг» (шлейфы за объектами) </p>
+
+
+
+<p>TSR - Жрёт много но выдаёт самую качественную картинку. Это «родной» DLSS от самих Epic Games. Lumen и Nanite создавались под TSR. Без него ты можешь увидеть много шума и мерцания в тенях. Он не просто «жрет много», он умеет апскейлить. Ты можешь рендерить игру в 70% разрешения, а TSR дотянет её до 100% с очень крутым качеством.</p>
+
