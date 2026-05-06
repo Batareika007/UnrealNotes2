@@ -9,4 +9,14 @@
 <p>Tools - world partition - convert level</p>
 <p>выбираем уровень который нужно сконвертировать и ждём.</p>
 <p>у нас будут два уровня, первый оригинальный а второй с world partiton (в название уровня будет добавлен _WP)</p>
-<p>... продолжение следует</p>
+
+
+<h2>создать Data Layer</h2>
+<p>ПКМ в разделе world - Data layer. и даешь ему название</p>
+
+<p>windows - World partition - Data Layers Outliner - здесь будет список всех Data Layers который мы хотим добавить на уровень, и туда добавляем наш созданый Data Layer, или же можно прям там его создать</p>
+
+<p>выбираем какие акторы будут прям в нем, можешь добавлять и удалиять любые акторы из Data layer</p>
+
+<h2>Blueprint</h2>
+<p>вызываем ноду <span class="node">Get Data Layer Manager</span> - из неё вытягиваем <span class="node">Set Data Layer Runtime State</span> - указываем сылку на Data Layer и его положение, если он не загружен, загружин или активен. </p>
