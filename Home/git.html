@@ -2,7 +2,27 @@
  Это очень базовые команды для Git. Раздел не обновляется и служит только как архивная заметка.
 </div>
 <h1>GIT</h1>
+<p>Версия 5.4 GIT работает прекрасно, если не нужны фишки новых версий, то можно спокойно работать с гитом</p>
 
+<p>версия 5.7 встроенный гит плагин сломан! постоянно будет показывать ошибку </p>
+
+<p>объек  is missing from this changelist  (referenced from /..)</p>
+
+<p>в двух словах в новых персиях очень сильно намудрили систему, она стала очень жестко проверять, на столько что теперь всегда что-то не хватает</p>
+
+<p>можно убрать эту проверку, есть два пути: </p>
+<p>открыть файл DefaultEngine.ini которая находися в папке Config </p>
+<span class="code">[ConsoleVariables]</span>
+<span class="code">RevisionControl.FilesValidation.Enable=0</span>
+<p>добавить эти строки если их нет</p>
+
+<p>каждый раз в консоли писать</p>
+<span class="code">RevisionControl.FilesValidation.Enable 0</span>
+
+<p>далее, если при нажатии кнопки view changes, выходит списко с тысячами объектов, можно отменить:</p>
+<p><span class="code">project settings - Editor - Revision Control - Enable Uncontrolled Changelist</span> - убирать галочку</p>
+
+<hr>
 <p>GIT — используется для подключения проекта к GitLab.</p>
 
 <p>Source Control → Connect to Source Control</p>
