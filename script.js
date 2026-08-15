@@ -93,10 +93,11 @@ const subTopics = {
     { id: "LevelDesign/LevelInstancePackedLevelActor", title: "Level Instance / Packed Level Actor" },
     { id: "LevelDesign/DataLayer", title: "Data Layer" },
   ],
-  Cinematic: [
+  "Cinematic and Camera": [
     { id: "Cinematic/camerarigs", title: "кран и рельсы" },
     { id: "Cinematic/firststeps", title: "создание первого сиквенсера" },
     { id: "Cinematic/plugins", title: "плагины" },
+    { id: "Cinematic/camera shake", title: "тряска камеры" },
   ],
   Debug: [
     { id: "Debug/debug", title: "Debug" },
