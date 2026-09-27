@@ -138,6 +138,7 @@ const subTopics = {
     { id: "Theory/modeplace", title: "Place Actors" },
     { id: "Theory/naming", title: "Базовые элементы движка" },
     { id: "Theory/proffesion", title: "Проффесии" },
+    { id: "Theory/GraphicsTechnology", title: "технологии ГРАФИКИ" },
     
   ],
   Optimize:[
