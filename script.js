@@ -114,6 +114,7 @@ const subTopics = {
   Light: [
     { id: "Light/light", title: "свет и туман" },
     { id: "Light/lumenandshadows", title: "Люмен и красивые тени" },
+    { id: "Light/light_teory", title: "Выбор единиц измерения" },
   ],
   Physics: [
     { id: "Physics/physics", title: "Physical Materials" },
